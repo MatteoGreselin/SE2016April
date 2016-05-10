@@ -214,6 +214,50 @@ addcontentsline{toc}{section}{1.2 Scope}
 1.2 Scope
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{S}{cope of this }
+\end_layout
+
+\end_inset
+
+project will be:
+\end_layout
+
+\begin_layout Itemize
+[G1] Limit traffic that enters in the city coherently with CO2 levels
+\end_layout
+
+\begin_layout Itemize
+[G2] Manage traffic situation in days with special events
+\end_layout
+
+\begin_layout Itemize
+[G3] Allows that citizens could arrive in less time in the best hospital
+\end_layout
+
+\begin_layout Itemize
+[G4] Allows an easier parking search 
+\end_layout
+
+\begin_layout Itemize
+[G5] Improve the city life
+\end_layout
+
+\begin_layout Itemize
+[G6] Reduce Hospital queues
+\end_layout
+
+\begin_layout Itemize
+[G7] Offer an user-friendly app
+\end_layout
+
 \begin_layout Section*
 \begin_inset ERT
 status open
@@ -228,6 +272,31 @@ addcontentsline{toc}{section}{1.3 Proposed System}
 \end_inset
 
 1.3 Proposed System
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{I}{n order to }
+\end_layout
+
+\end_inset
+
+reach the scope, i will proposed a system with a mobile platform.
+ It is not necessary a web platform because each information will regards
+ people that are driving or with an emergency that means with no time for
+ starting a PC.
+ Users will open the app and then they will choose what is their necessity
+ : traffic situation, emergency or parking.
+ It is not necessary any registration for using the application, but in
+ case of emergency, will be asked to select in which hospital user has decided
+ to go, in order to have a correct situation of queues.
+ 
 \end_layout
 
 \begin_layout Section*
@@ -260,6 +329,14 @@ addcontentsline{toc}{subsection}{1.4.1 Definitions}
 \end_inset
 
 1.4.1 Definitions
+\end_layout
+
+\begin_layout Description
+User will indicate people that will use the application
+\end_layout
+
+\begin_layout Description
+System: In this document, this word will indicate our application
 \end_layout
 
 \begin_layout Subsection*
@@ -362,6 +439,71 @@ addcontentsline{toc}{section}{1.5 Assumption}
 \end_inset
 
 1.5 Assumption
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{C}{oherently with }
+\end_layout
+
+\end_inset
+
+the specification document, is necessary to do some assumption in order
+ to increase the clarity:
+\end_layout
+
+\begin_layout Itemize
+[A1] We assume that every user has a smartphone if he/se want use the app;
+\end_layout
+
+\begin_layout Itemize
+[A2] We assume that every user has a internet connection;
+\end_layout
+
+\begin_layout Itemize
+[A3] We assume that each citizen will follow the instructions provided by
+ application;
+\end_layout
+
+\begin_layout Itemize
+[A4] We assume that special situation (as manifestation or VIP's visit)
+ will be scheduled in advace;
+\end_layout
+
+\begin_layout Itemize
+[A5] We assume that in case of accidents, they will be notify as soon as
+ possible;
+\end_layout
+
+\begin_layout Itemize
+[A6] 
+\end_layout
+
+\begin_layout Itemize
+[A7]
+\end_layout
+
+\begin_layout Itemize
+[A8]
+\end_layout
+
+\begin_layout Itemize
+[A9] Application will indicate any available parking that will be at maximum
+ 15 minutes walk by an indicated place
+\end_layout
+
+\begin_layout Itemize
+[A10]
+\end_layout
+
+\begin_layout Itemize
+[A11]
 \end_layout
 
 \begin_layout Section*
@@ -473,6 +615,22 @@ addcontentsline{toc}{section}{3.1 Functional Requirements}
 \end_inset
 
 3.1 Functional Requirements
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.1.1 User Interface}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
@@ -637,6 +795,53 @@ addcontentsline{toc}{chapter}{4.Specifications}
 4.Specifications
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{W}{ith specification }
+\end_layout
+
+\end_inset
+
+i will explain some aspect on how i will reach goals of the project.
+\end_layout
+
+\begin_layout Itemize
+[S1] Only registered user could recive notification abount accidents or
+ special events 
+\end_layout
+
+\begin_layout Itemize
+[S2] In order to use all the functionalities of the app, is recommended
+ to activate GPS on smartphone
+\end_layout
+
+\begin_layout Itemize
+[S3] Every events or accidents that will be notified, will be check in order
+ to avoid wrong information for citizens
+\end_layout
+
+\begin_layout Itemize
+[S4]
+\end_layout
+
+\begin_layout Itemize
+[S5]
+\end_layout
+
+\begin_layout Itemize
+[S6]
+\end_layout
+
+\begin_layout Itemize
+[S7]
+\end_layout
+
 \begin_layout Chapter*
 \begin_inset ERT
 status open
@@ -651,6 +856,60 @@ addcontentsline{toc}{chapter}{5.Scenarios Identifying}
 \end_inset
 
 5.Scenarios Identifying
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{N}{ow i propose }
+\end_layout
+
+\end_inset
+
+some situation that could happen in the real world:
+\end_layout
+
+\begin_layout Itemize
+This sunday the Pope will be in Milan for a celebration in the cathedral.
+ The way from airport Milano Forlanini to city center will be blocked from
+ 8 a.m.
+ to 10 a.m.
+ in order to allow a safety travel.
+ Each registred user will recive a notify Saturday evening that will inform
+ about the event.
+ In the notify will be indicated three different possibilities to pass from
+ south-east to north-east of Milan (and from north-east to south-east) in
+ order to reduce the hardships for citizens.
+\end_layout
+
+\begin_layout Itemize
+Marco cuts his finger and his girfriend Francesca must found an hospital
+ without long queue becouse he lost blood.
+ 
+\begin_inset Newline newline
+\end_inset
+
+She will open the application and will select 'emergency',then she could
+ see hospitals w.r.t.
+ their position.
+ If the queues were to be very long, she could decides to search hospitals
+ with short waiting queue and she will find one not so far.
+ In this way Marco will receive medical care in a short time.
+\end_layout
+
+\begin_layout Itemize
+Tommaso needs to go to the city center with all the family.
+ For this reason he has decided to use his car but he knows that the parking
+ availability is a big problem in Milan.
+ Tommaso will open the app and will select 'parking availability' in the
+ main page and will insert his destination, system will propose him all
+ available parking at maximum 15 minutes walk for the prefixed zone with
+ the number of remaing car park.
 \end_layout
 
 \begin_layout Chapter*
