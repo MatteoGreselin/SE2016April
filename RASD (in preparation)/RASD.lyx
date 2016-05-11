@@ -172,29 +172,37 @@ lettrine{T}{he purpose of }
 
 \end_inset
 
-this document is, providing requirements and specifications about an application
+this document is providing requirements and specifications about an application
  due to monitoring process done by city of Milan.
- The application will be called 'SmartCityAdvisor' and its scope will be
- to provide to citizen more information about pubblic service situation,
- like ospital queues or parking availability, and to manage in the best
- possible way exceptional event like accident, the arrival of some VIP or
- other with a momentary traffic deviation.
+ 
+\begin_inset Newline newline
+\end_inset
+
+The application will be called 'SmartCityAdvisor' and its scope will be
+ provide to citizen more information about pubblic service situation, like
+ hospital queues or parking availability, and to manage in the best possible
+ way exceptional event like accidents, VIPs arrival or other, with a momentary
+ traffic deviation.
  The objective of this project is improve the city life through a mobile
  application, that will allow to recive notifications about actual traffic
  situation or about momentary deviation, according to own GPS position,
- and also it will allow to request which is the empiest hospital in case
- of emergency.
+ and also it will allow to check which is the empiest hospital in case of
+ emergency or which is the best one for a precise emergency.
  
 \begin_inset Newline newline
 \end_inset
 
 As required by city of Milan, as new functionality i will propose the parking
- availability, that is possible with data already measured.
- The idea is that citizens will indicate the destination in the mobile app
- and a maximum distance for the parking, then the system will propose all
- the possible solutions with the remaing place with, for example, an updating
- each five minutes.
- The system also provides Application Programming Interface (API) to enable
+ availability, that is possible with data already measured.: the idea is
+ that citizens will indicate the destination in the mobile app and system
+ will propose all the possible solutions with free place.
+ A possible updating for parking situation should be each 10 minutes during
+ the week ann each five minutes in the weekend or during festivities.
+ 
+\begin_inset Newline newline
+\end_inset
+
+The system also provides Application Programming Interface (API) to enable
  further developments.
 \end_layout
 
@@ -251,7 +259,7 @@ project will be:
 \end_layout
 
 \begin_layout Itemize
-[G6] Reduce Hospital queues
+[G6] Reduce Hospital queues 
 \end_layout
 
 \begin_layout Itemize
@@ -292,10 +300,10 @@ reach the scope, i will proposed a system with a mobile platform.
  people that are driving or with an emergency that means with no time for
  starting a PC.
  Users will open the app and then they will choose what is their necessity
- : traffic situation, emergency or parking.
- It is not necessary any registration for using the application, but in
- case of emergency, will be asked to select in which hospital user has decided
- to go, in order to have a correct situation of queues.
+ : traffic situation, emergency or parking for example.
+ Registration is not mandatory but it is strongly raccomended in order to
+ be able to use all functionalities: for example, general notification could
+ be recived only by registred users.
  
 \end_layout
 
@@ -331,12 +339,32 @@ addcontentsline{toc}{subsection}{1.4.1 Definitions}
 1.4.1 Definitions
 \end_layout
 
-\begin_layout Description
-User will indicate people that will use the application
+\begin_layout Itemize
+GUEST ⇒ This word will indicate all general people without a personal account
 \end_layout
 
-\begin_layout Description
-System: In this document, this word will indicate our application
+\begin_layout Itemize
+USER ⇒ This word will indicate people that will use the application with
+ a personal account
+\end_layout
+
+\begin_layout Itemize
+HOSPITALS ⇒ This word will indicate hospital as istitution that will inform
+ our system about queue situation
+\end_layout
+
+\begin_layout Itemize
+ATM ⇒ This word will indicate the company of pubblic transport as entity
+ that must inform our system about the precise position of public transport
+\end_layout
+
+\begin_layout Itemize
+SYSTEM ⇒In this document, this word will indicate our application
+\end_layout
+
+\begin_layout Itemize
+CITY ADMINISTATION ⇒ It will indicate the entity that will manage all the
+ application
 \end_layout
 
 \begin_layout Subsection*
@@ -388,6 +416,11 @@ OS :
  
 \end_layout
 
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+ATM: : Azienda Trasporti Milanesi s.p.a.
+\end_layout
+
 \begin_layout Subsection*
 \begin_inset ERT
 status open
@@ -412,7 +445,7 @@ addcontentsline{toc}{subsection}{1.4.3 Abbreviations}
 
 \begin_layout Labeling
 \labelwidthstring 00.00.0000
-[Dn] : n-domain assumption.
+[An] : n-domain assumption.
 \end_layout
 
 \begin_layout Labeling
@@ -535,9 +568,23 @@ lettrine{I}{n this }
 
 \end_inset
 
- project, stakeolders will be professors of the course Software Engineering
- 2 as product owner, city of Milan and its citizen, any developers that
- will work on this application in the future
+ project stakeolders will be 
+\end_layout
+
+\begin_layout Itemize
+Professors of the course Software Engineering 2 as product owner 
+\end_layout
+
+\begin_layout Itemize
+City of Milan, as entity that has open the call for application develop
+\end_layout
+
+\begin_layout Itemize
+Citizen that might use the app and will take advantages from this application
+\end_layout
+
+\begin_layout Itemize
+Any developers that will work on this application in the future
 \end_layout
 
 \begin_layout Section*
@@ -548,12 +595,67 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{1.7 References}
+addcontentsline{toc}{section}{1.7 Future Upgradese}
 \end_layout
 
 \end_inset
 
-1.7 References
+1.7 Future Upgrades
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{I}{n futere }
+\end_layout
+
+\end_inset
+
+application might be upgrade with other functionalities like:
+\end_layout
+
+\begin_layout Itemize
+Parking reservation: when you find a free park near your destination, you
+ could choose to reserve it for five, ten, fifteen or more minutes.
+ Reservation wil a cost that will increase with the reservation time required.
+\end_layout
+
+\begin_layout Itemize
+Check public transport: if you need to use the public transport, you could
+ use the app in order to see all buses or tram near you or to search the
+ position of a fixed line.
+\end_layout
+
+\begin_layout Itemize
+Medical Examination Reservation: when you need to a medical reservation,
+ you could use the application in order to choose an hospital and book an
+ appoinment, coherently with medical staff availability 
+\end_layout
+
+\begin_layout Standard
+If this upgades will be done, could be usefull provide for the development
+ of a well-format web-site.
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{1.8 References}
+\end_layout
+
+\end_inset
+
+1.8 References
 \end_layout
 
 \begin_layout Labeling
@@ -582,6 +684,68 @@ addcontentsline{toc}{chapter}{2.Actors Identifyng}
 
 2.
  Actors Identifying
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+GUEST
+\bar default
+ ⇒ He/she is a person that use the application with reduced functionalities.
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+USER
+\bar default
+ ⇒ He/she is a person tha use the application with alll functionalities,
+ he/she has a personal account with a personal page
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+CITY ADMINISTRATION
+\bar default
+ ⇒ It is the entity that manage the entire system.
+ It can see usage reports, sent notify to user, insert special event in
+ the DB, check the correct working.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+HOSPITAL
+\bar default
+ ⇒ It represent each entity that must inform the system about queue situation,
+ its system is connected by the DB.
+ Each time that a person require a waiting ticket for a paticular visit,
+ system will update the DB.
+ The same thinks will be done when a person will start his/her medical visit
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+ATM (or public transport company)
+\bar default
+ ⇒ It is the entity that manage the pubblic transport in Milan, it must
+ connect its GPS system of each vehicle with the DB of application, in this
+ way there will be a real time updating.
+ It will have also a personal interface in order to insert new pubblic lines
+ in the DB , remove them or inform users about strikes or exceptional event
+ (great delay or momentary pubblic line cancellations)
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+SYSTEM 
+\bar default
+⇒ It is the main importat part of the application, it coordinates all processes
+ and if it goes down, the entire application goes down.
 \end_layout
 
 \begin_layout Chapter*
@@ -625,12 +789,108 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{3.1.1 User Interface}
+addcontentsline{toc}{subsection}{3.1.1 Sign Up}
 \end_layout
 
 \end_inset
 
+3.1.1 Sign Up
+\end_layout
 
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.1.2 Log In}
+\end_layout
+
+\end_inset
+
+3.1.2 Log In
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.1.3 Hospital Functionalities}
+\end_layout
+
+\end_inset
+
+3.1.3 Hospital Functionalities
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.1.4 ATM Functionalities}
+\end_layout
+
+\end_inset
+
+3.1.4 ATM Functionalities
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.1.5 Parking Availability }
+\end_layout
+
+\end_inset
+
+3.1.5 Parking Availability
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.1.6 Administation Functionalities }
+\end_layout
+
+\end_inset
+
+3.1.6 Administation Functionalities
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.1.7 Profile Managing}
+\end_layout
+
+\end_inset
+
+3.1.7 Profile Managing
 \end_layout
 
 \begin_layout Section*
