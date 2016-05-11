@@ -650,6 +650,44 @@ status open
 
 
 \backslash
+addcontentsline{toc}{section}{1.8 Overview}
+\end_layout
+
+\end_inset
+
+1.8 Overview
+\end_layout
+
+\begin_layout Standard
+Chapter 2 of this document presents actors involved in the processes,.
+\begin_inset Newline newline
+\end_inset
+
+Chapter 3 presents a general overview of the system.
+ It aims to show the background of the requirements stated in the section
+ below
+\begin_inset Newline newline
+\end_inset
+
+Chapter 4 gives more detailed specific requirements for the offered functions.
+\begin_inset Newline newline
+\end_inset
+
+Chapter 5 presents some possible example of usage in the real world
+\begin_inset Newline newline
+\end_inset
+
+Chapter 6 and 7 present all types of digram used for describe processes
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 addcontentsline{toc}{section}{1.8 References}
 \end_layout
 
@@ -658,15 +696,18 @@ addcontentsline{toc}{section}{1.8 References}
 1.8 References
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Specification Document
+\begin_layout Itemize
+Specification Document given us by teachers
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 IEEE Std 830-1998 IEEE Recommended Practice for Software Requirements Specificat
 ions.
  (Revision of IEEE Std 830-1993)
+\end_layout
+
+\begin_layout Itemize
+Other example of RASD given us by teachers
 \end_layout
 
 \begin_layout Chapter*
@@ -687,41 +728,65 @@ addcontentsline{toc}{chapter}{2.Actors Identifyng}
 \end_layout
 
 \begin_layout Enumerate
-GUEST ⇒ He/she is a person that use the application with reduced functionalities.
+
+\bar under
+GUEST
+\bar default
+ ⇒ He/she is a person that use the application with reduced functionalities.
 \end_layout
 
 \begin_layout Enumerate
-USER ⇒ He/she is a person tha use the application with alll functionalities,
+
+\bar under
+USER
+\bar default
+ ⇒ He/she is a person tha use the application with alll functionalities,
  he/she has a personal account with a personal page
 \end_layout
 
 \begin_layout Enumerate
-CITY ADMINISTRATION ⇒ It is the entity that manage the entire system.
+
+\bar under
+CITY ADMINISTRATION
+\bar default
+ ⇒ It is the entity that manage the entire system.
  It can see usage reports, sent notify to user, insert special event in
  the DB, check the correct working.
  
 \end_layout
 
 \begin_layout Enumerate
-HOSPITAL ⇒ It represent each entity that must inform the system about queue
- situation, its system is connected by the DB.
+
+\bar under
+HOSPITAL
+\bar default
+ ⇒ It represent each entity that must inform the system about queue situation,
+ its system is connected by the DB.
  Each time that a person require a waiting ticket for a paticular visit,
  system will update the DB.
  The same thinks will be done when a person will start his/her medical visit
 \end_layout
 
 \begin_layout Enumerate
-ATM (or public transport company) ⇒ It is the entity that manage the pubblic
- transport in Milan, it must connect its GPS system of each vehicle with
- the DB of application, in this way there will be a real time updating.
+
+\bar under
+ATM (or public transport company)
+\bar default
+ ⇒ It is the entity that manage the pubblic transport in Milan, it must
+ connect its GPS system of each vehicle with the DB of application, in this
+ way there will be a real time updating.
  It will have also a personal interface in order to insert new pubblic lines
  in the DB , remove them or inform users about strikes or exceptional event
  (great delay or momentary pubblic line cancellations)
 \end_layout
 
 \begin_layout Enumerate
-SYSTEM ⇒ It is the main importat part of the application, it coordinates
- all processes and if it goes down, the entire application goes down.
+
+\bar under
+SYSTEM 
+\bar default
+⇒ It is the main importat part of the application, it coordinates all processes
+ and if it goes down, the entire application goes down.
 \end_layout
 
 \begin_layout Chapter*
@@ -765,12 +830,108 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{3.1.1 User Interface}
+addcontentsline{toc}{subsection}{3.1.1 Sign Up}
 \end_layout
 
 \end_inset
 
+3.1.1 Sign Up
+\end_layout
 
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.1.2 Log In}
+\end_layout
+
+\end_inset
+
+3.1.2 Log In
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.1.3 Hospital Functionalities}
+\end_layout
+
+\end_inset
+
+3.1.3 Hospital Functionalities
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.1.4 ATM Functionalities}
+\end_layout
+
+\end_inset
+
+3.1.4 ATM Functionalities
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.1.5 Parking Availability }
+\end_layout
+
+\end_inset
+
+3.1.5 Parking Availability
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.1.6 Administation Functionalities }
+\end_layout
+
+\end_inset
+
+3.1.6 Administation Functionalities
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.1.7 Profile Managing}
+\end_layout
+
+\end_inset
+
+3.1.7 Profile Managing
 \end_layout
 
 \begin_layout Section*
@@ -803,6 +964,47 @@ addcontentsline{toc}{subsection}{3.2.1 User Interface}
 \end_inset
 
 3.2.1 User Interface
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{U}{ser interface }
+\end_layout
+
+\end_inset
+
+of my SmartCityAdvisor application is very user friendly.
+ It is simple and intuitive, it has been tought in order to allows its use
+ to all users
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.5] at (current page.center) {
+\backslash
+includegraphics{UserInterface1}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*

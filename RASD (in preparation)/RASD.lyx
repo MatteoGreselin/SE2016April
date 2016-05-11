@@ -650,6 +650,44 @@ status open
 
 
 \backslash
+addcontentsline{toc}{section}{1.8 Overview}
+\end_layout
+
+\end_inset
+
+1.8 Overview
+\end_layout
+
+\begin_layout Standard
+Chapter 2 of this document presents actors involved in the processes,.
+\begin_inset Newline newline
+\end_inset
+
+Chapter 3 presents a general overview of the system.
+ It aims to show the background of the requirements stated in the section
+ below
+\begin_inset Newline newline
+\end_inset
+
+Chapter 4 gives more detailed specific requirements for the offered functions.
+\begin_inset Newline newline
+\end_inset
+
+Chapter 5 presents some possible example of usage in the real world
+\begin_inset Newline newline
+\end_inset
+
+Chapter 6 and 7 present all types of digram used for describe processes
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 addcontentsline{toc}{section}{1.8 References}
 \end_layout
 
@@ -658,15 +696,18 @@ addcontentsline{toc}{section}{1.8 References}
 1.8 References
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-Specification Document
+\begin_layout Itemize
+Specification Document given us by teachers
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 IEEE Std 830-1998 IEEE Recommended Practice for Software Requirements Specificat
 ions.
  (Revision of IEEE Std 830-1993)
+\end_layout
+
+\begin_layout Itemize
+Other example of RASD given us by teachers
 \end_layout
 
 \begin_layout Chapter*
@@ -925,6 +966,67 @@ addcontentsline{toc}{subsection}{3.2.1 User Interface}
 3.2.1 User Interface
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{U}{ser interface }
+\end_layout
+
+\end_inset
+
+of my SmartCityAdvisor application is very user friendly.
+ It is simple and intuitive, it has been tought in order to allows its use
+ to all users
+\begin_inset Newline newline
+\end_inset
+
+It has been produced to be used via web or mobile application and it has
+ a main page.
+ Here you can use all the functionalities of the project and, if you want,
+ you can log in for changing your profile infos or changing preferences
+ about notifications.
+ 
+\begin_inset Newline newline
+\end_inset
+
+With a pc, on the top of the public page we could find six links that allow
+ to navigate into the web site and below them we have the possibility to
+ refine our search, we find a calendar and some statistics.
+\begin_inset Newline newline
+\end_inset
+
+With a smartphone the interfece will have some little differences according
+ to the operative system
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.5] at (current page.center) {
+\backslash
+includegraphics{UserInterface1}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection*
 \begin_inset ERT
 status open
@@ -939,6 +1041,24 @@ addcontentsline{toc}{subsection}{3.2.2 User Characteristics}
 \end_inset
 
 3.2.2 User Characteristics
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{S}{martCityAdvisot}
+\end_layout
+
+\end_inset
+
+is a service reserved to all people, citizens and turist.
+ In order to registrate a new account is necessary to be more than 18 years
+ old.
 \end_layout
 
 \begin_layout Subsection*
@@ -973,6 +1093,39 @@ addcontentsline{toc}{subsection}{3.2.4 Security}
 3.2.4 Security
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{I}{n the application}
+\end_layout
+
+\end_inset
+
+ there aren't sensible information but, in order to ensure the maximum tranquili
+ty to our users and in order that their trust in us, we want guarantee an
+ high protected area.
+\end_layout
+
+\begin_layout Enumerate
+The communications between server and clients must be completely secure
+ and pro- tected by strong encryption such as SSL protocol.
+\end_layout
+
+\begin_layout Enumerate
+Users password must not stored in plain text in the database, they must
+ be hashed and encrypted.
+\end_layout
+
+\begin_layout Enumerate
+If a user try more than 4th times for log in, block the IP address for 10
+ minutes.
+\end_layout
+
 \begin_layout Subsection*
 \begin_inset ERT
 status open
@@ -981,28 +1134,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{3.2.5 System Availability}
+addcontentsline{toc}{subsection}{3.2.5 Documentation}
 \end_layout
 
 \end_inset
 
-3.2.5 System Availability 
-\end_layout
-
-\begin_layout Subsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsection}{3.2.6 Documentation}
-\end_layout
-
-\end_inset
-
-3.2.6 Documentation
+3.2.5 Documentation
 \end_layout
 
 \begin_layout Standard
