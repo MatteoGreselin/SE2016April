@@ -33,7 +33,7 @@
 \spacing single
 \use_hyperref false
 \papersize a4paper
-\use_geometry true
+\use_geometry false
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -57,7 +57,10 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 2cm
 \topmargin 1.5cm
+\rightmargin 2cm
+\bottommargin 2cm
 \secnumdepth 5
 \tocdepth 5
 \paragraph_separation indent
@@ -166,13 +169,13 @@ status open
 
 
 \backslash
-lettrine{T}{he }
+lettrine{T}{he purpose of }
 \end_layout
 
 \end_inset
 
-purpose of this document is providing requirements and specifications about
- an application due to monitoring process done by city of Milan.
+this document is providing requirements and specifications about an application
+ due to monitoring process done by city of Milan.
  
 \begin_inset Newline newline
 \end_inset
@@ -229,12 +232,12 @@ status open
 
 
 \backslash
-lettrine{M}{ain }
+lettrine{M}{ain goals }
 \end_layout
 
 \end_inset
 
-goals of the project will be:
+project will be:
 \end_layout
 
 \begin_layout Description
@@ -403,13 +406,13 @@ status open
 
 
 \backslash
-lettrine{I}{n }
+lettrine{I}{n order to }
 \end_layout
 
 \end_inset
 
-order to reach the scope, i will proposed a system with an interface develop
- both for web and smart device.
+reach the scope, i will proposed a system with an interface develop both
+ for web and smart device.
  Users will open the app and then they will choose what is their necessity
  : traffic situation, emergency or parking for example.
  Registration is not mandatory but it is strongly raccomended in order to
@@ -446,13 +449,13 @@ status open
 
 
 \backslash
-lettrine{C}{oherently }
+lettrine{C}{oherently with }
 \end_layout
 
 \end_inset
 
-with specification document, is necessary to do some assumption in order
- to increase the clarity:
+ specification document, is necessary to do some assumption in order to
+ increase the clarity:
 \end_layout
 
 \begin_layout Description
@@ -520,12 +523,12 @@ status open
 
 
 \backslash
-lettrine{I}{n }
+lettrine{I}{n this }
 \end_layout
 
 \end_inset
 
-this project stakeolders will be :
+ project stakeolders will be :
 \end_layout
 
 \begin_layout Itemize
@@ -568,12 +571,12 @@ status open
 
 
 \backslash
-lettrine{I}{n }
+lettrine{I}{n the futurem, }
 \end_layout
 
 \end_inset
 
-the future, application might be upgraded with other functionalities like:
+application might be upgraded with other functionalities like:
 \end_layout
 
 \begin_layout Itemize
@@ -854,6 +857,10 @@ addcontentsline{toc}{subsection}{4.1.2 Log In as User}
 \end_layout
 
 \begin_layout Subsection*
+\begin_inset Newpage newpage
+\end_inset
+
+
 \begin_inset ERT
 status open
 
@@ -1135,9 +1142,6 @@ addcontentsline{toc}{subsection}{4.1.4 Profile Managing}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section*
 \begin_inset ERT
 status open
 
@@ -1151,10 +1155,6 @@ addcontentsline{toc}{section}{4.2 Not Functional Requirement}
 \end_inset
 
 4.2 Non Functional Requirments
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Subsection*
@@ -1181,12 +1181,12 @@ status open
 
 
 \backslash
-lettrine{U}{ser }
+lettrine{U}{ser interface }
 \end_layout
 
 \end_inset
 
-interface of my SmartCityAdvisor application is very user friendly.
+of my SmartCityAdvisor application is very user friendly.
  It is simple and intuitive, it has been tought in order to allows its use
  to all users
 \begin_inset Newline newline
@@ -1222,7 +1222,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.45] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{UserInterface1}}; 
 \backslash
@@ -1285,19 +1285,7 @@ addcontentsline{toc}{subsection}{4.2.2 Harware Interface}
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lettrine{T}{he }
-\end_layout
-
-\end_inset
-
-application could be run on a lot of different devices, as smartphones,
+The application could be run on a lot of different devices, as smartphones,
  PCs, tablet, desktop and so on.
  The application must be implemented in order to be visualized in different
  size of windows and some of this could be on touch-screan device.
@@ -1322,19 +1310,7 @@ addcontentsline{toc}{subsection}{4.2.3 Software Interface}
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lettrine{S}{oftware }
-\end_layout
-
-\end_inset
-
- for users will be implemented as a thin client.
+Software for user will be implemented as a thin client.
  All principal operations will be done on server-side and will be used some
  popular APIs in order to reduce costs without reduce performance.
  For example, for the map service will be use Google Maps API.
@@ -1357,20 +1333,8 @@ addcontentsline{toc}{subsection}{4.2.3 Communication Interface}
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lettrine{T}{o }
-\end_layout
-
-\end_inset
-
-communicate will be used Internet connection, in order to use all functionalitie
-s is neccessary to have a 3g or WI-fi module on the devices.
+To communicate will be used Internet connection, in order to use all functionali
+ties is neccessary to have a 3g or WI-fi module on the devices.
 \end_layout
 
 \begin_layout Subsection*
@@ -1397,25 +1361,21 @@ status open
 
 
 \backslash
-lettrine{I}{n }
+lettrine{I}{n order to }
 \end_layout
 
 \end_inset
 
-order to allow a real time information, interested people must have or a
- smartphone with internet connettivity if they are on travel, or a PC (but
- always with an internet connection avaible) if they are at home.
+allow a real time information, interested people must have or a smartphone
+ with internet connettivity if they are on travel, or a PC (but always with
+ an internet connection avaible) if they are at home.
 \begin_inset Newline newline
 \end_inset
 
 All peolple that will obtain maximum performance by the application should
  have a basic knowledge about internet, usage of smartphone/pc GPS and usage
  of online maps.
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -1426,13 +1386,12 @@ status open
 
 
 \backslash
-lettrine{R}{eguarding }
+lettrine{R}{eguarding specifications, }
 \end_layout
 
 \end_inset
 
-specification, i will explain some aspect on how i will reach goals of the
- project:
+i will explain some aspect on how i will reach goals of the project:
 \end_layout
 
 \begin_layout Description
@@ -1539,13 +1498,13 @@ status open
 
 
 \backslash
-lettrine{N}{ow }
+lettrine{N}{ow i will propose }
 \end_layout
 
 \end_inset
 
-i will propose some situation that could happen in the real world, in order
- to bring out the real usage of SmartCityAdvisor:
+some situation that could happen in the real world, in order to bring out
+ the real usage of SmartCityAdvisor:
 \end_layout
 
 \begin_layout Section*
@@ -1565,29 +1524,14 @@ addcontentsline{toc}{section}{5.1 Pope will arrive in the city}
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lettrine{N}{ext }
-\end_layout
-
-\end_inset
-
- sunday Pope will be in Milan for a celebration in the cathedral.
+Next sunday Pope will be in Milan for a celebration in the cathedral.
  The way from airport Milano Forlanini to city center will be blocked from
  8 a.m.
  to 10 a.m.
  in order to allow a safety travel.
  Administration will log in with its special account in the system and it
  will enter the event.
-\begin_inset Newline newline
-\end_inset
-
-In the previus day, system will inform citizens and turists: each registred
+ in the previus day, system will inform citizens and turists: each registred
  user will recive a notify that will inform about the event and in the notify
  will be indicated three different possibilities to pass from south-east
  to north-east of Milan (and from north-east to south-east) in order to
@@ -1614,19 +1558,7 @@ addcontentsline{toc}{section}{5.2 It's happened an accident}
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lettrine{I}{s }
-\end_layout
-
-\end_inset
-
-Monday morning and all people are going to work.
+Is Monday morning and all people are going to work.
  In the traffic is very easy that could happen and accident and it happens.
  When people involved on it or people that have seen it call the police,
  an automatically information will bi insert in the system.
@@ -1635,11 +1567,7 @@ r whit position and hours of the accidents.
  If the accidents involve more vehicle, system might decide if divert traffic
  with the control of traffic lights and if use the large monitos in the
  city.
- 
-\begin_inset Newline newline
-\end_inset
-
-With all these information, citizens and turist could find the best way
+ With all these information, citizens and turist could find the best way
  in order to reach their destinations.
 \end_layout
 
@@ -1660,22 +1588,13 @@ addcontentsline{toc}{section}{5.3 Medical Emergency}
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lettrine{M}{arco }
-\end_layout
-
+Marco is working on the roof when he falls down.
+ His girfriend Francesca must found an hospital that could trat probables
+ fractures and, if possible, without long queue
+\begin_inset Newline newline
 \end_inset
 
-is working on the roof when he falls down.
- His girfriend Francesca must found an hospital that could trat probables
- fractures and, if possible, without long queue.
- She will open the application and will select 'emergency', then she could
+She will open the application and will select 'emergency', then she could
  see hospitals w.r.t.
  their position.
  About each hospital she might see the principal specialization and if queues
@@ -1684,13 +1603,6 @@ is working on the roof when he falls down.
  it and a notification abount the new patient will be send to the selected
  structure.
  
-\end_layout
-
-\begin_layout Section*
-\begin_inset Newpage newpage
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section*
@@ -1706,23 +1618,11 @@ addcontentsline{toc}{section}{5.4 Sunday Outing}
 
 \end_inset
 
-5.4 Sunday Outing
+5.3 Sunday Outing
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lettrine{T}{ommaso }
-\end_layout
-
-\end_inset
-
-needs to go to the city center with all the family.
+Tommaso needs to go to the city center with all the family.
  For this reason he has decided to use his car but he knows that the parking
  availability is a big problem in Milan.
  Tommaso will open the app and will select 'parking availability' in the
@@ -1756,34 +1656,20 @@ addcontentsline{toc}{section}{5.5 One mounth without rain}
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lettrine{I}{n }
-\end_layout
-
-\end_inset
-
-city like Milan, one of the biggest problem are period without rain and
+In city like Milan, one of the biggest problem are period without rain and
  this is just happened.
  In the last 30 days the city has exceeded the limit of fine particles imposed
  by the European Community for 22.
  This is a not trivial problem becouse is dangerous to healt, in particular
  for old people and children.
- The air is unbreathable so the city has decided to limit the cars entries
- in the city center.
- Exceptional rule has been indicated in the large monitore beside main streets
- and also by notification to all registered people to SmartCityAdvisor.
-\begin_inset Newline newline
+ The air is unbreathable so the city has decided to limit the entry of
+\end_layout
+
+\begin_layout Section*
+\begin_inset Newpage newpage
 \end_inset
 
-Furthermore, all cars of persons not resident in the city center that will
- be find into it during the block, will be fined.
- 
+
 \end_layout
 
 \begin_layout Chapter*
@@ -1812,15 +1698,15 @@ status open
 
 
 \backslash
-lettrine{I}{n }
+lettrine{I}{n the following }
 \end_layout
 
 \end_inset
 
-the following sections i will reports models taht represent how the application
- might be implemented with all operation sequences and all functionalities
- that each actor could have, some of these one only after registration and
- log in.
+sections i will reports models taht represent how the application might
+ be implemented with all operation sequences and all functionalities that
+ each actor could have, some of these one only after registration and log
+ in.
  
 \end_layout
 
@@ -1866,7 +1752,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.5] at (current page.center) {
+node [scale=0.57] at (current page.center) {
 \backslash
 includegraphics{UseCase1}}; 
 \backslash
@@ -1904,7 +1790,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.35] at (current page.center) {
+node [scale=0.4] at (current page.center) {
 \backslash
 includegraphics{UseCase2}}; 
 \backslash
@@ -1962,7 +1848,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.45] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{SequenceLogIn}}; 
 \backslash
@@ -2017,7 +1903,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.45] at (current page.center) {
+node [scale=0.5] at (current page.center) {
 \backslash
 includegraphics{SequenceAdmin}}; 
 \backslash
@@ -2056,7 +1942,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.45] at (current page.center) {
+node [scale=0.53] at (current page.center) {
 \backslash
 includegraphics{SequenceHospital}}; 
 \backslash
@@ -2094,7 +1980,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.45] at (current page.center) {
+node [scale=0.53] at (current page.center) {
 \backslash
 includegraphics{SequencePolice}}; 
 \backslash
@@ -2120,7 +2006,7 @@ addcontentsline{toc}{subsection}{6.2.6 Public Transport Company Functionalities
 
 \end_inset
 
-6.2.6 Public Transport Company Functionalities
+6.2.6 ublic Transport Company Functionalities
 \end_layout
 
 \begin_layout Standard
@@ -2133,7 +2019,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.5] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{SequenceTransport}}; 
 \backslash
@@ -2150,9 +2036,6 @@ end{tikzpicture}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section*
 \begin_inset ERT
 status open
 
@@ -2166,6 +2049,26 @@ addcontentsline{toc}{section}{6.3 Class Diagrams}
 \end_inset
 
 6.3 Class Diagrams
+\end_layout
+
+\begin_layout Section*
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{6.4 State Chart Diagrams}
+\end_layout
+
+\end_inset
+
+6.4 State Chart Diagrams
 \end_layout
 
 \begin_layout Chapter*
@@ -2240,12 +2143,12 @@ status open
 
 
 \backslash
-lettrine{F}{or }
+lettrine{F}{or create this }
 \end_layout
 
 \end_inset
 
-create this documet we have used:
+documet we have used:
 \end_layout
 
 \begin_layout Description

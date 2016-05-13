@@ -33,7 +33,7 @@
 \spacing single
 \use_hyperref false
 \papersize a4paper
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -57,10 +57,7 @@
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 2cm
 \topmargin 1.5cm
-\rightmargin 2cm
-\bottommargin 2cm
 \secnumdepth 5
 \tocdepth 5
 \paragraph_separation indent
@@ -240,39 +237,35 @@ lettrine{M}{ain goals }
 project will be:
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [G1] Limit traffic that enters in the city coherently with CO2 levels
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [G2] Manage traffic situation in days with special events
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [G3] Allows that citizens could arrive in less time in the best hospital
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [G4] Allows an easier parking search 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [G5] Improve the city life
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [G6] Reduce Hospital queues 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [G7] Offer an user-friendly app
 \end_layout
 
 \begin_layout Section*
-\begin_inset Newpage newpage
-\end_inset
-
-
 \begin_inset ERT
 status open
 
@@ -314,22 +307,27 @@ USER ⇒ This word will indicate people that will use the application with
 \end_layout
 
 \begin_layout Itemize
-HOSPITALS ⇒ This word will indicate hospital as istitution that will inform
+HOSPITAL ⇒ This word will indicate hospital as istitution that will inform
  our system about queue situation
 \end_layout
 
 \begin_layout Itemize
-ATM ⇒ This word will indicate the company of pubblic transport as entity
- that must inform our system about the precise position of public transport
+PUBLIC TRANSPORT COMPANY ⇒ It will indicate the company of pubblic transport
+ as entity that must inform our system about the precise position of public
+ transport
 \end_layout
 
 \begin_layout Itemize
-SYSTEM ⇒In this document, this word will indicate our application
+SYSTEM ⇒ In this document, this word will indicate our application
 \end_layout
 
 \begin_layout Itemize
-CITY ADMINISTATION ⇒ It will indicate the entity that will manage all the
- application
+CITY ADMINISTRATION (or simply administration) ⇒ It will indicate the entity
+ that will manage all the application
+\end_layout
+
+\begin_layout Itemize
+POLICE STATION ⇒ It will indicate the entity that could answer to help request
 \end_layout
 
 \begin_layout Subsection*
@@ -348,24 +346,20 @@ addcontentsline{toc}{subsection}{1.3.2 Abbreviations}
 1.3.3Abbreviations
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
+\begin_layout Description
+[An] : n-domain assumption.
+\end_layout
+
+\begin_layout Description
+[Gn] : n-goal.
+\end_layout
+
+\begin_layout Description
 [Rn] : n-functional requirement.
  
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-[An] : n-domain assumption.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-[Gn] : n-goal.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
+\begin_layout Description
 [Sn] : n-specification
 \end_layout
 
@@ -414,16 +408,18 @@ lettrine{I}{n order to }
 
 \end_inset
 
-reach the scope, i will proposed a system with a mobile platform.
- It is not necessary a web platform because each information will regards
- people that are driving or with an emergency that means with no time for
- starting a PC.
+reach the scope, i will proposed a system with an interface develop both
+ for web and smart device.
  Users will open the app and then they will choose what is their necessity
  : traffic situation, emergency or parking for example.
  Registration is not mandatory but it is strongly raccomended in order to
  be able to use all functionalities: for example, general notification could
  be recived only by registred users.
- 
+ With respect to the necessity to recive information, for example, about
+ best way to do, will be necessary an internet connection.
+ The system will interact with users directly via notification, via monitor
+ (that are posed in the main streets) and, indirectly, with the management
+ of traffic lights.
 \end_layout
 
 \begin_layout Section*
@@ -434,28 +430,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{2.2 Assumptions and Domain Properties}
+addcontentsline{toc}{section}{2.2 Assumptions}
 \end_layout
 
 \end_inset
 
-2.2 Assumptions and Domain Properties
-\end_layout
-
-\begin_layout Subsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsection}{2.2.1 Assumptions}
-\end_layout
-
-\end_inset
-
-2.2.1 Assumptions
+2.2 Assumptions
 \end_layout
 
 \begin_layout Standard
@@ -471,60 +451,49 @@ lettrine{C}{oherently with }
 
 \end_inset
 
-the specification document, is necessary to do some assumption in order
- to increase the clarity:
+ specification document, is necessary to do some assumption in order to
+ increase the clarity:
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [A1] We assume that every user has a smartphone if he/se want use the app;
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [A2] We assume that every user has a internet connection;
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [A3] We assume that each citizen will follow the instructions provided by
  application;
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [A4] We assume that special situation (as manifestation or VIP's visit)
  will be scheduled in advace;
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [A5] We assume that in case of accidents, they will be notify as soon as
  possible;
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [A6] We assume that when an accident happen, someone will call hospital
  or police and in that moment the first structure that will recive the help
  request will also insert it in the system, manually or by an automatic
  system
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [A7] We assume that all hospital structure, all police stations, all car
  parks and the public transport company will answer in a positive way to
  this innovative solution
 \end_layout
 
-\begin_layout Subsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsection}{2.2.2 Domain Properties}
-\end_layout
-
-\end_inset
-
-2.2.2 Domain Properties
+\begin_layout Description
+[A8] We assume that Administration has created an organization in order
+ to keeping on work each sensor and actuator in the city
 \end_layout
 
 \begin_layout Section*
@@ -556,7 +525,7 @@ lettrine{I}{n this }
 
 \end_inset
 
- project stakeolders will be 
+ project stakeolders will be :
 \end_layout
 
 \begin_layout Itemize
@@ -599,29 +568,26 @@ status open
 
 
 \backslash
-lettrine{I}{n futere }
+lettrine{I}{n the futurem, }
 \end_layout
 
 \end_inset
 
-application might be upgrade with other functionalities like:
+application might be upgraded with other functionalities like:
 \end_layout
 
 \begin_layout Itemize
-Check public transport: if you need to use the public transport, you could
+Check public transport ⇒ if you need to use the public transport, you could
  use the app in order to see all buses or tram near you or to search the
- position of a fixed line.
+ position of a fixed line and when you will find what you need, you could
+ also buy the ticket.
 \end_layout
 
 \begin_layout Itemize
 Medical Examination Reservation: when you need to a medical reservation,
- you could use the application in order to choose an hospital and book an
- appoinment, coherently with medical staff availability 
-\end_layout
-
-\begin_layout Standard
-If this upgades will be done, could be usefull provide for the development
- of a well-format web-site.
+ you could use the application in order to choosing an hospital and booking
+ an appoinment, coherently with medical staff availability and hospital
+ specialization
 \end_layout
 
 \begin_layout Section*
@@ -888,10 +854,6 @@ addcontentsline{toc}{subsection}{4.1.2 Log In as User}
 \end_layout
 
 \begin_layout Subsection*
-\begin_inset Newpage newpage
-\end_inset
-
-
 \begin_inset ERT
 status open
 
@@ -1173,6 +1135,9 @@ addcontentsline{toc}{subsection}{4.1.4 Profile Managing}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section*
 \begin_inset ERT
 status open
 
@@ -1186,6 +1151,10 @@ addcontentsline{toc}{section}{4.2 Not Functional Requirement}
 \end_inset
 
 4.2 Non Functional Requirments
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Subsection*
@@ -1253,7 +1222,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.55] at (current page.center) {
+node [scale=0.45] at (current page.center) {
 \backslash
 includegraphics{UserInterface1}}; 
 \backslash
@@ -1312,7 +1281,7 @@ addcontentsline{toc}{subsection}{4.2.2 Harware Interface}
 
 \end_inset
 
-4.2.2 Harware Interface
+4.2.2 Hardware Interface
 \end_layout
 
 \begin_layout Standard
@@ -1341,29 +1310,10 @@ addcontentsline{toc}{subsection}{4.2.3 Software Interface}
 \end_layout
 
 \begin_layout Standard
-The system will rely on Google map APIs.
- In particular will be used: • Mapping system: Name: Google Map API; Version:
- 3.0.4; Source: https://developers.google.com/maps/.
- This allows to take advantage of probably the most complete mapping system
- of the planet, and not less important, to reduce useless developing costs
- that probably would not benefit of the same quality.
- • DBMS system: Name: MySQL; Version: 5.6.21; Source:https://www.mysql.it/.
- This DBMS has been chosen among the others because it is one of the most
- lighter and easy to use.
- It is also a free-ware.
- In particular the DBMS should be implemented with the aim of keep data
- credentials of both the two main type of users, either sorted or memorized.
- It has to perform the necessarily verifying procedure during the login
- phases.
- The inputs are: • users’ credential for the first registration; • users’
- identification data for the login procedure.
- and the outputs are: • the result of login procedure, here intended as
- the success in identifying the user or in failure.
- All the other personal data should remain confidential in order to avoid
- privacy law issues.
- It should always be user’s decision the disclosure of personal information.
- The database system interface will be more carefully projected in the next
- developing Phase.
+Software for user will be implemented as a thin client.
+ All principal operations will be done on server-side and will be used some
+ popular APIs in order to reduce costs without reduce performance.
+ For example, for the map service will be use Google Maps API.
 \end_layout
 
 \begin_layout Subsection*
@@ -1425,7 +1375,11 @@ allow a real time information, interested people must have or a smartphone
 All peolple that will obtain maximum performance by the application should
  have a basic knowledge about internet, usage of smartphone/pc GPS and usage
  of online maps.
-\begin_inset Newpage newpage
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
 \end_inset
 
 
@@ -1444,28 +1398,28 @@ lettrine{R}{eguarding specifications, }
 i will explain some aspect on how i will reach goals of the project:
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [S1] Only registered user could recive notification abount accidents or
  special events.
  
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [S2] In order to use all the functionalities of the app, is recommended
  to activate GPS on smartphone.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [S3] Every events or accidents that will be notified, will be check in order
  to avoid wrong information for citizens
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [S4] The highest priority will be done to the accuracy of information respect
  the velocity of notifications
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Description
 [S5] Notification about serious accidents that involve people will have
  highest priority, in order tu simplify the rescue operation that could
  be slowed by traffic
@@ -1548,13 +1502,13 @@ status open
 
 
 \backslash
-lettrine{N}{ow i will propose }
+lettrine{N}
 \end_layout
 
 \end_inset
 
-some situation that could happen in the real world, in order to bring out
- the real usage of SmartCityAdvisor:
+ow i will propose some situation that could happen in the real world, in
+ order to bring out the real usage of SmartCityAdvisor:
 \end_layout
 
 \begin_layout Section*
@@ -1574,14 +1528,29 @@ addcontentsline{toc}{section}{5.1 Pope will arrive in the city}
 \end_layout
 
 \begin_layout Standard
-Next sunday Pope will be in Milan for a celebration in the cathedral.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{N}
+\end_layout
+
+\end_inset
+
+ext sunday Pope will be in Milan for a celebration in the cathedral.
  The way from airport Milano Forlanini to city center will be blocked from
  8 a.m.
  to 10 a.m.
  in order to allow a safety travel.
  Administration will log in with its special account in the system and it
  will enter the event.
- in the previus day, system will inform citizens and turists: each registred
+\begin_inset Newline newline
+\end_inset
+
+In the previus day, system will inform citizens and turists: each registred
  user will recive a notify that will inform about the event and in the notify
  will be indicated three different possibilities to pass from south-east
  to north-east of Milan (and from north-east to south-east) in order to
@@ -1617,7 +1586,11 @@ r whit position and hours of the accidents.
  If the accidents involve more vehicle, system might decide if divert traffic
  with the control of traffic lights and if use the large monitos in the
  city.
- With all these information, citizens and turist could find the best way
+ 
+\begin_inset Newline newline
+\end_inset
+
+With all these information, citizens and turist could find the best way
  in order to reach their destinations.
 \end_layout
 
@@ -1640,11 +1613,8 @@ addcontentsline{toc}{section}{5.3 Medical Emergency}
 \begin_layout Standard
 Marco is working on the roof when he falls down.
  His girfriend Francesca must found an hospital that could trat probables
- fractures and, if possible, without long queue
-\begin_inset Newline newline
-\end_inset
-
-She will open the application and will select 'emergency', then she could
+ fractures and, if possible, without long queue.
+ She will open the application and will select 'emergency', then she could
  see hospitals w.r.t.
  their position.
  About each hospital she might see the principal specialization and if queues
@@ -1653,6 +1623,13 @@ She will open the application and will select 'emergency', then she could
  it and a notification abount the new patient will be send to the selected
  structure.
  
+\end_layout
+
+\begin_layout Section*
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
@@ -1668,7 +1645,7 @@ addcontentsline{toc}{section}{5.4 Sunday Outing}
 
 \end_inset
 
-5.3 Sunday Outing
+5.4 Sunday Outing
 \end_layout
 
 \begin_layout Standard
@@ -1687,10 +1664,41 @@ In the first implementation of the service he could not do other things
  but probably, in the future, he could reserve the park for some minutes
  (five, then, fifteen....) and he will pay a price directly proportional with
  the time select.
-\begin_inset Newpage newpage
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{5.5 One mounth without rain}
+\end_layout
+
 \end_inset
 
+5.5 One mounth without rain
+\end_layout
 
+\begin_layout Standard
+In city like Milan, one of the biggest problem are period without rain and
+ this is just happened.
+ In the last 30 days the city has exceeded the limit of fine particles imposed
+ by the European Community for 22.
+ This is a not trivial problem becouse is dangerous to healt, in particular
+ for old people and children.
+ The air is unbreathable so the city has decided to limit the cars entries
+ in the city center.
+ Exceptional rule has been indicated in the large monitore beside main streets
+ and also by notification to all registered people to SmartCityAdvisor.
+\begin_inset Newline newline
+\end_inset
+
+Furthermore, all cars of persons not resident in the city center that will
+ be find into it during the block, will be fined.
+ 
 \end_layout
 
 \begin_layout Chapter*
@@ -1773,7 +1781,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.57] at (current page.center) {
+node [scale=0.5] at (current page.center) {
 \backslash
 includegraphics{UseCase1}}; 
 \backslash
@@ -1811,7 +1819,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.4] at (current page.center) {
+node [scale=0.35] at (current page.center) {
 \backslash
 includegraphics{UseCase2}}; 
 \backslash
@@ -1869,7 +1877,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.47] at (current page.center) {
+node [scale=0.45] at (current page.center) {
 \backslash
 includegraphics{SequenceLogIn}}; 
 \backslash
@@ -1924,7 +1932,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.5] at (current page.center) {
+node [scale=0.45] at (current page.center) {
 \backslash
 includegraphics{SequenceAdmin}}; 
 \backslash
@@ -1963,7 +1971,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.53] at (current page.center) {
+node [scale=0.45] at (current page.center) {
 \backslash
 includegraphics{SequenceHospital}}; 
 \backslash
@@ -2001,7 +2009,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.53] at (current page.center) {
+node [scale=0.45] at (current page.center) {
 \backslash
 includegraphics{SequencePolice}}; 
 \backslash
@@ -2027,7 +2035,7 @@ addcontentsline{toc}{subsection}{6.2.6 Public Transport Company Functionalities
 
 \end_inset
 
-6.2.6 ublic Transport Company Functionalities
+6.2.6 Public Transport Company Functionalities
 \end_layout
 
 \begin_layout Standard
@@ -2040,7 +2048,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.55] at (current page.center) {
+node [scale=0.5] at (current page.center) {
 \backslash
 includegraphics{SequenceTransport}}; 
 \backslash
@@ -2057,6 +2065,9 @@ end{tikzpicture}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section*
 \begin_inset ERT
 status open
 
@@ -2070,26 +2081,6 @@ addcontentsline{toc}{section}{6.3 Class Diagrams}
 \end_inset
 
 6.3 Class Diagrams
-\end_layout
-
-\begin_layout Section*
-\begin_inset Newpage newpage
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{section}{6.4 State Chart Diagrams}
-\end_layout
-
-\end_inset
-
-6.4 State Chart Diagrams
 \end_layout
 
 \begin_layout Chapter*
