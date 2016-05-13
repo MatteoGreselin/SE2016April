@@ -33,7 +33,7 @@
 \spacing single
 \use_hyperref false
 \papersize a4paper
-\use_geometry true
+\use_geometry false
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -839,6 +839,25 @@ addcontentsline{toc}{subsection}{4.1.1 Sign Up}
 4.1.1 Sign Up
 \end_layout
 
+\begin_layout Description
+[R1] Guest must no be already registered
+\end_layout
+
+\begin_layout Description
+[R2] Guest must provide some personal information : Name, Surname, Age,
+ eMail, Username, Password
+\end_layout
+
+\begin_layout Description
+[R3] System will send an eMail to the indicate address in order to activate
+ the account
+\end_layout
+
+\begin_layout Description
+[R4] System will ask to insert password times: the two password must be
+ identical.
+\end_layout
+
 \begin_layout Subsection*
 \begin_inset ERT
 status open
@@ -847,15 +866,32 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{4.1.2 Log In}
+addcontentsline{toc}{subsection}{4.1.2 Log In as User}
 \end_layout
 
 \end_inset
 
-4.1.2 Log In
+4.1.2 Log In as User
+\end_layout
+
+\begin_layout Description
+[R1] User must insert username and password
+\end_layout
+
+\begin_layout Description
+[R2] If he/she wants, he/she could use the email address as usernamen
+\end_layout
+
+\begin_layout Description
+[R3] If necessary, will be avaible a 'recovery password' process that will
+ use the indicated email
 \end_layout
 
 \begin_layout Subsection*
+\begin_inset Newpage newpage
+\end_inset
+
+
 \begin_inset ERT
 status open
 
@@ -869,6 +905,14 @@ addcontentsline{toc}{subsection}{4.1.3 Log In as Superuser}
 \end_inset
 
 4.1.3 Log In as Superuser
+\end_layout
+
+\begin_layout Standard
+In this situation are included Administration, Police Stations, Hospitals,
+ Public Transport Company and Parking Management.
+ They will have some special account with special functionalities due to
+ the fact that they must collaborate in order to guarantee a great service
+ to customer (citizens and turists in this case).
 \end_layout
 
 \begin_layout Subsubsection*
@@ -885,6 +929,48 @@ addcontentsline{toc}{subsubsection}{4.1.3.1 Hospital Functionalities}
 \end_inset
 
 4.1.3.1 Hospital Functionalities
+\end_layout
+
+\begin_layout Description
+[R1] Funcitonality could be done manually by an operator on automatically
+ by an information system
+\end_layout
+
+\begin_layout Description
+[R2] When a person take a tiket for the queue, the queue for that specific
+ medical visit will be update automatically 
+\end_layout
+
+\begin_layout Description
+[R3] When a medical visit starts, the waiting ticked will be read electronically
+ and this operation will update the queue for that specific visit
+\end_layout
+
+\begin_layout Description
+[R4] When Hospital recive a call for an accident on the street, it will
+ be registred and automatically insert in the system
+\end_layout
+
+\begin_layout Description
+[R5] If the indicated position of the accident is already present in the
+ system, there will not be any updating.
+ This means that probably police station has already update the event.
+\end_layout
+
+\begin_layout Description
+[R6] When the medical staff return from the accident, it will be registred
+ and automatically insert in the system
+\end_layout
+
+\begin_layout Description
+[R7] If the indicated position of the accident is not present in the system,
+ there will not be any updating.
+ This means that probably police station has already update the solve accident.
+\end_layout
+
+\begin_layout Description
+[R8] Hospital structure could change the specializations present in it,
+ in case someone of them is closed 
 \end_layout
 
 \begin_layout Subsubsection*
@@ -904,6 +990,15 @@ s}
 4.1.3.2 Public Transport Company Functionalities
 \end_layout
 
+\begin_layout Description
+[R1] It must constantly provide the position of each vehicle
+\end_layout
+
+\begin_layout Description
+[R2] It must send special notification reguarding company, as strike or
+ own broken vehicle or line interrupted, but after Administration approvation
+\end_layout
+
 \begin_layout Subsubsection*
 \begin_inset ERT
 status open
@@ -912,12 +1007,44 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{4.1.3.3 Parking Availability }
+addcontentsline{toc}{subsubsection}{4.1.3.3 Parking Availability }
 \end_layout
 
 \end_inset
 
 4.1.3.3 Parking Availability
+\end_layout
+
+\begin_layout Description
+[R1] Car Parks in the city must be complitely automated
+\end_layout
+
+\begin_layout Description
+[R2] Some actuator will releve the availability or not availability in a
+ fixed car park.
+\end_layout
+
+\begin_layout Description
+[R3] The situation will be update in the system each time that actuators
+ will detect somethings.
+\end_layout
+
+\begin_layout Description
+[R4] In case of reservation, system will be implementing for using QR code.
+\end_layout
+
+\begin_layout Description
+[R5] Each User that will reserve a place will recive a QR code that he/she
+ must show when he/she will arrive to the car park
+\end_layout
+
+\begin_layout Description
+[R6] In each car park there will be a QR reader, near the entry 
+\end_layout
+
+\begin_layout Description
+[R7] The QR will be valid coherently with the time indicate for the reservation
+ (five, ten, fifteen...)
 \end_layout
 
 \begin_layout Subsubsection*
@@ -933,7 +1060,79 @@ addcontentsline{toc}{subsubsection}{4.1.3.4 Administation Functionalities }
 
 \end_inset
 
-.1.3.4 Administation Functionalities
+4.1.3.4 Administation Functionalities
+\end_layout
+
+\begin_layout Description
+[R1] Administration must manage the entire application, manually or autimaticall
+y
+\end_layout
+
+\begin_layout Description
+[R2] Administration must foresee at least 3 people in order to provide a
+ quickly response if it is necessary
+\end_layout
+
+\begin_layout Description
+[R3] Administration could accept or refuse Public Transport Company notification
+\end_layout
+
+\begin_layout Description
+[R4] Administration could see usage report, as user access, user registred,
+ accedets done in a period and so on.
+\end_layout
+
+\begin_layout Description
+[R5] It must provide manteinance, in order to guarantee the service
+\end_layout
+
+\begin_layout Description
+[R6] It is the only that can insert programmed event, as manifestations,
+ road works, Vips visits, ecological days...
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{4.1.3.5 Police Station Functionalities}
+\end_layout
+
+\end_inset
+
+4.1.3.5 Police Station Functionalities
+\end_layout
+
+\begin_layout Description
+[R1] Funcitonality could be done manually by an operator on automatically
+ by an information system
+\end_layout
+
+\begin_layout Description
+[R2] When Police Station recives a call for an accident on the street, it
+ will be registred and automatically insert in the system
+\end_layout
+
+\begin_layout Description
+[R3] If the indicated position of the accident is already present in the
+ system, there will not be any updating.
+ This means that probably an hospital has already answer to the calling.
+\end_layout
+
+\begin_layout Description
+[R4] When the police staff return from the accident, it will be registred
+ and automatically insert in the system
+\end_layout
+
+\begin_layout Description
+[R5] If the indicated position of the accident is not present in the system,
+ there will not be any updating.
+ This means that probably an hospital has already update the solve accident.
 \end_layout
 
 \begin_layout Subsection*
@@ -944,12 +1143,29 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{4.1.3 Profile Managing}
+addcontentsline{toc}{subsection}{4.1.4 Profile Managing}
 \end_layout
 
 \end_inset
 
-4.1.3 Profile Managing
+4.1.4 Profile Managing
+\end_layout
+
+\begin_layout Description
+[R1] User could change email address, but only one time.
+\end_layout
+
+\begin_layout Description
+[R2] User could change password one time at week
+\end_layout
+
+\begin_layout Description
+[R3] User could select which notification he/she wants recive (traffic,
+ accidents, special notification, events....).
+\end_layout
+
+\begin_layout Description
+[R4] User could delete his/her account in each moment
 \end_layout
 
 \begin_layout Section*
@@ -1100,14 +1316,10 @@ addcontentsline{toc}{subsection}{4.2.2 Harware Interface}
 \end_layout
 
 \begin_layout Standard
-A several variety of devices have to be supported: smartphones, tablets,
- laptops and desktops.
- Due to this, the same application needs to be visualized in different window
- size.
- The user interface should definitely support an easy usage of touch-screen
- devices, that are the ones it is thought will be more used to access on
- MTS application.
- To simplify it should be screen-oriented.
+The application could be run on a lot of different devices, as smartphones,
+ PCs, tablet, desktop and so on.
+ The application must be implemented in order to be visualized in different
+ size of windows and some of this could be on touch-screan device.
  Devices should be enabled with internet connection and optionally also
  with GPS module.
 \end_layout
@@ -1168,6 +1380,11 @@ addcontentsline{toc}{subsection}{4.2.3 Communication Interface}
 \end_inset
 
 4.2.3 Communication Interface
+\end_layout
+
+\begin_layout Standard
+To communicate will be used Internet connection, in order to use all functionali
+ties is neccessary to have a 3g or WI-fi module on the devices.
 \end_layout
 
 \begin_layout Subsection*
@@ -1556,7 +1773,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.7] at (current page.center) {
+node [scale=0.57] at (current page.center) {
 \backslash
 includegraphics{UseCase1}}; 
 \backslash
@@ -1594,7 +1811,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.5] at (current page.center) {
+node [scale=0.4] at (current page.center) {
 \backslash
 includegraphics{UseCase2}}; 
 \backslash
@@ -1652,7 +1869,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.5] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{SequenceLogIn}}; 
 \backslash
@@ -1688,8 +1905,8 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{6.2.3 Log In As Superuser and Functionalities
- }
+addcontentsline{toc}{subsection}{6.2.3 Log In As Superuser and Administration
+ Functionalities }
 \end_layout
 
 \end_inset
@@ -1697,7 +1914,149 @@ addcontentsline{toc}{subsection}{6.2.3 Log In As Superuser and Functionalities
 6.2.3 Log In As Superuser and Functionalities
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.5] at (current page.center) {
+\backslash
+includegraphics{SequenceAdmin}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{6.2.4 Hospital Structure Functionalities
+ }
+\end_layout
+
+\end_inset
+
+6.2.4 Hospital Structure Functionalities
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.53] at (current page.center) {
+\backslash
+includegraphics{SequenceHospital}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{6.2.5 Police Station Functionalities }
+\end_layout
+
+\end_inset
+
+6.2.5 Police Station Functionalities
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.53] at (current page.center) {
+\backslash
+includegraphics{SequencePolice}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{6.2.6 Public Transport Company Functionalities
+ }
+\end_layout
+
+\end_inset
+
+6.2.6 ublic Transport Company Functionalities
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{SequenceTransport}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
+\begin_inset Newpage newpage
+\end_inset
+
+
 \begin_inset ERT
 status open
 
@@ -1714,6 +2073,10 @@ addcontentsline{toc}{section}{6.3 Class Diagrams}
 \end_layout
 
 \begin_layout Section*
+\begin_inset Newpage newpage
+\end_inset
+
+
 \begin_inset ERT
 status open
 
@@ -1823,7 +2186,19 @@ VisualParadigm10 Community Edition to create Sequence Diagrams and State
 \end_layout
 
 \begin_layout Description
-AlloyAnalyzer4.2 to prove the consistency of our 
+AlloyAnalyzer4.2 to prove the consistency of 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
