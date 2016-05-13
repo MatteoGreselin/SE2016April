@@ -57,8 +57,10 @@
 \shortcut idx
 \color #008000
 \end_index
-\topmargin 3cm
-\bottommargin 3cm
+\leftmargin 2cm
+\topmargin 1.5cm
+\rightmargin 2cm
+\bottommargin 2cm
 \secnumdepth 5
 \tocdepth 5
 \paragraph_separation indent
@@ -156,7 +158,7 @@ addcontentsline{toc}{section}{1.1 Purpose}
 
 \end_inset
 
-1.1 Purpose
+1.1 Description Of Given Problem
 \end_layout
 
 \begin_layout Standard
@@ -214,12 +216,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{1.2 Scope}
+addcontentsline{toc}{section}{1.2 Main Goals}
 \end_layout
 
 \end_inset
 
-1.2 Scope
+1.2 Main Goals
 \end_layout
 
 \begin_layout Standard
@@ -230,7 +232,7 @@ status open
 
 
 \backslash
-lettrine{S}{cope of this }
+lettrine{M}{ain goals }
 \end_layout
 
 \end_inset
@@ -274,53 +276,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{1.3 Proposed System}
+addcontentsline{toc}{section}{1.3 Glossary}
 \end_layout
 
 \end_inset
 
-1.3 Proposed System
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lettrine{I}{n order to }
-\end_layout
-
-\end_inset
-
-reach the scope, i will proposed a system with a mobile platform.
- It is not necessary a web platform because each information will regards
- people that are driving or with an emergency that means with no time for
- starting a PC.
- Users will open the app and then they will choose what is their necessity
- : traffic situation, emergency or parking for example.
- Registration is not mandatory but it is strongly raccomended in order to
- be able to use all functionalities: for example, general notification could
- be recived only by registred users.
- 
-\end_layout
-
-\begin_layout Section*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{section}{1.4 Glossary}
-\end_layout
-
-\end_inset
-
-1.4 Glossary
+1.3 Glossary
 \end_layout
 
 \begin_layout Subsection*
@@ -331,12 +292,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{1.4.1 Definitions}
+addcontentsline{toc}{subsection}{1.3.1 Definitions}
 \end_layout
 
 \end_inset
 
-1.4.1 Definitions
+1.3.1 Definitions
 \end_layout
 
 \begin_layout Itemize
@@ -375,12 +336,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{1.4.2 Acronyms}
+addcontentsline{toc}{subsection}{1.3.2 Acronyms}
 \end_layout
 
 \end_inset
 
-1.4.2 Acronyms
+1.3.2 Acronyms
 \end_layout
 
 \begin_layout Labeling
@@ -429,12 +390,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{1.4.3 Abbreviations}
+addcontentsline{toc}{subsection}{1.3.3 Abbreviations}
 \end_layout
 
 \end_inset
 
-1.4.3Abbreviations
+1.3.3Abbreviations
 \end_layout
 
 \begin_layout Labeling
@@ -458,6 +419,22 @@ addcontentsline{toc}{subsection}{1.4.3 Abbreviations}
 [Sn] : n-specification
 \end_layout
 
+\begin_layout Chapter*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{2 General Description}
+\end_layout
+
+\end_inset
+
+ 2 General Description
+\end_layout
+
 \begin_layout Section*
 \begin_inset ERT
 status open
@@ -466,12 +443,69 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{1.5 Assumption}
+addcontentsline{toc}{section}{2.1 Proposed System}
 \end_layout
 
 \end_inset
 
-1.5 Assumption
+2.1 Proposed System
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{I}{n order to }
+\end_layout
+
+\end_inset
+
+reach the scope, i will proposed a system with a mobile platform.
+ It is not necessary a web platform because each information will regards
+ people that are driving or with an emergency that means with no time for
+ starting a PC.
+ Users will open the app and then they will choose what is their necessity
+ : traffic situation, emergency or parking for example.
+ Registration is not mandatory but it is strongly raccomended in order to
+ be able to use all functionalities: for example, general notification could
+ be recived only by registred users.
+ 
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{2.2 Assumptions and Domain Properties}
+\end_layout
+
+\end_inset
+
+2.2 Assumptions and Domain Properties
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.2.1 Assumptions}
+\end_layout
+
+\end_inset
+
+2.2.1 Assumptions
 \end_layout
 
 \begin_layout Standard
@@ -539,6 +573,22 @@ the specification document, is necessary to do some assumption in order
 [A11]
 \end_layout
 
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.2.2 Domain Properties}
+\end_layout
+
+\end_inset
+
+2.2.2 Domain Properties
+\end_layout
+
 \begin_layout Section*
 \begin_inset ERT
 status open
@@ -547,12 +597,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{1.6 Stakeholders}
+addcontentsline{toc}{section}{2.3 Identifyng Stakeholders}
 \end_layout
 
 \end_inset
 
-1.6 Stakeholders
+2.3 Idnetifyng Stakeholders
 \end_layout
 
 \begin_layout Standard
@@ -595,12 +645,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{1.7 Future Upgradese}
+addcontentsline{toc}{section}{2.4 Future Upgradese}
 \end_layout
 
 \end_inset
 
-1.7 Future Upgrades
+2.4 Future Upgrades
 \end_layout
 
 \begin_layout Standard
@@ -650,12 +700,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{1.8 Overview}
+addcontentsline{toc}{section}{2.5 Document Overview}
 \end_layout
 
 \end_inset
 
-1.8 Overview
+2.5 Document Overview
 \end_layout
 
 \begin_layout Standard
@@ -688,12 +738,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{1.8 References}
+addcontentsline{toc}{section}{2.6 References}
 \end_layout
 
 \end_inset
 
-1.8 References
+2.6 References
 \end_layout
 
 \begin_layout Itemize
@@ -718,12 +768,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{chapter}{2.Actors Identifyng}
+addcontentsline{toc}{chapter}{3.Actors Identifyng}
 \end_layout
 
 \end_inset
 
-2.
+3.
  Actors Identifying
 \end_layout
 
@@ -797,12 +847,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{chapter}{3.Requirements}
+addcontentsline{toc}{chapter}{4.Requirements}
 \end_layout
 
 \end_inset
 
-3.
+4.
  Requirements
 \end_layout
 
@@ -814,12 +864,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{3.1 Functional Requirements}
+addcontentsline{toc}{section}{4.1 Functional Requirements}
 \end_layout
 
 \end_inset
 
-3.1 Functional Requirements
+4.1 Functional Requirements
 \end_layout
 
 \begin_layout Subsection*
@@ -830,12 +880,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{3.1.1 Sign Up}
+addcontentsline{toc}{subsection}{4.1.1 Sign Up}
 \end_layout
 
 \end_inset
 
-3.1.1 Sign Up
+4.1.1 Sign Up
 \end_layout
 
 \begin_layout Subsection*
@@ -846,12 +896,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{3.1.2 Log In}
+addcontentsline{toc}{subsection}{4.1.2 Log In}
 \end_layout
 
 \end_inset
 
-3.1.2 Log In
+4.1.2 Log In
 \end_layout
 
 \begin_layout Subsection*
@@ -862,12 +912,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{3.1.3 Hospital Functionalities}
+addcontentsline{toc}{subsection}{4.1.3 Hospital Functionalities}
 \end_layout
 
 \end_inset
 
-3.1.3 Hospital Functionalities
+4.1.3 Hospital Functionalities
 \end_layout
 
 \begin_layout Subsection*
@@ -878,12 +928,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{3.1.4 ATM Functionalities}
+addcontentsline{toc}{subsection}{4.1.4 ATM Functionalities}
 \end_layout
 
 \end_inset
 
-3.1.4 ATM Functionalities
+4.1.4 ATM Functionalities
 \end_layout
 
 \begin_layout Subsection*
@@ -894,12 +944,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{3.1.5 Parking Availability }
+addcontentsline{toc}{subsection}{4.1.5 Parking Availability }
 \end_layout
 
 \end_inset
 
-3.1.5 Parking Availability
+4.1.5 Parking Availability
 \end_layout
 
 \begin_layout Subsection*
@@ -910,12 +960,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{3.1.6 Administation Functionalities }
+addcontentsline{toc}{subsection}{4.1.6 Administation Functionalities }
 \end_layout
 
 \end_inset
 
-3.1.6 Administation Functionalities
+4.1.6 Administation Functionalities
 \end_layout
 
 \begin_layout Subsection*
@@ -926,12 +976,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{3.1.7 Profile Managing}
+addcontentsline{toc}{subsection}{4.1.7 Profile Managing}
 \end_layout
 
 \end_inset
 
-3.1.7 Profile Managing
+4.1.7 Profile Managing
 \end_layout
 
 \begin_layout Section*
@@ -942,12 +992,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{3.2 Not Functional Requirement}
+addcontentsline{toc}{section}{4.2 Not Functional Requirement}
 \end_layout
 
 \end_inset
 
-3.2 Non Functional Requirments
+4.2 Non Functional Requirments
 \end_layout
 
 \begin_layout Subsection*
@@ -958,12 +1008,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{3.2.1 User Interface}
+addcontentsline{toc}{subsection}{4.2.1 User Interface}
 \end_layout
 
 \end_inset
 
-3.2.1 User Interface
+4.2.1 User Interface
 \end_layout
 
 \begin_layout Standard
@@ -982,6 +1032,26 @@ lettrine{U}{ser interface }
 of my SmartCityAdvisor application is very user friendly.
  It is simple and intuitive, it has been tought in order to allows its use
  to all users
+\begin_inset Newline newline
+\end_inset
+
+It has been produced to be used via web or mobile application and it has
+ a main page.
+ Here you can use all the functionalities of the project and, if you want,
+ you can log in for changing your profile infos or changing preferences
+ about notifications.
+ 
+\begin_inset Newline newline
+\end_inset
+
+With a pc, on the top of the public page we could find six links that allow
+ to navigate into the web site and below them we have the possibility to
+ refine our search, we find a calendar and some statistics.
+\begin_inset Newline newline
+\end_inset
+
+With a smartphone the interfece will have some little differences according
+ to the operative system
 \begin_inset Newline newline
 \end_inset
 
@@ -1015,76 +1085,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{3.2.2 User Characteristics}
+addcontentsline{toc}{subsection}{4.2.2 User Characteristics}
 \end_layout
 
 \end_inset
 
-3.2.2 User Characteristics
-\end_layout
-
-\begin_layout Subsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsection}{3.2.3 Constraints}
-\end_layout
-
-\end_inset
-
-3.2.3 Constraints
-\end_layout
-
-\begin_layout Subsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsection}{3.2.4 Security}
-\end_layout
-
-\end_inset
-
-3.2.4 Security
-\end_layout
-
-\begin_layout Subsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsection}{3.2.5 System Availability}
-\end_layout
-
-\end_inset
-
-3.2.5 System Availability 
-\end_layout
-
-\begin_layout Subsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsection}{3.2.6 Documentation}
-\end_layout
-
-\end_inset
-
-3.2.6 Documentation
+4.2.2 User Characteristics
 \end_layout
 
 \begin_layout Standard
@@ -1095,33 +1101,17 @@ status open
 
 
 \backslash
-lettrine{D}{uring }
+lettrine{S}{martCityAdvisot}
 \end_layout
 
 \end_inset
 
-this project we should do several phases:
+is a service reserved to all people, citizens and turist.
+ In order to registrate a new account is necessary to be more than 18 years
+ old.
 \end_layout
 
-\begin_layout Enumerate
-Project Plan : to define our system, goals and how we can obtain them
-\end_layout
-
-\begin_layout Enumerate
-RASD: Requirement Analysis and Specification Document, to well-understand
- the given problem and to analyze in a detailed way which are our goals
- and how to reach them defining requirements and specification
-\end_layout
-
-\begin_layout Enumerate
-DD: Design Document, to define how we should implement our system.
-\end_layout
-
-\begin_layout Enumerate
-Testing Document: it's a report of our system testing
-\end_layout
-
-\begin_layout Chapter*
+\begin_layout Subsection*
 \begin_inset ERT
 status open
 
@@ -1129,12 +1119,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{chapter}{4.Specifications}
+addcontentsline{toc}{subsection}{4.2.3 Constraints}
 \end_layout
 
 \end_inset
 
-4.Specifications
+4.2.3 Constraints and other specification
 \end_layout
 
 \begin_layout Standard
@@ -1168,23 +1158,7 @@ i will explain some aspect on how i will reach goals of the project.
  to avoid wrong information for citizens
 \end_layout
 
-\begin_layout Itemize
-[S4]
-\end_layout
-
-\begin_layout Itemize
-[S5]
-\end_layout
-
-\begin_layout Itemize
-[S6]
-\end_layout
-
-\begin_layout Itemize
-[S7]
-\end_layout
-
-\begin_layout Chapter*
+\begin_layout Subsection*
 \begin_inset ERT
 status open
 
@@ -1192,12 +1166,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{chapter}{5.Scenarios Identifying}
+addcontentsline{toc}{subsection}{4.2.4 Security}
 \end_layout
 
 \end_inset
 
-5.Scenarios Identifying
+4.2.4 Security
 \end_layout
 
 \begin_layout Standard
@@ -1208,50 +1182,79 @@ status open
 
 
 \backslash
-lettrine{N}{ow i propose }
+lettrine{I}{n the application}
 \end_layout
 
 \end_inset
 
-some situation that could happen in the real world:
+ there aren't sensible information but, in order to ensure the maximum tranquili
+ty to our users and in order that their trust in us, we want guarantee an
+ high protected area.
 \end_layout
 
-\begin_layout Itemize
-This sunday the Pope will be in Milan for a celebration in the cathedral.
- The way from airport Milano Forlanini to city center will be blocked from
- 8 a.m.
- to 10 a.m.
- in order to allow a safety travel.
- Each registred user will recive a notify Saturday evening that will inform
- about the event.
- In the notify will be indicated three different possibilities to pass from
- south-east to north-east of Milan (and from north-east to south-east) in
- order to reduce the hardships for citizens.
+\begin_layout Enumerate
+The communications between server and clients must be completely secure
+ and pro- tected by strong encryption such as SSL protocol.
 \end_layout
 
-\begin_layout Itemize
-Marco cuts his finger and his girfriend Francesca must found an hospital
- without long queue becouse he lost blood.
- 
-\begin_inset Newline newline
+\begin_layout Enumerate
+Users password must not stored in plain text in the database, they must
+ be hashed and encrypted.
+\end_layout
+
+\begin_layout Enumerate
+If a user try more than 4th times for log in, block the IP address for 10
+ minutes.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.2.5 Documentation}
+\end_layout
+
 \end_inset
 
-She will open the application and will select 'emergency',then she could
- see hospitals w.r.t.
- their position.
- If the queues were to be very long, she could decides to search hospitals
- with short waiting queue and she will find one not so far.
- In this way Marco will receive medical care in a short time.
+4.2.5 Documentation
 \end_layout
 
-\begin_layout Itemize
-Tommaso needs to go to the city center with all the family.
- For this reason he has decided to use his car but he knows that the parking
- availability is a big problem in Milan.
- Tommaso will open the app and will select 'parking availability' in the
- main page and will insert his destination, system will propose him all
- available parking at maximum 15 minutes walk for the prefixed zone with
- the number of remaing car park.
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{D}{uring }
+\end_layout
+
+\end_inset
+
+this project we should do several phases:
+\end_layout
+
+\begin_layout Enumerate
+Project Plan : to define our system, goals and how we can obtain them
+\end_layout
+
+\begin_layout Enumerate
+RASD: Requirement Analysis and Specification Document, to well-understand
+ the given problem and to analyze in a detailed way which are our goals
+ and how to reach them defining requirements and specificati3on
+\end_layout
+
+\begin_layout Enumerate
+DD: Design Document, to define how we should implement our system.
+\end_layout
+
+\begin_layout Enumerate
+Testing Document: it's a report of our system testing
 \end_layout
 
 \begin_layout Chapter*
@@ -1262,13 +1265,181 @@ status open
 
 
 \backslash
-addcontentsline{toc}{chapter}{6.UML Models}
+addcontentsline{toc}{chapter}{5.
+ Scenarios Identifying}
+\end_layout
+
+\end_inset
+
+5.
+ Scenarios Identifying
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{N}{ow i will propose }
+\end_layout
+
+\end_inset
+
+some situation that could happen in the real world, in order to bring out
+ the real usage of SmartCityAdvisor:
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{5.1 Pope will arrive in the city}
+\end_layout
+
+\end_inset
+
+5.1 Pope will arrive in the city
+\end_layout
+
+\begin_layout Standard
+Next sunday Pope will be in Milan for a celebration in the cathedral.
+ The way from airport Milano Forlanini to city center will be blocked from
+ 8 a.m.
+ to 10 a.m.
+ in order to allow a safety travel.
+ Administration will log in with its special account in the system and it
+ will enter the event.
+ in the previus day, system will inform citizens and turists: each registred
+ user will recive a notify that will inform about the event and in the notify
+ will be indicated three different possibilities to pass from south-east
+ to north-east of Milan (and from north-east to south-east) in order to
+ reduce the hardships for citizens.
+ Also in the large information monitor in the main street will be indicated
+ the event and during that day, system will manage traffic situation trough
+ particular actators that allow to control traffic lights.
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{5.2 It's happened an accident}
+\end_layout
+
+\end_inset
+
+5.2 It's happened an accident
+\end_layout
+
+\begin_layout Standard
+Is Monday morning and all people are going to work.
+ In the traffic is very easy that could happen and accident and it happens.
+ When people involved on it or people that have seen it call the police,
+ an automatically information will bi insert in the system.
+ The system will send a notification to all people registered to SmartCityAdviso
+r whit position and hours of the accidents.
+ If the accidents involve more vehicle, system might decide if divert traffic
+ with the control of traffic lights and if use the large monitos in the
+ city.
+ With all these information, citizens and turist could find the best way
+ in order to reach their destinations.
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{5.3 Medical Emergency}
+\end_layout
+
+\end_inset
+
+5.3 Medical Emergency
+\end_layout
+
+\begin_layout Standard
+Marco is working on the roof when he falls down.
+ His girfriend Francesca must found an hospital that could trat probables
+ fractures and, if possible, without long queue
+\begin_inset Newline newline
+\end_inset
+
+She will open the application and will select 'emergency', then she could
+ see hospitals w.r.t.
+ their position.
+ About each hospital she might see the principal specialization and if queues
+ are long.
+ When she will decide which should be the best structure, she will select
+ it and a notification abount the new patient will be send to the selected
+ structure.
+ 
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{5.4 Sunday Outing}
+\end_layout
+
+\end_inset
+
+5.3 Sunday Outing
+\end_layout
+
+\begin_layout Standard
+Tommaso needs to go to the city center with all the family.
+ For this reason he has decided to use his car but he knows that the parking
+ availability is a big problem in Milan.
+ Tommaso will open the app and will select 'parking availability' in the
+ main page; after that he will insert his destination, system will propose
+ him all available parking at maximum 15 minutes walk for the prefixed zone
+ with the number of remaing car park.
+ 
+\begin_inset Newline newline
+\end_inset
+
+In the first implementation of the service he could not do other things
+ but probably, in the future, he could reserve the park for some minutes
+ (five, then, fifteen....) and he will pay a price directly proportional with
+ the time select.
+\end_layout
+
+\begin_layout Chapter*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{6.
+ Models}
 \end_layout
 
 \end_inset
 
 6.
- UML Models
+ Models
 \end_layout
 
 \begin_layout Section*
@@ -1279,12 +1450,57 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{6.1 Use Case And Sequence Diagram}
+addcontentsline{toc}{section}{6.1 Use Case}
 \end_layout
 
 \end_inset
 
-6.1 Use Case And Sequence Diagram
+6.1 Use Case
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.7] at (current page.center) {
+\backslash
+includegraphics{UseCase1}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.5] at (current page.center) {
+\backslash
+includegraphics{UseCase2}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
@@ -1295,12 +1511,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{6.2 Class Diagramm}
+addcontentsline{toc}{section}{6.2 Sequence Diagram}
 \end_layout
 
 \end_inset
 
-6.2 Class Diagram
+6.2 Sequence Diagram
 \end_layout
 
 \begin_layout Section*
@@ -1311,12 +1527,28 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{6.3 State Chart Diagram}
+addcontentsline{toc}{section}{6.3 Class Diagramm}
 \end_layout
 
 \end_inset
 
-6.3 State Chart Diagram
+6.3 Class Diagram
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{6.4 State Chart Diagram}
+\end_layout
+
+\end_inset
+
+6.4 State Chart Diagram
 \end_layout
 
 \begin_layout Chapter*
