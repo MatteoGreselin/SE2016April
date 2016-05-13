@@ -269,6 +269,10 @@ project will be:
 \end_layout
 
 \begin_layout Section*
+\begin_inset Newpage newpage
+\end_inset
+
+
 \begin_inset ERT
 status open
 
@@ -336,61 +340,7 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{1.3.2 Acronyms}
-\end_layout
-
-\end_inset
-
-1.3.2 Acronyms
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\shape smallcaps
-RASD :
-\shape default
- Requirements Analysis and Specification Document.
- 
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-DB : DataBase.
- DBMS: DataBase management system.
- 
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-API : Application Programming Interface.
- 
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-
-\shape smallcaps
-OS :
-\shape default
- Operating System.
- 
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-ATM: : Azienda Trasporti Milanesi s.p.a.
-\end_layout
-
-\begin_layout Subsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsection}{1.3.3 Abbreviations}
+addcontentsline{toc}{subsection}{1.3.2 Abbreviations}
 \end_layout
 
 \end_inset
@@ -549,28 +499,16 @@ the specification document, is necessary to do some assumption in order
 \end_layout
 
 \begin_layout Itemize
-[A6] 
+[A6] We assume that when an accident happen, someone will call hospital
+ or police and in that moment the first structure that will recive the help
+ request will also insert it in the system, manually or by an automatic
+ system
 \end_layout
 
 \begin_layout Itemize
-[A7]
-\end_layout
-
-\begin_layout Itemize
-[A8]
-\end_layout
-
-\begin_layout Itemize
-[A9] Application will indicate any available parking that will be at maximum
- 15 minutes walk by an indicated place
-\end_layout
-
-\begin_layout Itemize
-[A10]
-\end_layout
-
-\begin_layout Itemize
-[A11]
+[A7] We assume that all hospital structure, all police stations, all car
+ parks and the public transport company will answer in a positive way to
+ this innovative solution
 \end_layout
 
 \begin_layout Subsection*
@@ -667,12 +605,6 @@ lettrine{I}{n futere }
 \end_inset
 
 application might be upgrade with other functionalities like:
-\end_layout
-
-\begin_layout Itemize
-Parking reservation: when you find a free park near your destination, you
- could choose to reserve it for five, ten, fifteen or more minutes.
- Reservation wil a cost that will increase with the reservation time required.
 \end_layout
 
 \begin_layout Itemize
@@ -811,16 +743,35 @@ CITY ADMINISTRATION
 HOSPITAL
 \bar default
  ⇒ It represent each entity that must inform the system about queue situation,
- its system is connected by the DB.
+ its system is connected with the DB.
  Each time that a person require a waiting ticket for a paticular visit,
  system will update the DB.
- The same thinks will be done when a person will start his/her medical visit
+ The same thinks will be done when a person will start his/her medical visit.
+ It must be ready also for bring out to the system accidents happenend after
+ has recived an help request and also accidents solved, if not alredy done
+ by other entity
+\end_layout
+
+\begin_layout Enumerate
+
+\shape smallcaps
+\bar under
+POLICE STATION
+\shape default
+\bar default
+ ⇒ It represent each entity that could answer to an help request after an
+ accidents.
+ It's systrem is connected with the DB.
+ Each time that it recives an help require for an accident, system will
+ be update with the new fact.
+ The same think will be done when the accidents is solved, if not already
+ done by other entity.
 \end_layout
 
 \begin_layout Enumerate
 
 \bar under
-ATM (or public transport company)
+PUBLIC TRANSPORT COMPANY
 \bar default
  ⇒ It is the entity that manage the pubblic transport in Milan, it must
  connect its GPS system of each vehicle with the DB of application, in this
@@ -912,12 +863,77 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{4.1.3 Hospital Functionalities}
+addcontentsline{toc}{subsection}{4.1.3 Log In as Superuser}
 \end_layout
 
 \end_inset
 
-4.1.3 Hospital Functionalities
+4.1.3 Log In as Superuser
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{4.1.3.1 Hospital Functionalities}
+\end_layout
+
+\end_inset
+
+4.1.3.1 Hospital Functionalities
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{4.1.3.2 Public Transport Company Functionalitie
+s}
+\end_layout
+
+\end_inset
+
+4.1.3.2 Public Transport Company Functionalities
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.1.3.3 Parking Availability }
+\end_layout
+
+\end_inset
+
+4.1.3.3 Parking Availability
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{4.1.3.4 Administation Functionalities }
+\end_layout
+
+\end_inset
+
+.1.3.4 Administation Functionalities
 \end_layout
 
 \begin_layout Subsection*
@@ -928,63 +944,19 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{4.1.4 ATM Functionalities}
+addcontentsline{toc}{subsection}{4.1.3 Profile Managing}
 \end_layout
 
 \end_inset
 
-4.1.4 ATM Functionalities
-\end_layout
-
-\begin_layout Subsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsection}{4.1.5 Parking Availability }
-\end_layout
-
-\end_inset
-
-4.1.5 Parking Availability
-\end_layout
-
-\begin_layout Subsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsection}{4.1.6 Administation Functionalities }
-\end_layout
-
-\end_inset
-
-4.1.6 Administation Functionalities
-\end_layout
-
-\begin_layout Subsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsection}{4.1.7 Profile Managing}
-\end_layout
-
-\end_inset
-
-4.1.7 Profile Managing
+4.1.3 Profile Managing
 \end_layout
 
 \begin_layout Section*
+\begin_inset Newpage newpage
+\end_inset
+
+
 \begin_inset ERT
 status open
 
@@ -1065,7 +1037,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.5] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{UserInterface1}}; 
 \backslash
@@ -1108,7 +1080,7 @@ lettrine{S}{martCityAdvisot}
 
 is a service reserved to all people, citizens and turist.
  In order to registrate a new account is necessary to be more than 18 years
- old.
+ old
 \end_layout
 
 \begin_layout Subsection*
@@ -1119,12 +1091,99 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{4.2.3 Constraints}
+addcontentsline{toc}{subsection}{4.2.2 Harware Interface}
 \end_layout
 
 \end_inset
 
-4.2.3 Constraints and other specification
+4.2.2 Harware Interface
+\end_layout
+
+\begin_layout Standard
+A several variety of devices have to be supported: smartphones, tablets,
+ laptops and desktops.
+ Due to this, the same application needs to be visualized in different window
+ size.
+ The user interface should definitely support an easy usage of touch-screen
+ devices, that are the ones it is thought will be more used to access on
+ MTS application.
+ To simplify it should be screen-oriented.
+ Devices should be enabled with internet connection and optionally also
+ with GPS module.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.2.3 Software Interface}
+\end_layout
+
+\end_inset
+
+4.2.3 Software Interface
+\end_layout
+
+\begin_layout Standard
+The system will rely on Google map APIs.
+ In particular will be used: • Mapping system: Name: Google Map API; Version:
+ 3.0.4; Source: https://developers.google.com/maps/.
+ This allows to take advantage of probably the most complete mapping system
+ of the planet, and not less important, to reduce useless developing costs
+ that probably would not benefit of the same quality.
+ • DBMS system: Name: MySQL; Version: 5.6.21; Source:https://www.mysql.it/.
+ This DBMS has been chosen among the others because it is one of the most
+ lighter and easy to use.
+ It is also a free-ware.
+ In particular the DBMS should be implemented with the aim of keep data
+ credentials of both the two main type of users, either sorted or memorized.
+ It has to perform the necessarily verifying procedure during the login
+ phases.
+ The inputs are: • users’ credential for the first registration; • users’
+ identification data for the login procedure.
+ and the outputs are: • the result of login procedure, here intended as
+ the success in identifying the user or in failure.
+ All the other personal data should remain confidential in order to avoid
+ privacy law issues.
+ It should always be user’s decision the disclosure of personal information.
+ The database system interface will be more carefully projected in the next
+ developing Phase.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.2.3 Communication Interface}
+\end_layout
+
+\end_inset
+
+4.2.3 Communication Interface
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.2.4 Constraints}
+\end_layout
+
+\end_inset
+
+4.2.3 Constraints and other specifications
 \end_layout
 
 \begin_layout Standard
@@ -1135,22 +1194,48 @@ status open
 
 
 \backslash
-lettrine{W}{ith specification }
+lettrine{I}{n order to }
 \end_layout
 
 \end_inset
 
-i will explain some aspect on how i will reach goals of the project.
+allow a real time information, interested people must have or a smartphone
+ with internet connettivity if they are on travel, or a PC (but always with
+ an internet connection avaible) if they are at home.
+\begin_inset Newline newline
+\end_inset
+
+All peolple that will obtain maximum performance by the application should
+ have a basic knowledge about internet, usage of smartphone/pc GPS and usage
+ of online maps.
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{R}{eguarding specifications, }
+\end_layout
+
+\end_inset
+
+i will explain some aspect on how i will reach goals of the project:
 \end_layout
 
 \begin_layout Itemize
 [S1] Only registered user could recive notification abount accidents or
- special events 
+ special events.
+ 
 \end_layout
 
 \begin_layout Itemize
 [S2] In order to use all the functionalities of the app, is recommended
- to activate GPS on smartphone
+ to activate GPS on smartphone.
 \end_layout
 
 \begin_layout Itemize
@@ -1158,53 +1243,15 @@ i will explain some aspect on how i will reach goals of the project.
  to avoid wrong information for citizens
 \end_layout
 
-\begin_layout Subsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsection}{4.2.4 Security}
+\begin_layout Itemize
+[S4] The highest priority will be done to the accuracy of information respect
+ the velocity of notifications
 \end_layout
 
-\end_inset
-
-4.2.4 Security
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lettrine{I}{n the application}
-\end_layout
-
-\end_inset
-
- there aren't sensible information but, in order to ensure the maximum tranquili
-ty to our users and in order that their trust in us, we want guarantee an
- high protected area.
-\end_layout
-
-\begin_layout Enumerate
-The communications between server and clients must be completely secure
- and pro- tected by strong encryption such as SSL protocol.
-\end_layout
-
-\begin_layout Enumerate
-Users password must not stored in plain text in the database, they must
- be hashed and encrypted.
-\end_layout
-
-\begin_layout Enumerate
-If a user try more than 4th times for log in, block the IP address for 10
- minutes.
+\begin_layout Itemize
+[S5] Notification about serious accidents that involve people will have
+ highest priority, in order tu simplify the rescue operation that could
+ be slowed by traffic
 \end_layout
 
 \begin_layout Subsection*
@@ -1215,12 +1262,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{4.2.5 Documentation}
+addcontentsline{toc}{subsection}{4.2.4 Documentation}
 \end_layout
 
 \end_inset
 
-4.2.5 Documentation
+4.2.4 Documentation
 \end_layout
 
 \begin_layout Standard
@@ -1236,25 +1283,26 @@ lettrine{D}{uring }
 
 \end_inset
 
-this project we should do several phases:
+this project i should perform different documentation:
 \end_layout
 
 \begin_layout Enumerate
-Project Plan : to define our system, goals and how we can obtain them
+Project plan (PP), it aims at defining a planning for your project
 \end_layout
 
 \begin_layout Enumerate
-RASD: Requirement Analysis and Specification Document, to well-understand
+Requirement Analysis and Specification Document (RASD), to well-understand
  the given problem and to analyze in a detailed way which are our goals
  and how to reach them defining requirements and specificati3on
 \end_layout
 
 \begin_layout Enumerate
-DD: Design Document, to define how we should implement our system.
+Design Document (DD), to define how we should implement our system.
 \end_layout
 
 \begin_layout Enumerate
-Testing Document: it's a report of our system testing
+Test Plan Document (ITPD), it aims at describing how you plan to accomplish
+ the integration test
 \end_layout
 
 \begin_layout Chapter*
@@ -1422,6 +1470,10 @@ In the first implementation of the service he could not do other things
  but probably, in the future, he could reserve the park for some minutes
  (five, then, fifteen....) and he will pay a price directly proportional with
  the time select.
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter*
@@ -1442,6 +1494,26 @@ addcontentsline{toc}{chapter}{6.
  Models
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{I}{n the following }
+\end_layout
+
+\end_inset
+
+sections i will reports models taht represent how the application might
+ be implemented with all operation sequences and all functionalities that
+ each actor could have, some of these one only after registration and log
+ in.
+ 
+\end_layout
+
 \begin_layout Section*
 \begin_inset ERT
 status open
@@ -1450,12 +1522,28 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{6.1 Use Case}
+addcontentsline{toc}{section}{6.1 Use Case Diagrams}
 \end_layout
 
 \end_inset
 
-6.1 Use Case
+6.1 Use Case Diagrams
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{6.1.1 Guests and Users}
+\end_layout
+
+\end_inset
+
+6.1.1 Guests and Users
 \end_layout
 
 \begin_layout Standard
@@ -1478,10 +1566,25 @@ end{tikzpicture}
 \end_inset
 
 
-\begin_inset Newline newline
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{6.1.2 Superusers}
+\end_layout
+
 \end_inset
 
+6.1.2 Superusers
+\end_layout
 
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -1501,6 +1604,10 @@ end{tikzpicture}
 \end_inset
 
 
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
@@ -1511,12 +1618,83 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{6.2 Sequence Diagram}
+addcontentsline{toc}{section}{6.2 Sequence Diagrams}
 \end_layout
 
 \end_inset
 
-6.2 Sequence Diagram
+6.2 Sequence Diagrams
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{6.2.1 Registration And Log in}
+\end_layout
+
+\end_inset
+
+6.2.1 Registration And Log in
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.5] at (current page.center) {
+\backslash
+includegraphics{SequenceLogIn}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{6.2.2 Application Usage }
+\end_layout
+
+\end_inset
+
+6.2.2 Appication Usage
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{6.2.3 Log In As Superuser and Functionalities
+ }
+\end_layout
+
+\end_inset
+
+6.2.3 Log In As Superuser and Functionalities
 \end_layout
 
 \begin_layout Section*
@@ -1527,12 +1705,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{6.3 Class Diagramm}
+addcontentsline{toc}{section}{6.3 Class Diagrams}
 \end_layout
 
 \end_inset
 
-6.3 Class Diagram
+6.3 Class Diagrams
 \end_layout
 
 \begin_layout Section*
@@ -1543,12 +1721,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{6.4 State Chart Diagram}
+addcontentsline{toc}{section}{6.4 State Chart Diagrams}
 \end_layout
 
 \end_inset
 
-6.4 State Chart Diagram
+6.4 State Chart Diagrams
 \end_layout
 
 \begin_layout Chapter*
@@ -1607,12 +1785,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{chapter}{8.Used Tools}
+addcontentsline{toc}{chapter}{8.Used Tools and Work Timing}
 \end_layout
 
 \end_inset
 
-8.Used Tools
+8.Used Tools and Work Timing
 \end_layout
 
 \begin_layout Standard
@@ -1645,7 +1823,26 @@ VisualParadigm10 Community Edition to create Sequence Diagrams and State
 \end_layout
 
 \begin_layout Description
-AlloyAnalyzer4.2 to prove the consistency of our model;
+AlloyAnalyzer4.2 to prove the consistency of our 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{R}{eguarding }
+\end_layout
+
+\end_inset
+
+the drafting of this document, i have spent about hours.
+ Problably, during a team group, this thin will be the same for each component
+ becouse the time that normally is used for coordinate the work is very
+ relevant.
 \end_layout
 
 \end_body
