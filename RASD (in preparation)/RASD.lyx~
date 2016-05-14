@@ -7,6 +7,8 @@
 \date{}
 \usepackage{lettrine}
 \usepackage{tikz,pgf}
+\usepackage{listings} %Per inserire codice
+\usepackage{color} %Per permettere la colorazione dei caratteri 
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -166,13 +168,13 @@ status open
 
 
 \backslash
-lettrine{T}{he purpose of }
+lettrine{T}{he }
 \end_layout
 
 \end_inset
 
-this document is providing requirements and specifications about an application
- due to monitoring process done by city of Milan.
+purpose of this document is providing requirements and specifications about
+ an application due to monitoring process done by city of Milan.
  
 \begin_inset Newline newline
 \end_inset
@@ -229,12 +231,16 @@ status open
 
 
 \backslash
-lettrine{M}{ain goals }
+lettrine{M}{ain }
 \end_layout
 
 \end_inset
 
-project will be:
+goals of the project will be:
+\end_layout
+
+\begin_layout Description
+[] Simplify the acces to the applications functionalities
 \end_layout
 
 \begin_layout Description
@@ -403,13 +409,13 @@ status open
 
 
 \backslash
-lettrine{I}{n order to }
+lettrine{I}{n }
 \end_layout
 
 \end_inset
 
-reach the scope, i will proposed a system with an interface develop both
- for web and smart device.
+order to reach the scope, i will proposed a system with an interface develop
+ both for web and smart device.
  Users will open the app and then they will choose what is their necessity
  : traffic situation, emergency or parking for example.
  Registration is not mandatory but it is strongly raccomended in order to
@@ -446,13 +452,13 @@ status open
 
 
 \backslash
-lettrine{C}{oherently with }
+lettrine{C}{oherently }
 \end_layout
 
 \end_inset
 
- specification document, is necessary to do some assumption in order to
- increase the clarity:
+with specification document, is necessary to do some assumption in order
+ to increase the clarity:
 \end_layout
 
 \begin_layout Description
@@ -496,6 +502,12 @@ lettrine{C}{oherently with }
  to keeping on work each sensor and actuator in the city
 \end_layout
 
+\begin_layout Description
+[A9] We assume that after the period indicated fot a scheduled event, system
+ will deleted it automatically.
+ On the DB will be manteined a documentation about all passed events
+\end_layout
+
 \begin_layout Section*
 \begin_inset ERT
 status open
@@ -520,12 +532,12 @@ status open
 
 
 \backslash
-lettrine{I}{n this }
+lettrine{I}{n }
 \end_layout
 
 \end_inset
 
- project stakeolders will be :
+this project stakeolders will be :
 \end_layout
 
 \begin_layout Itemize
@@ -568,12 +580,12 @@ status open
 
 
 \backslash
-lettrine{I}{n the futurem, }
+lettrine{I}{n }
 \end_layout
 
 \end_inset
 
-application might be upgraded with other functionalities like:
+the future, application might be upgraded with other functionalities like:
 \end_layout
 
 \begin_layout Itemize
@@ -1181,12 +1193,12 @@ status open
 
 
 \backslash
-lettrine{U}{ser interface }
+lettrine{U}{ser }
 \end_layout
 
 \end_inset
 
-of my SmartCityAdvisor application is very user friendly.
+interface of my SmartCityAdvisor application is very user friendly.
  It is simple and intuitive, it has been tought in order to allows its use
  to all users
 \begin_inset Newline newline
@@ -1285,7 +1297,19 @@ addcontentsline{toc}{subsection}{4.2.2 Harware Interface}
 \end_layout
 
 \begin_layout Standard
-The application could be run on a lot of different devices, as smartphones,
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{T}{he }
+\end_layout
+
+\end_inset
+
+application could be run on a lot of different devices, as smartphones,
  PCs, tablet, desktop and so on.
  The application must be implemented in order to be visualized in different
  size of windows and some of this could be on touch-screan device.
@@ -1310,7 +1334,19 @@ addcontentsline{toc}{subsection}{4.2.3 Software Interface}
 \end_layout
 
 \begin_layout Standard
-Software for user will be implemented as a thin client.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{S}{oftware }
+\end_layout
+
+\end_inset
+
+ for users will be implemented as a thin client.
  All principal operations will be done on server-side and will be used some
  popular APIs in order to reduce costs without reduce performance.
  For example, for the map service will be use Google Maps API.
@@ -1333,8 +1369,20 @@ addcontentsline{toc}{subsection}{4.2.3 Communication Interface}
 \end_layout
 
 \begin_layout Standard
-To communicate will be used Internet connection, in order to use all functionali
-ties is neccessary to have a 3g or WI-fi module on the devices.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{T}{o }
+\end_layout
+
+\end_inset
+
+communicate will be used Internet connection, in order to use all functionalitie
+s is neccessary to have a 3g or WI-fi module on the devices.
 \end_layout
 
 \begin_layout Subsection*
@@ -1361,14 +1409,14 @@ status open
 
 
 \backslash
-lettrine{I}{n order to }
+lettrine{I}{n }
 \end_layout
 
 \end_inset
 
-allow a real time information, interested people must have or a smartphone
- with internet connettivity if they are on travel, or a PC (but always with
- an internet connection avaible) if they are at home.
+order to allow a real time information, interested people must have or a
+ smartphone with internet connettivity if they are on travel, or a PC (but
+ always with an internet connection avaible) if they are at home.
 \begin_inset Newline newline
 \end_inset
 
@@ -1390,12 +1438,13 @@ status open
 
 
 \backslash
-lettrine{R}{eguarding specifications, }
+lettrine{R}{eguarding }
 \end_layout
 
 \end_inset
 
-i will explain some aspect on how i will reach goals of the project:
+specification, i will explain some aspect on how i will reach goals of the
+ project:
 \end_layout
 
 \begin_layout Description
@@ -1502,13 +1551,13 @@ status open
 
 
 \backslash
-lettrine{N}
+lettrine{N}{ow }
 \end_layout
 
 \end_inset
 
-ow i will propose some situation that could happen in the real world, in
- order to bring out the real usage of SmartCityAdvisor:
+i will propose some situation that could happen in the real world, in order
+ to bring out the real usage of SmartCityAdvisor:
 \end_layout
 
 \begin_layout Section*
@@ -1535,12 +1584,12 @@ status open
 
 
 \backslash
-lettrine{N}
+lettrine{N}{ext }
 \end_layout
 
 \end_inset
 
-ext sunday Pope will be in Milan for a celebration in the cathedral.
+ sunday Pope will be in Milan for a celebration in the cathedral.
  The way from airport Milano Forlanini to city center will be blocked from
  8 a.m.
  to 10 a.m.
@@ -1577,7 +1626,19 @@ addcontentsline{toc}{section}{5.2 It's happened an accident}
 \end_layout
 
 \begin_layout Standard
-Is Monday morning and all people are going to work.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{I}{s }
+\end_layout
+
+\end_inset
+
+Monday morning and all people are going to work.
  In the traffic is very easy that could happen and accident and it happens.
  When people involved on it or people that have seen it call the police,
  an automatically information will bi insert in the system.
@@ -1611,7 +1672,19 @@ addcontentsline{toc}{section}{5.3 Medical Emergency}
 \end_layout
 
 \begin_layout Standard
-Marco is working on the roof when he falls down.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{M}{arco }
+\end_layout
+
+\end_inset
+
+is working on the roof when he falls down.
  His girfriend Francesca must found an hospital that could trat probables
  fractures and, if possible, without long queue.
  She will open the application and will select 'emergency', then she could
@@ -1649,7 +1722,19 @@ addcontentsline{toc}{section}{5.4 Sunday Outing}
 \end_layout
 
 \begin_layout Standard
-Tommaso needs to go to the city center with all the family.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{T}{ommaso }
+\end_layout
+
+\end_inset
+
+needs to go to the city center with all the family.
  For this reason he has decided to use his car but he knows that the parking
  availability is a big problem in Milan.
  Tommaso will open the app and will select 'parking availability' in the
@@ -1683,7 +1768,19 @@ addcontentsline{toc}{section}{5.5 One mounth without rain}
 \end_layout
 
 \begin_layout Standard
-In city like Milan, one of the biggest problem are period without rain and
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{I}{n }
+\end_layout
+
+\end_inset
+
+city like Milan, one of the biggest problem are period without rain and
  this is just happened.
  In the last 30 days the city has exceeded the limit of fine particles imposed
  by the European Community for 22.
@@ -1727,15 +1824,15 @@ status open
 
 
 \backslash
-lettrine{I}{n the following }
+lettrine{I}{n }
 \end_layout
 
 \end_inset
 
-sections i will reports models taht represent how the application might
- be implemented with all operation sequences and all functionalities that
- each actor could have, some of these one only after registration and log
- in.
+the following sections i will reports models taht represent how the application
+ might be implemented with all operation sequences and all functionalities
+ that each actor could have, some of these one only after registration and
+ log in.
  
 \end_layout
 
@@ -1887,6 +1984,72 @@ end{tikzpicture}
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.5] at (current page.center) {
+\backslash
+includegraphics{TabReg}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.5] at (current page.center) {
+\backslash
+includegraphics{TabLogin}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -1919,7 +2082,7 @@ addcontentsline{toc}{subsection}{6.2.3 Log In As Superuser and Administration
 
 \end_inset
 
-6.2.3 Log In As Superuser and Functionalities
+6.2.3 Log In As Superuser and Functionalities 
 \end_layout
 
 \begin_layout Standard
@@ -1935,6 +2098,64 @@ begin{tikzpicture}[remember picture]
 node [scale=0.45] at (current page.center) {
 \backslash
 includegraphics{SequenceAdmin}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.5] at (current page.center) {
+\backslash
+includegraphics{TabLogAsSuper}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.5] at (current page.center) {
+\backslash
+includegraphics{TabAdminNewEvent}}; 
 \backslash
 end{tikzpicture}
 \end_layout
@@ -2019,6 +2240,41 @@ end{tikzpicture}
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.5] at (current page.center) {
+\backslash
+includegraphics{TabHelpRequest}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -2051,6 +2307,25 @@ begin{tikzpicture}[remember picture]
 node [scale=0.5] at (current page.center) {
 \backslash
 includegraphics{SequenceTransport}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.5] at (current page.center) {
+\backslash
+includegraphics{TabSpecialNot}}; 
 \backslash
 end{tikzpicture}
 \end_layout
@@ -2115,6 +2390,86 @@ addcontentsline{toc}{section}{7.1 Alloy Code}
 7.1 Alloy Code
 \end_layout
 
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+abstract sig Person{}
+\end_layout
+
+\begin_layout Plain Layout
+
+abstract sig Superuser{}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Guest extends Person{}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig User extends Person{
+\end_layout
+
+\begin_layout Plain Layout
+
+		recive: set Notification, 		reserve: set ParkingReserve
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Administration extends Superuser{}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig AdminNotification{}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Hospital extends Superuser{}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Queue {}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Police extends Superuser{}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig PublicTransport extends Superuser{}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig PubTraNotification{}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Parking extends Superuser{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
 \begin_inset ERT
 status open
@@ -2155,12 +2510,12 @@ status open
 
 
 \backslash
-lettrine{F}{or create this }
+lettrine{F}{or }
 \end_layout
 
 \end_inset
 
-documet we have used:
+create this documet we have used:
 \end_layout
 
 \begin_layout Description

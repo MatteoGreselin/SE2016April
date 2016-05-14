@@ -7,6 +7,8 @@
 \date{}
 \usepackage{lettrine}
 \usepackage{tikz,pgf}
+\usepackage{listings} %Per inserire codice
+\usepackage{color} %Per permettere la colorazione dei caratteri 
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -235,6 +237,10 @@ lettrine{M}{ain }
 \end_inset
 
 goals of the project will be:
+\end_layout
+
+\begin_layout Description
+[] Simplify the acces to the applications functionalities
 \end_layout
 
 \begin_layout Description
@@ -494,6 +500,12 @@ with specification document, is necessary to do some assumption in order
 \begin_layout Description
 [A8] We assume that Administration has created an organization in order
  to keeping on work each sensor and actuator in the city
+\end_layout
+
+\begin_layout Description
+[A9] We assume that after the period indicated fot a scheduled event, system
+ will deleted it automatically.
+ On the DB will be manteined a documentation about all passed events
 \end_layout
 
 \begin_layout Section*
@@ -1972,6 +1984,72 @@ end{tikzpicture}
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.5] at (current page.center) {
+\backslash
+includegraphics{TabReg}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.5] at (current page.center) {
+\backslash
+includegraphics{TabLogin}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -2004,7 +2082,7 @@ addcontentsline{toc}{subsection}{6.2.3 Log In As Superuser and Administration
 
 \end_inset
 
-6.2.3 Log In As Superuser and Functionalities
+6.2.3 Log In As Superuser and Functionalities 
 \end_layout
 
 \begin_layout Standard
@@ -2020,6 +2098,64 @@ begin{tikzpicture}[remember picture]
 node [scale=0.45] at (current page.center) {
 \backslash
 includegraphics{SequenceAdmin}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.5] at (current page.center) {
+\backslash
+includegraphics{TabLogAsSuper}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.5] at (current page.center) {
+\backslash
+includegraphics{TabAdminNewEvent}}; 
 \backslash
 end{tikzpicture}
 \end_layout
@@ -2104,6 +2240,41 @@ end{tikzpicture}
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.5] at (current page.center) {
+\backslash
+includegraphics{TabHelpRequest}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -2136,6 +2307,29 @@ begin{tikzpicture}[remember picture]
 node [scale=0.5] at (current page.center) {
 \backslash
 includegraphics{SequenceTransport}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.5] at (current page.center) {
+\backslash
+includegraphics{TabSpecialNot}}; 
 \backslash
 end{tikzpicture}
 \end_layout
@@ -2198,6 +2392,86 @@ addcontentsline{toc}{section}{7.1 Alloy Code}
 \end_inset
 
 7.1 Alloy Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+abstract sig Person{}
+\end_layout
+
+\begin_layout Plain Layout
+
+abstract sig Superuser{}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Guest extends Person{}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig User extends Person{
+\end_layout
+
+\begin_layout Plain Layout
+
+		recive: set Notification, 		reserve: set ParkingReserve
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Administration extends Superuser{}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig AdminNotification{}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Hospital extends Superuser{}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Queue {}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Police extends Superuser{}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig PublicTransport extends Superuser{}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig PubTraNotification{}
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Parking extends Superuser{} 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
