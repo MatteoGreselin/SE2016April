@@ -1,0 +1,2550 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\date{}
+\usepackage{lettrine}
+\usepackage{tikz,pgf}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{alloy-style}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman cmr
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command makeindex
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 1.5cm
+\secnumdepth 5
+\tocdepth 5
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle plain
+\bullet 1 0 9 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture,overlay] 
+\backslash
+node [opacity=0.1,scale=1] at (current page.center) {
+\backslash
+includegraphics{logopolimi}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\shape smallcaps
+\size huge
+\emph on
+\noun on
+Requirements Analysis and Specification Document
+\end_layout
+
+\begin_layout Author
+
+\shape smallcaps
+Matteo Greselin - Matr.
+ 862908
+\end_layout
+
+\begin_layout Date
+
+\shape smallcaps
+Version 1.0
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{1 Introduction}
+\end_layout
+
+\end_inset
+
+ 1 Introduction
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{1.1 Purpose}
+\end_layout
+
+\end_inset
+
+1.1 Description Of Given Problem
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{T}{he }
+\end_layout
+
+\end_inset
+
+purpose of this document is providing requirements and specifications about
+ an application due to monitoring process done by city of Milan.
+ 
+\begin_inset Newline newline
+\end_inset
+
+The application will be called 'SmartCityAdvisor' and its scope will be
+ provide to citizen more information about pubblic service situation, like
+ hospital queues or parking availability, and to manage in the best possible
+ way exceptional event like accidents, VIPs arrival or other, with a momentary
+ traffic deviation.
+ The objective of this project is improve the city life through a mobile
+ application, that will allow to recive notifications about actual traffic
+ situation or about momentary deviation, according to own GPS position,
+ and also it will allow to check which is the empiest hospital in case of
+ emergency or which is the best one for a precise emergency.
+ 
+\begin_inset Newline newline
+\end_inset
+
+As required by city of Milan, as new functionality i will propose the parking
+ availability, that is possible with data already measured.: the idea is
+ that citizens will indicate the destination in the mobile app and system
+ will propose all the possible solutions with free place.
+ A possible updating for parking situation should be each 10 minutes during
+ the week ann each five minutes in the weekend or during festivities.
+ 
+\begin_inset Newline newline
+\end_inset
+
+The system also provides Application Programming Interface (API) to enable
+ further developments.
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{1.2 Main Goals}
+\end_layout
+
+\end_inset
+
+1.2 Main Goals
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{M}{ain }
+\end_layout
+
+\end_inset
+
+goals of the project will be:
+\end_layout
+
+\begin_layout Description
+[] Simplify the acces to the applications functionalities
+\end_layout
+
+\begin_layout Description
+[G1] Limit traffic that enters in the city coherently with CO2 levels
+\end_layout
+
+\begin_layout Description
+[G2] Manage traffic situation in days with special events
+\end_layout
+
+\begin_layout Description
+[G3] Allows that citizens could arrive in less time in the best hospital
+\end_layout
+
+\begin_layout Description
+[G4] Allows an easier parking search 
+\end_layout
+
+\begin_layout Description
+[G5] Improve the city life
+\end_layout
+
+\begin_layout Description
+[G6] Reduce Hospital queues 
+\end_layout
+
+\begin_layout Description
+[G7] Offer an user-friendly app
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{1.3 Glossary}
+\end_layout
+
+\end_inset
+
+1.3 Glossary
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{1.3.1 Definitions}
+\end_layout
+
+\end_inset
+
+1.3.1 Definitions
+\end_layout
+
+\begin_layout Itemize
+GUEST ⇒ This word will indicate all general people without a personal account
+\end_layout
+
+\begin_layout Itemize
+USER ⇒ This word will indicate people that will use the application with
+ a personal account
+\end_layout
+
+\begin_layout Itemize
+HOSPITAL ⇒ This word will indicate hospital as istitution that will inform
+ our system about queue situation
+\end_layout
+
+\begin_layout Itemize
+PUBLIC TRANSPORT COMPANY ⇒ It will indicate the company of pubblic transport
+ as entity that must inform our system about the precise position of public
+ transport
+\end_layout
+
+\begin_layout Itemize
+SYSTEM ⇒ In this document, this word will indicate our application
+\end_layout
+
+\begin_layout Itemize
+CITY ADMINISTRATION (or simply administration) ⇒ It will indicate the entity
+ that will manage all the application
+\end_layout
+
+\begin_layout Itemize
+POLICE STATION ⇒ It will indicate the entity that could answer to help request
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{1.3.2 Abbreviations}
+\end_layout
+
+\end_inset
+
+1.3.3Abbreviations
+\end_layout
+
+\begin_layout Description
+[An] : n-domain assumption.
+\end_layout
+
+\begin_layout Description
+[Gn] : n-goal.
+\end_layout
+
+\begin_layout Description
+[Rn] : n-functional requirement.
+ 
+\end_layout
+
+\begin_layout Description
+[Sn] : n-specification
+\end_layout
+
+\begin_layout Chapter*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{2 General Description}
+\end_layout
+
+\end_inset
+
+ 2 General Description
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{2.1 Proposed System}
+\end_layout
+
+\end_inset
+
+2.1 Proposed System
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{I}{n }
+\end_layout
+
+\end_inset
+
+order to reach the scope, i will proposed a system with an interface develop
+ both for web and smart device.
+ Users will open the app and then they will choose what is their necessity
+ : traffic situation, emergency or parking for example.
+ Registration is not mandatory but it is strongly raccomended in order to
+ be able to use all functionalities: for example, general notification could
+ be recived only by registred users.
+ With respect to the necessity to recive information, for example, about
+ best way to do, will be necessary an internet connection.
+ The system will interact with users directly via notification, via monitor
+ (that are posed in the main streets) and, indirectly, with the management
+ of traffic lights.
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{2.2 Assumptions}
+\end_layout
+
+\end_inset
+
+2.2 Assumptions
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{C}{oherently }
+\end_layout
+
+\end_inset
+
+with specification document, is necessary to do some assumption in order
+ to increase the clarity:
+\end_layout
+
+\begin_layout Description
+[A1] We assume that every user has a smartphone if he/se want use the app;
+\end_layout
+
+\begin_layout Description
+[A2] We assume that every user has a internet connection;
+\end_layout
+
+\begin_layout Description
+[A3] We assume that each citizen will follow the instructions provided by
+ application;
+\end_layout
+
+\begin_layout Description
+[A4] We assume that special situation (as manifestation or VIP's visit)
+ will be scheduled in advace;
+\end_layout
+
+\begin_layout Description
+[A5] We assume that in case of accidents, they will be notify as soon as
+ possible;
+\end_layout
+
+\begin_layout Description
+[A6] We assume that when an accident happen, someone will call hospital
+ or police and in that moment the first structure that will recive the help
+ request will also insert it in the system, manually or by an automatic
+ system
+\end_layout
+
+\begin_layout Description
+[A7] We assume that all hospital structure, all police stations, all car
+ parks and the public transport company will answer in a positive way to
+ this innovative solution
+\end_layout
+
+\begin_layout Description
+[A8] We assume that Administration has created an organization in order
+ to keeping on work each sensor and actuator in the city
+\end_layout
+
+\begin_layout Description
+[A9] We assume that after the period indicated fot a scheduled event, system
+ will deleted it automatically.
+ On the DB will be manteined a documentation about all passed events
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{2.3 Identifyng Stakeholders}
+\end_layout
+
+\end_inset
+
+2.3 Idnetifyng Stakeholders
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{I}{n }
+\end_layout
+
+\end_inset
+
+this project stakeolders will be :
+\end_layout
+
+\begin_layout Itemize
+Professors of the course Software Engineering 2 as product owner 
+\end_layout
+
+\begin_layout Itemize
+City of Milan, as entity that has open the call for application develop
+\end_layout
+
+\begin_layout Itemize
+Citizen that might use the app and will take advantages from this application
+\end_layout
+
+\begin_layout Itemize
+Any developers that will work on this application in the future
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{2.4 Future Upgradese}
+\end_layout
+
+\end_inset
+
+2.4 Future Upgrades
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{I}{n }
+\end_layout
+
+\end_inset
+
+the future, application might be upgraded with other functionalities like:
+\end_layout
+
+\begin_layout Itemize
+Check public transport ⇒ if you need to use the public transport, you could
+ use the app in order to see all buses or tram near you or to search the
+ position of a fixed line and when you will find what you need, you could
+ also buy the ticket.
+\end_layout
+
+\begin_layout Itemize
+Medical Examination Reservation: when you need to a medical reservation,
+ you could use the application in order to choosing an hospital and booking
+ an appoinment, coherently with medical staff availability and hospital
+ specialization
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{2.5 Document Overview}
+\end_layout
+
+\end_inset
+
+2.5 Document Overview
+\end_layout
+
+\begin_layout Standard
+Chapter 2 of this document presents actors involved in the processes,.
+\begin_inset Newline newline
+\end_inset
+
+Chapter 3 presents a general overview of the system.
+ It aims to show the background of the requirements stated in the section
+ below
+\begin_inset Newline newline
+\end_inset
+
+Chapter 4 gives more detailed specific requirements for the offered functions.
+\begin_inset Newline newline
+\end_inset
+
+Chapter 5 presents some possible example of usage in the real world
+\begin_inset Newline newline
+\end_inset
+
+Chapter 6 and 7 present all types of digram used for describe processes
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{2.6 References}
+\end_layout
+
+\end_inset
+
+2.6 References
+\end_layout
+
+\begin_layout Itemize
+Specification Document given us by teachers
+\end_layout
+
+\begin_layout Itemize
+IEEE Std 830-1998 IEEE Recommended Practice for Software Requirements Specificat
+ions.
+ (Revision of IEEE Std 830-1993)
+\end_layout
+
+\begin_layout Itemize
+Other example of RASD given us by teachers
+\end_layout
+
+\begin_layout Chapter*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{3.Actors Identifyng}
+\end_layout
+
+\end_inset
+
+3.
+ Actors Identifying
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+GUEST
+\bar default
+ ⇒ He/she is a person that use the application with reduced functionalities.
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+USER
+\bar default
+ ⇒ He/she is a person tha use the application with alll functionalities,
+ he/she has a personal account with a personal page
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+CITY ADMINISTRATION
+\bar default
+ ⇒ It is the entity that manage the entire system.
+ It can see usage reports, sent notify to user, insert special event in
+ the DB, check the correct working.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+HOSPITAL
+\bar default
+ ⇒ It represent each entity that must inform the system about queue situation,
+ its system is connected with the DB.
+ Each time that a person require a waiting ticket for a paticular visit,
+ system will update the DB.
+ The same thinks will be done when a person will start his/her medical visit.
+ It must be ready also for bring out to the system accidents happenend after
+ has recived an help request and also accidents solved, if not alredy done
+ by other entity
+\end_layout
+
+\begin_layout Enumerate
+
+\shape smallcaps
+\bar under
+POLICE STATION
+\shape default
+\bar default
+ ⇒ It represent each entity that could answer to an help request after an
+ accidents.
+ It's systrem is connected with the DB.
+ Each time that it recives an help require for an accident, system will
+ be update with the new fact.
+ The same think will be done when the accidents is solved, if not already
+ done by other entity.
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+PUBLIC TRANSPORT COMPANY
+\bar default
+ ⇒ It is the entity that manage the pubblic transport in Milan, it must
+ connect its GPS system of each vehicle with the DB of application, in this
+ way there will be a real time updating.
+ It will have also a personal interface in order to insert new pubblic lines
+ in the DB , remove them or inform users about strikes or exceptional event
+ (great delay or momentary pubblic line cancellations)
+\end_layout
+
+\begin_layout Enumerate
+
+\bar under
+SYSTEM 
+\bar default
+⇒ It is the main importat part of the application, it coordinates all processes
+ and if it goes down, the entire application goes down.
+\end_layout
+
+\begin_layout Chapter*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{4.Requirements}
+\end_layout
+
+\end_inset
+
+4.
+ Requirements
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{4.1 Functional Requirements}
+\end_layout
+
+\end_inset
+
+4.1 Functional Requirements
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.1.1 Sign Up}
+\end_layout
+
+\end_inset
+
+4.1.1 Sign Up
+\end_layout
+
+\begin_layout Description
+[R1] Guest must no be already registered
+\end_layout
+
+\begin_layout Description
+[R2] Guest must provide some personal information : Name, Surname, Age,
+ eMail, Username, Password
+\end_layout
+
+\begin_layout Description
+[R3] System will send an eMail to the indicate address in order to activate
+ the account
+\end_layout
+
+\begin_layout Description
+[R4] System will ask to insert password times: the two password must be
+ identical.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.1.2 Log In as User}
+\end_layout
+
+\end_inset
+
+4.1.2 Log In as User
+\end_layout
+
+\begin_layout Description
+[R1] User must insert username and password
+\end_layout
+
+\begin_layout Description
+[R2] If he/she wants, he/she could use the email address as usernamen
+\end_layout
+
+\begin_layout Description
+[R3] If necessary, will be avaible a 'recovery password' process that will
+ use the indicated email
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.1.3 Log In as Superuser}
+\end_layout
+
+\end_inset
+
+4.1.3 Log In as Superuser
+\end_layout
+
+\begin_layout Standard
+In this situation are included Administration, Police Stations, Hospitals,
+ Public Transport Company and Parking Management.
+ They will have some special account with special functionalities due to
+ the fact that they must collaborate in order to guarantee a great service
+ to customer (citizens and turists in this case).
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{4.1.3.1 Hospital Functionalities}
+\end_layout
+
+\end_inset
+
+4.1.3.1 Hospital Functionalities
+\end_layout
+
+\begin_layout Description
+[R1] Funcitonality could be done manually by an operator on automatically
+ by an information system
+\end_layout
+
+\begin_layout Description
+[R2] When a person take a tiket for the queue, the queue for that specific
+ medical visit will be update automatically 
+\end_layout
+
+\begin_layout Description
+[R3] When a medical visit starts, the waiting ticked will be read electronically
+ and this operation will update the queue for that specific visit
+\end_layout
+
+\begin_layout Description
+[R4] When Hospital recive a call for an accident on the street, it will
+ be registred and automatically insert in the system
+\end_layout
+
+\begin_layout Description
+[R5] If the indicated position of the accident is already present in the
+ system, there will not be any updating.
+ This means that probably police station has already update the event.
+\end_layout
+
+\begin_layout Description
+[R6] When the medical staff return from the accident, it will be registred
+ and automatically insert in the system
+\end_layout
+
+\begin_layout Description
+[R7] If the indicated position of the accident is not present in the system,
+ there will not be any updating.
+ This means that probably police station has already update the solve accident.
+\end_layout
+
+\begin_layout Description
+[R8] Hospital structure could change the specializations present in it,
+ in case someone of them is closed 
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{4.1.3.2 Public Transport Company Functionalitie
+s}
+\end_layout
+
+\end_inset
+
+4.1.3.2 Public Transport Company Functionalities
+\end_layout
+
+\begin_layout Description
+[R1] It must constantly provide the position of each vehicle
+\end_layout
+
+\begin_layout Description
+[R2] It must send special notification reguarding company, as strike or
+ own broken vehicle or line interrupted, but after Administration approvation
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{4.1.3.3 Parking Availability }
+\end_layout
+
+\end_inset
+
+4.1.3.3 Parking Availability
+\end_layout
+
+\begin_layout Description
+[R1] Car Parks in the city must be complitely automated
+\end_layout
+
+\begin_layout Description
+[R2] Some actuator will releve the availability or not availability in a
+ fixed car park.
+\end_layout
+
+\begin_layout Description
+[R3] The situation will be update in the system each time that actuators
+ will detect somethings.
+\end_layout
+
+\begin_layout Description
+[R4] In case of reservation, system will be implementing for using QR code.
+\end_layout
+
+\begin_layout Description
+[R5] Each User that will reserve a place will recive a QR code that he/she
+ must show when he/she will arrive to the car park
+\end_layout
+
+\begin_layout Description
+[R6] In each car park there will be a QR reader, near the entry 
+\end_layout
+
+\begin_layout Description
+[R7] The QR will be valid coherently with the time indicate for the reservation
+ (five, ten, fifteen...)
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{4.1.3.4 Administation Functionalities }
+\end_layout
+
+\end_inset
+
+4.1.3.4 Administation Functionalities
+\end_layout
+
+\begin_layout Description
+[R1] Administration must manage the entire application, manually or autimaticall
+y
+\end_layout
+
+\begin_layout Description
+[R2] Administration must foresee at least 3 people in order to provide a
+ quickly response if it is necessary
+\end_layout
+
+\begin_layout Description
+[R3] Administration could accept or refuse Public Transport Company notification
+\end_layout
+
+\begin_layout Description
+[R4] Administration could see usage report, as user access, user registred,
+ accedets done in a period and so on.
+\end_layout
+
+\begin_layout Description
+[R5] It must provide manteinance, in order to guarantee the service
+\end_layout
+
+\begin_layout Description
+[R6] It is the only that can insert programmed event, as manifestations,
+ road works, Vips visits, ecological days...
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{4.1.3.5 Police Station Functionalities}
+\end_layout
+
+\end_inset
+
+4.1.3.5 Police Station Functionalities
+\end_layout
+
+\begin_layout Description
+[R1] Funcitonality could be done manually by an operator on automatically
+ by an information system
+\end_layout
+
+\begin_layout Description
+[R2] When Police Station recives a call for an accident on the street, it
+ will be registred and automatically insert in the system
+\end_layout
+
+\begin_layout Description
+[R3] If the indicated position of the accident is already present in the
+ system, there will not be any updating.
+ This means that probably an hospital has already answer to the calling.
+\end_layout
+
+\begin_layout Description
+[R4] When the police staff return from the accident, it will be registred
+ and automatically insert in the system
+\end_layout
+
+\begin_layout Description
+[R5] If the indicated position of the accident is not present in the system,
+ there will not be any updating.
+ This means that probably an hospital has already update the solve accident.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.1.4 Profile Managing}
+\end_layout
+
+\end_inset
+
+4.1.4 Profile Managing
+\end_layout
+
+\begin_layout Description
+[R1] User could change email address, but only one time.
+\end_layout
+
+\begin_layout Description
+[R2] User could change password one time at week
+\end_layout
+
+\begin_layout Description
+[R3] User could select which notification he/she wants recive (traffic,
+ accidents, special notification, events....).
+\end_layout
+
+\begin_layout Description
+[R4] User could delete his/her account in each moment
+\end_layout
+
+\begin_layout Section*
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{4.2 Not Functional Requirement}
+\end_layout
+
+\end_inset
+
+4.2 Non Functional Requirments
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.2.1 User Interface}
+\end_layout
+
+\end_inset
+
+4.2.1 User Interface
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{U}{ser }
+\end_layout
+
+\end_inset
+
+interface of my SmartCityAdvisor application is very user friendly.
+ It is simple and intuitive, it has been tought in order to allows its use
+ to all users
+\begin_inset Newline newline
+\end_inset
+
+It has been produced to be used via web or mobile application and it has
+ a main page.
+ Here you can use all the functionalities of the project and, if you want,
+ you can log in for changing your profile infos or changing preferences
+ about notifications.
+ 
+\begin_inset Newline newline
+\end_inset
+
+With a pc, on the top of the public page we could find six links that allow
+ to navigate into the web site and below them we have the possibility to
+ refine our search, we find a calendar and some statistics.
+\begin_inset Newline newline
+\end_inset
+
+With a smartphone the interfece will have some little differences according
+ to the operative system
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.45] at (current page.center) {
+\backslash
+includegraphics{UserInterface1}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.2.2 User Characteristics}
+\end_layout
+
+\end_inset
+
+4.2.2 User Characteristics
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{S}{martCityAdvisot}
+\end_layout
+
+\end_inset
+
+is a service reserved to all people, citizens and turist.
+ In order to registrate a new account is necessary to be more than 18 years
+ old
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.2.2 Harware Interface}
+\end_layout
+
+\end_inset
+
+4.2.2 Hardware Interface
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{T}{he }
+\end_layout
+
+\end_inset
+
+application could be run on a lot of different devices, as smartphones,
+ PCs, tablet, desktop and so on.
+ The application must be implemented in order to be visualized in different
+ size of windows and some of this could be on touch-screan device.
+ Devices should be enabled with internet connection and optionally also
+ with GPS module.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.2.3 Software Interface}
+\end_layout
+
+\end_inset
+
+4.2.3 Software Interface
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{S}{oftware }
+\end_layout
+
+\end_inset
+
+ for users will be implemented as a thin client.
+ All principal operations will be done on server-side and will be used some
+ popular APIs in order to reduce costs without reduce performance.
+ For example, for the map service will be use Google Maps API.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.2.3 Communication Interface}
+\end_layout
+
+\end_inset
+
+4.2.3 Communication Interface
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{T}{o }
+\end_layout
+
+\end_inset
+
+communicate will be used Internet connection, in order to use all functionalitie
+s is neccessary to have a 3g or WI-fi module on the devices.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.2.4 Constraints}
+\end_layout
+
+\end_inset
+
+4.2.3 Constraints and other specifications
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{I}{n }
+\end_layout
+
+\end_inset
+
+order to allow a real time information, interested people must have or a
+ smartphone with internet connettivity if they are on travel, or a PC (but
+ always with an internet connection avaible) if they are at home.
+\begin_inset Newline newline
+\end_inset
+
+All peolple that will obtain maximum performance by the application should
+ have a basic knowledge about internet, usage of smartphone/pc GPS and usage
+ of online maps.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{R}{eguarding }
+\end_layout
+
+\end_inset
+
+specification, i will explain some aspect on how i will reach goals of the
+ project:
+\end_layout
+
+\begin_layout Description
+[S1] Only registered user could recive notification abount accidents or
+ special events.
+ 
+\end_layout
+
+\begin_layout Description
+[S2] In order to use all the functionalities of the app, is recommended
+ to activate GPS on smartphone.
+\end_layout
+
+\begin_layout Description
+[S3] Every events or accidents that will be notified, will be check in order
+ to avoid wrong information for citizens
+\end_layout
+
+\begin_layout Description
+[S4] The highest priority will be done to the accuracy of information respect
+ the velocity of notifications
+\end_layout
+
+\begin_layout Description
+[S5] Notification about serious accidents that involve people will have
+ highest priority, in order tu simplify the rescue operation that could
+ be slowed by traffic
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.2.4 Documentation}
+\end_layout
+
+\end_inset
+
+4.2.4 Documentation
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{D}{uring }
+\end_layout
+
+\end_inset
+
+this project i should perform different documentation:
+\end_layout
+
+\begin_layout Enumerate
+Project plan (PP), it aims at defining a planning for your project
+\end_layout
+
+\begin_layout Enumerate
+Requirement Analysis and Specification Document (RASD), to well-understand
+ the given problem and to analyze in a detailed way which are our goals
+ and how to reach them defining requirements and specificati3on
+\end_layout
+
+\begin_layout Enumerate
+Design Document (DD), to define how we should implement our system.
+\end_layout
+
+\begin_layout Enumerate
+Test Plan Document (ITPD), it aims at describing how you plan to accomplish
+ the integration test
+\end_layout
+
+\begin_layout Chapter*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{5.
+ Scenarios Identifying}
+\end_layout
+
+\end_inset
+
+5.
+ Scenarios Identifying
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{N}{ow }
+\end_layout
+
+\end_inset
+
+i will propose some situation that could happen in the real world, in order
+ to bring out the real usage of SmartCityAdvisor:
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{5.1 Pope will arrive in the city}
+\end_layout
+
+\end_inset
+
+5.1 Pope will arrive in the city
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{N}{ext }
+\end_layout
+
+\end_inset
+
+ sunday Pope will be in Milan for a celebration in the cathedral.
+ The way from airport Milano Forlanini to city center will be blocked from
+ 8 a.m.
+ to 10 a.m.
+ in order to allow a safety travel.
+ Administration will log in with its special account in the system and it
+ will enter the event.
+\begin_inset Newline newline
+\end_inset
+
+In the previus day, system will inform citizens and turists: each registred
+ user will recive a notify that will inform about the event and in the notify
+ will be indicated three different possibilities to pass from south-east
+ to north-east of Milan (and from north-east to south-east) in order to
+ reduce the hardships for citizens.
+ Also in the large information monitor in the main street will be indicated
+ the event and during that day, system will manage traffic situation trough
+ particular actators that allow to control traffic lights.
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{5.2 It's happened an accident}
+\end_layout
+
+\end_inset
+
+5.2 It's happened an accident
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{I}{s }
+\end_layout
+
+\end_inset
+
+Monday morning and all people are going to work.
+ In the traffic is very easy that could happen and accident and it happens.
+ When people involved on it or people that have seen it call the police,
+ an automatically information will bi insert in the system.
+ The system will send a notification to all people registered to SmartCityAdviso
+r whit position and hours of the accidents.
+ If the accidents involve more vehicle, system might decide if divert traffic
+ with the control of traffic lights and if use the large monitos in the
+ city.
+ 
+\begin_inset Newline newline
+\end_inset
+
+With all these information, citizens and turist could find the best way
+ in order to reach their destinations.
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{5.3 Medical Emergency}
+\end_layout
+
+\end_inset
+
+5.3 Medical Emergency
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{M}{arco }
+\end_layout
+
+\end_inset
+
+is working on the roof when he falls down.
+ His girfriend Francesca must found an hospital that could trat probables
+ fractures and, if possible, without long queue.
+ She will open the application and will select 'emergency', then she could
+ see hospitals w.r.t.
+ their position.
+ About each hospital she might see the principal specialization and if queues
+ are long.
+ When she will decide which should be the best structure, she will select
+ it and a notification abount the new patient will be send to the selected
+ structure.
+ 
+\end_layout
+
+\begin_layout Section*
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{5.4 Sunday Outing}
+\end_layout
+
+\end_inset
+
+5.4 Sunday Outing
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{T}{ommaso }
+\end_layout
+
+\end_inset
+
+needs to go to the city center with all the family.
+ For this reason he has decided to use his car but he knows that the parking
+ availability is a big problem in Milan.
+ Tommaso will open the app and will select 'parking availability' in the
+ main page; after that he will insert his destination, system will propose
+ him all available parking at maximum 15 minutes walk for the prefixed zone
+ with the number of remaing car park.
+ 
+\begin_inset Newline newline
+\end_inset
+
+In the first implementation of the service he could not do other things
+ but probably, in the future, he could reserve the park for some minutes
+ (five, then, fifteen....) and he will pay a price directly proportional with
+ the time select.
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{5.5 One mounth without rain}
+\end_layout
+
+\end_inset
+
+5.5 One mounth without rain
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{I}{n }
+\end_layout
+
+\end_inset
+
+city like Milan, one of the biggest problem are period without rain and
+ this is just happened.
+ In the last 30 days the city has exceeded the limit of fine particles imposed
+ by the European Community for 22.
+ This is a not trivial problem becouse is dangerous to healt, in particular
+ for old people and children.
+ The air is unbreathable so the city has decided to limit the cars entries
+ in the city center.
+ Exceptional rule has been indicated in the large monitore beside main streets
+ and also by notification to all registered people to SmartCityAdvisor.
+\begin_inset Newline newline
+\end_inset
+
+Furthermore, all cars of persons not resident in the city center that will
+ be find into it during the block, will be fined.
+ 
+\end_layout
+
+\begin_layout Chapter*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{6.
+ Models}
+\end_layout
+
+\end_inset
+
+6.
+ Models
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{I}{n }
+\end_layout
+
+\end_inset
+
+the following sections i will reports models taht represent how the application
+ might be implemented with all operation sequences and all functionalities
+ that each actor could have, some of these one only after registration and
+ log in.
+ 
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{6.1 Use Case Diagrams}
+\end_layout
+
+\end_inset
+
+6.1 Use Case Diagrams
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{6.1.1 Guests and Users}
+\end_layout
+
+\end_inset
+
+6.1.1 Guests and Users
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.50] at (current page.center) {
+\backslash
+includegraphics{UseCase1}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{6.1.2 Superusers}
+\end_layout
+
+\end_inset
+
+6.1.2 Superusers
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.40] at (current page.center) {
+\backslash
+includegraphics{UseCase2}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{6.2 Sequence Diagrams}
+\end_layout
+
+\end_inset
+
+6.2 Sequence Diagrams
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{6.2.1 Registration And Log in}
+\end_layout
+
+\end_inset
+
+6.2.1 Registration And Log in
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.45] at (current page.center) {
+\backslash
+includegraphics{SequenceLogIn}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{TabReg}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{TabLogin}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{6.2.2 Application Usage }
+\end_layout
+
+\end_inset
+
+6.2.2 Appication Usage
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{6.2.3 Log In As Superuser and Administration
+ Functionalities }
+\end_layout
+
+\end_inset
+
+6.2.3 Log In As Superuser and Functionalities 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.45] at (current page.center) {
+\backslash
+includegraphics{SequenceAdmin}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{TabLogAsSuper}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{TabAdminNewEvent}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{6.2.4 Hospital Structure Functionalities
+ }
+\end_layout
+
+\end_inset
+
+6.2.4 Hospital Structure Functionalities
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.45] at (current page.center) {
+\backslash
+includegraphics{SequenceHospital}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{6.2.5 Police Station Functionalities }
+\end_layout
+
+\end_inset
+
+6.2.5 Police Station Functionalities
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.45] at (current page.center) {
+\backslash
+includegraphics{SequencePolice}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{TabHelpRequest}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{6.2.6 Public Transport Company Functionalities
+ }
+\end_layout
+
+\end_inset
+
+6.2.6 Public Transport Company Functionalities
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.5] at (current page.center) {
+\backslash
+includegraphics{SequenceTransport}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{TabSpecialNot}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{6.3 Class Diagrams}
+\end_layout
+
+\end_inset
+
+6.3 Class Diagrams
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.58] at (current page.center) {
+\backslash
+includegraphics{ClassDiagram}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{7.Alloy Modelling}
+\end_layout
+
+\end_inset
+
+7.Alloy Modelling 
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{7.1 Alloy Code}
+\end_layout
+
+\end_inset
+
+7.1 Alloy Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{I}{n}
+\end_layout
+
+\end_inset
+
+ order to confirm concistency about models that are been presented, is been
+ used Alloy model that allows to create the dependences between actors and
+ actions in a simulater real-world.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[language=alloy]{
+\backslash
+string"../RASD/Alloy/AlloyWorld
+\backslash
+string".als}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{7.2 Generated World}
+\end_layout
+
+\end_inset
+
+7.2 Generated World
+\end_layout
+
+\begin_layout Chapter*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{8.Used Tools and Work Timing}
+\end_layout
+
+\end_inset
+
+8.Used Tools and Work Timing
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{F}{or }
+\end_layout
+
+\end_inset
+
+create this documet we have used:
+\end_layout
+
+\begin_layout Description
+LYX to create a well-formatted document
+\end_layout
+
+\begin_layout Description
+moqups.com to create the UI sketches;
+\end_layout
+
+\begin_layout Description
+VisualParadigm10 Community Edition to create Sequence Diagrams and State
+ Charts;
+\end_layout
+
+\begin_layout Description
+AlloyAnalyzer4.2 to prove the consistency of 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{R}{eguarding }
+\end_layout
+
+\end_inset
+
+the drafting of this document, i have spent about hours.
+ Problably, during a team group, this thin will be the same for each component
+ becouse the time that normally is used for coordinate the work is very
+ relevant.
+\end_layout
+
+\end_body
+\end_document
