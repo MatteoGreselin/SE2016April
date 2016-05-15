@@ -184,7 +184,7 @@ purpose of this document is providing requirements and specifications about
 The application will be called 'SmartCityAdvisor' and its scope will be
  provide to citizen more information about pubblic service situation, like
  hospital queues or parking availability, and to manage in the best possible
- way exceptional event like accidents, VIPs arrival or other, with a momentary
+ wayexceptional event like accidents, VIPs arrival or other, with a momentary
  traffic deviation.
  The objective of this project is improve the city life through a mobile
  application, that will allow to recive notifications about actual traffic
@@ -242,10 +242,6 @@ goals of the project will be:
 \end_layout
 
 \begin_layout Description
-[] Simplify the acces to the applications functionalities
-\end_layout
-
-\begin_layout Description
 [G1] Limit traffic that enters in the city coherently with CO2 levels
 \end_layout
 
@@ -271,6 +267,10 @@ goals of the project will be:
 
 \begin_layout Description
 [G7] Offer an user-friendly app
+\end_layout
+
+\begin_layout Description
+[G8] Simplify the acces to the applications functionalities
 \end_layout
 
 \begin_layout Section*
@@ -591,14 +591,14 @@ the future, application might be upgraded with other functionalities like:
 \end_layout
 
 \begin_layout Itemize
-Check public transport ⇒ if you need to use the public transport, you could
+Check public transports ⇒ if you need to use the public transport, you could
  use the app in order to see all buses or tram near you or to search the
  position of a fixed line and when you will find what you need, you could
  also buy the ticket.
 \end_layout
 
 \begin_layout Itemize
-Medical Examination Reservation: when you need to a medical reservation,
+Medical Examination Reservation ⇒ when you need to a medical reservation,
  you could use the application in order to choosing an hospital and booking
  an appoinment, coherently with medical staff availability and hospital
  specialization
@@ -1200,7 +1200,7 @@ lettrine{U}{ser }
 
 \end_inset
 
-interface of my SmartCityAdvisor application is very user friendly.
+interface of SmartCityAdvisor application is very user friendly.
  It is simple and intuitive, it has been tought in order to allows its use
  to all users
 \begin_inset Newline newline
@@ -1245,7 +1245,39 @@ end{tikzpicture}
 
 \end_inset
 
+The application will have principally three sections.
+ In the first one, people could check autonomally the traffic situation,
+ in the second one they could check the parking availabilities and in the
+ third one, probably the most important, they could find assistance in case
+ of emergency.
+ 
+\begin_inset Newline newline
+\end_inset
 
+This last section will provide an iterface where people could see queues
+ in the hospital or where hospital are or what are the specializations of
+ each one.
+ 
+\begin_inset Newline newline
+\end_inset
+
+But in case of emergency, with few simply click, they could receive assistance
+ regardig which is the best hospital for that emergency, filtering by type
+ of emergency, hospital position, traffic situation and location of citizens.
+ 
+\begin_inset Newline newline
+\end_inset
+
+This functionalities will be automatic but it will have always the support
+ of some human, in this way when arrives the request about a citizen in
+ a critiacal situation, staff coulf deliver an ambulance.
+\begin_inset Newline newline
+\end_inset
+
+Besides there will be other functionalities like 'contact us', 'about us',
+ 'profile managing', 'policies'..
+ that are all functionalities in order to guarantee the best service and
+ the higher possible transparency.
 \end_layout
 
 \begin_layout Subsection*
@@ -1447,6 +1479,10 @@ lettrine{R}{eguarding }
 
 specification, i will explain some aspect on how i will reach goals of the
  project:
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Description
@@ -2111,9 +2147,63 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.6] at (current page.center) {
+node [scale=0.65] at (current page.center) {
 \backslash
 includegraphics{SequenceHospitalEmer}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{TabEmergency}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{TabReserve}}; 
 \backslash
 end{tikzpicture}
 \end_layout
@@ -2222,6 +2312,29 @@ end{tikzpicture}
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{TabTrafficManage}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -2264,6 +2377,13 @@ end{tikzpicture}
 \end_layout
 
 \begin_layout Subsection*
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
 \begin_inset ERT
 status open
 
@@ -2289,21 +2409,13 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.45] at (current page.center) {
+node [scale=0.48] at (current page.center) {
 \backslash
 includegraphics{SequencePolice}}; 
 \backslash
 end{tikzpicture}
 \end_layout
 
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
 \end_inset
 
 
@@ -2412,6 +2524,22 @@ addcontentsline{toc}{section}{6.3 Class Diagrams}
 \end_inset
 
 6.3 Class Diagrams
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
