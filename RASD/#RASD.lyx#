@@ -2070,59 +2070,6 @@ addcontentsline{toc}{subsection}{6.2.2 Application Usage }
 6.2.2 Appication Usage
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tikzpicture}[remember picture] 
-\backslash
-node [scale=0.55] at (current page.center) {
-\backslash
-includegraphics{SequenceUsage}}; 
-\backslash
-end{tikzpicture}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tikzpicture}[remember picture] 
-\backslash
-node [scale=0.65] at (current page.center) {
-\backslash
-includegraphics{SequenceHospitalEmer}}; 
-\backslash
-end{tikzpicture}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection*
 \begin_inset ERT
 status open
@@ -2157,10 +2104,6 @@ includegraphics{SequenceAdmin}};
 end{tikzpicture}
 \end_layout
 
-\end_inset
-
-
-\begin_inset Newline newline
 \end_inset
 
 

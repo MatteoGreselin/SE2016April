@@ -2070,6 +2070,59 @@ addcontentsline{toc}{subsection}{6.2.2 Application Usage }
 6.2.2 Appication Usage
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{SequenceUsage}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.6] at (current page.center) {
+\backslash
+includegraphics{SequenceHospitalEmer}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection*
 \begin_inset ERT
 status open
@@ -2104,6 +2157,10 @@ includegraphics{SequenceAdmin}};
 end{tikzpicture}
 \end_layout
 
+\end_inset
+
+
+\begin_inset Newline newline
 \end_inset
 
 
@@ -2395,22 +2452,6 @@ addcontentsline{toc}{chapter}{7.Alloy Modelling}
 7.Alloy Modelling 
 \end_layout
 
-\begin_layout Section*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{section}{7.1 Alloy Code}
-\end_layout
-
-\end_inset
-
-7.1 Alloy Code
-\end_layout
-
 \begin_layout Standard
 \begin_inset ERT
 status open
@@ -2430,7 +2471,27 @@ lettrine{I}{n}
 \begin_inset Newline newline
 \end_inset
 
+In next sections is been reported the Alloy code and some images that rapresent
+ it when is executed, in order to bring out the concistency of our model.
+\end_layout
 
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{7.1 Alloy Code}
+\end_layout
+
+\end_inset
+
+7.1 Alloy Code
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -2464,6 +2525,51 @@ addcontentsline{toc}{section}{7.2 Generated World}
 \end_inset
 
 7.2 Generated World
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{alloyWorld1}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{alloyWorld2}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter*
@@ -2540,7 +2646,7 @@ lettrine{R}{eguarding }
 
 \end_inset
 
-the drafting of this document, i have spent about hours.
+the drafting of this document, i have spent about 28 hours.
  Problably, during a team group, this thin will be the same for each component
  becouse the time that normally is used for coordinate the work is very
  relevant.
