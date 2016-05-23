@@ -159,6 +159,16 @@ addcontentsline{toc}{section}{1.1 Purpose}
 1.1 Purpose
 \end_layout
 
+\begin_layout Standard
+This document is required in order to provide more detailed about the applicatio
+n design : which components are necessary, which architecture has been choosen
+ and why, how components are integrated each other, which should be the
+ interface that i want propose to guest/user and so on.
+ For bring out these things DD will use what has been described in the RASD
+ document: this means that there is a strictly relation between what are
+ the application requirement and which choises will be done.
+\end_layout
+
 \begin_layout Section*
 \begin_inset ERT
 status open
@@ -267,6 +277,14 @@ SOA: Service Oriented Architecture
 DB: DataBase
 \end_layout
 
+\begin_layout Itemize
+DBMS : Data Base Management System
+\end_layout
+
+\begin_layout Itemize
+JEE : Java Enterprise Edition
+\end_layout
+
 \begin_layout Section*
 \begin_inset ERT
 status open
@@ -324,7 +342,38 @@ addcontentsline{toc}{section}{1.5 Reference Documents}
 \end_layout
 
 \begin_layout Standard
-For writing this domenc
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{I}{n}
+\end_layout
+
+\end_inset
+
+ this document we refer to following documentation: 
+\end_layout
+
+\begin_layout Itemize
+IEEE Std 1016-2009 (Revision of IEEE Std 1016-1998), Standard for Information
+ Technology Systems, Design Software, Design Descriptions 
+\end_layout
+
+\begin_layout Itemize
+International Standard ISO/IEC/IEE 42010 - First edition 2011-12-01 - Systems
+ and software engineering Architecture Description 
+\end_layout
+
+\begin_layout Itemize
+Template For The Design Document provided by prof.
+ Di Nitto 
+\end_layout
+
+\begin_layout Itemize
+RASD of smartiCityAdvisor® created me
 \end_layout
 
 \begin_layout Chapter*
@@ -343,6 +392,18 @@ addcontentsline{toc}{chapter}{2 Architectural Design}
 2 Architectural Design
 \end_layout
 
+\begin_layout Standard
+The idea is to use the pattern Model - View - Controller (MVC in the following)
+\begin_inset Newline newline
+\end_inset
+
+In the model there will be all the handlers (for the queue, for the traffic
+ situation, for the account...).
+ In the controller ther will be the connection point beetween the view and
+ each component.
+ 
+\end_layout
+
 \begin_layout Section*
 \begin_inset ERT
 status open
@@ -351,12 +412,259 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{2.1 System Overwiew}
+addcontentsline{toc}{section}{2.1 System Components}
 \end_layout
 
 \end_inset
 
-2.1 System Overwiew
+2.1 System Components
+\end_layout
+
+\begin_layout Standard
+The idea is to use the pattern Model - View - Controller (MVC in the following)
+\begin_inset Newline newline
+\end_inset
+
+In the section will be present main modules of each component.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.1.1 Model Module}
+\end_layout
+
+\end_inset
+
+2.2.1 Model Module
+\end_layout
+
+\begin_layout Standard
+In the model there will be all the handlers (for the queue, for the traffic
+ situation, for the account...).
+ In the controller ther will be the connection point beetween the view and
+ each component.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.1.1 Queue Handler}
+\end_layout
+
+\end_inset
+
+2.2.1.1 Queue Handler
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.1.2 Help Request Handler}
+\end_layout
+
+\end_inset
+
+2.2.1.2 Help Request Handler
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.1.3 Parking Handler}
+\end_layout
+
+\end_inset
+
+2.2.1.3 Parking Handler
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.1.4 Notification Handler}
+\end_layout
+
+\end_inset
+
+2.2.1.4 Notification Handler
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.1.5 Account And Data Handler}
+\end_layout
+
+\end_inset
+
+2.2.1.5 Account And Data Handler
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.1.2 View Moduel}
+\end_layout
+
+\end_inset
+
+2.2.2 View Moduel
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.2.1 Guest View}
+\end_layout
+
+\end_inset
+
+2.2.2.1 Guest View
+\end_layout
+
+\begin_layout Standard
+This view will provide all basic functionalities: traffic situation, parking
+ availability, hospital queue situation, event scheduled.
+ For reach this set of views is sufficient have a device and an internet
+ connection.
+ it doesn't need any type of registration but if doesn't permit to use the
+ entire set of functionalities of application.
+ 
+\begin_inset Newline newline
+\end_inset
+
+For more details about difference between guest functionalities and user
+ functionalitis might be consulted RASD.
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.2.2 User View}
+\end_layout
+
+\end_inset
+
+2.2.2.2 User View
+\end_layout
+
+\begin_layout Standard
+This view is the real view for user, because it permits to use all functionaliti
+s.
+ In ordert use this set of views is necessary an easy and quick registration.
+ The functionalities that a user could be use with respect to guests are
+ :
+\end_layout
+
+\begin_layout Itemize
+receive notification about accidents in real time
+\end_layout
+
+\begin_layout Itemize
+receive notification for each new event scheduled
+\end_layout
+
+\begin_layout Itemize
+reserve parking
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.2.3 Superuser Views}
+\end_layout
+
+\end_inset
+
+2.2.2.3 Superuser Views
+\end_layout
+
+\begin_layout Standard
+With 'superuser view' i mean the set of views for who will be log in as
+ superuser.
+ This set of view will not have any functionalities reserved to classic
+ guests/user, because these will be only managements view.
+\begin_inset Newline newline
+\end_inset
+
+The access to these voew will be allowed only to city administration, public
+ transport company, hospitals, police stations
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.1.3 Control Module}
+\end_layout
+
+\end_inset
+
+2.2.3 Control Module
+\end_layout
+
+\begin_layout Standard
+This module represents the part of the system that is in contact with the
+ users and guest.
+ It is the connection between the view module, loaded on the user's devices,
+ and the model module, that is loaded on the server.
+ This part too has to be loaded and performed by a dedicated server area.
 \end_layout
 
 \begin_layout Section*
@@ -472,6 +780,51 @@ addcontentsline{toc}{chapter}{3.Algorithms Design}
  Algorithms Design
 \end_layout
 
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{3.1 Queue Algorithms}
+\end_layout
+
+\end_inset
+
+3.1 Queue Algorithms
+\end_layout
+
+\begin_layout Standard
+The algorithms that manages the hospitals queues is very basic.
+ In the DB will be stored data with the following schema: 
+\end_layout
+
+\begin_layout Itemize
+first value in the record will be the hospital;
+\end_layout
+
+\begin_layout Itemize
+second value of the record will be the specialization, this means for which
+ pathology i'm requirinq a medical visit;
+\end_layout
+
+\begin_layout Itemize
+third value will be a variable that will indicate the number of person that
+ are waiting for it.
+\end_layout
+
+\begin_layout Standard
+When someone will arrive in a hospital he/she could retire the ticket with
+ his/her queue number, after selecting the right hospital specialization.
+ Then the system will update the third value of the record reguarding the
+ selected hospital specialization.
+ When someone will be called in the ambulatory, nurse will inform system
+ that will reduce to one that queue.
+ 
+\end_layout
+
 \begin_layout Chapter*
 \begin_inset ERT
 status open
@@ -538,7 +891,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [,scale=0.58] at (current page.center) {
+node [scale=0.58] at (current page.center) {
 \backslash
 includegraphics{hospitalqueue}}; 
 \backslash
@@ -559,7 +912,7 @@ status open
 
 
 \backslash
-begin{tikzpictu3re}[remember picture] 
+begin{tikzpicture}[remember picture] 
 \backslash
 node [scale=0.58] at (current page.center) {
 \backslash
@@ -783,38 +1136,6 @@ addcontentsline{toc}{subsection}{4.3.4 Public Transport Company}
 4.3.4 Public Transport Company
 \end_layout
 
-\begin_layout Section*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{section}{4.1 }
-\end_layout
-
-\end_inset
-
-4.
-\end_layout
-
-\begin_layout Section*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{section}{4.1 }
-\end_layout
-
-\end_inset
-
-4.
-\end_layout
-
 \begin_layout Chapter*
 \begin_inset ERT
 status open
@@ -873,25 +1194,39 @@ LYX to create a well-formatted document
 moqups.com to create the UI sketches;
 \end_layout
 
-\begin_layout Description
+\begin_layout Standard
 VisualParadigm10 Community Edition to create Sequence Diagrams and State
  Charts;
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{E}{xtra }
 \end_layout
 
-\begin_layout Description
-AlloyAnalyzer4.2 to prove the consistency of 
-\begin_inset Newline newline
 \end_inset
 
+documentation consulted:
+\end_layout
 
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
+\begin_layout Itemize
+Business Process Model and Notation (BPMN) - Version 2.0 provided by OMG
+ (Object Management Group)
 \end_layout
 
 \begin_layout Standard
