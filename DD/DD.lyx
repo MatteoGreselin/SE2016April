@@ -447,9 +447,7 @@ addcontentsline{toc}{subsection}{2.1.1 Model Module}
 \begin_layout Standard
 In the model there will be all the handlers (for the queue, for the traffic
  situation, for the account...).
- In the controller ther will be the connection point beetween the view and
- each component.
- 
+ Next subsection will explain in details each function managed by each handler
 \end_layout
 
 \begin_layout Subsubsection*
@@ -460,76 +458,401 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsubsection}{2.1.1.1 Queue Handler}
-\end_layout
-
-\end_inset
-
-2.2.1.1 Queue Handler
-\end_layout
-
-\begin_layout Subsubsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsubsection}{2.1.1.2 Help Request Handler}
-\end_layout
-
-\end_inset
-
-2.2.1.2 Help Request Handler
-\end_layout
-
-\begin_layout Subsubsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsubsection}{2.1.1.3 Parking Handler}
-\end_layout
-
-\end_inset
-
-2.2.1.3 Parking Handler
-\end_layout
-
-\begin_layout Subsubsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsubsection}{2.1.1.4 Notification Handler}
-\end_layout
-
-\end_inset
-
-2.2.1.4 Notification Handler
-\end_layout
-
-\begin_layout Subsubsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsubsection}{2.1.1.5 Account And Data Handler}
+addcontentsline{toc}{subsubsection}{2.1.1.1 Account And Data Handler}
 \end_layout
 
 \end_inset
 
 2.2.1.5 Account And Data Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{T}{his}
+\end_layout
+
+\end_inset
+
+ is the main handler: it hase a direct connection with the DB and for this
+ reason each action that willl required an access to DB, will br interfaced
+ with this handler.
+ It manage data and user accounts and this includes also the functionality
+ 'profile managing'.
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.1.2 Events Handler}
+\end_layout
+
+\end_inset
+
+2.1.1.2 Events Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{T}{o}
+\end_layout
+
+\end_inset
+
+ this handler could have access the City Administration with privileges
+ in order to add/remove/edit event scheduling and Users or Guests in order
+ to see events scheduled.
+ This component will also manage (if necessary) the event for its entire
+ period: it will need to be intefaced with Traffic Managment Handler and
+ Notification Handler.
+ Obviously, in order to save data, this component must be interfaced also
+ with Account And Data Handler.
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.1.3 Help Request Handler}
+\end_layout
+
+\end_inset
+
+2.1.1.3 Help Request Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{T}{his}
+\end_layout
+
+\end_inset
+
+ component will manage external request, it could be used by Police Stations,
+ Fire Fighters Stations and Hospital when an external emergency call arrive.
+ It will insert the new accident in the system and for this reason it will
+ need to be interfaced with the Account and Data Handler
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.1.4 Map Handler}
+\end_layout
+
+\end_inset
+
+2.1.1.4 Map Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{I}{t}
+\end_layout
+
+\end_inset
+
+ have the task to provide an usable map to the application : it will received
+ data by Google Maps API and it will prepare them in order to make the usable
+ for Traffic Situation Handler
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.1.5 Notification Handler}
+\end_layout
+
+\end_inset
+
+2.1.1.5 Notification Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{T}{his}
+\end_layout
+
+\end_inset
+
+ handler will manage the entire group of notification: 
+\end_layout
+
+\begin_layout Itemize
+notification attempts by Public Transport Company
+\end_layout
+
+\begin_layout Itemize
+feedback by City Administration about notification attempts
+\end_layout
+
+\begin_layout Itemize
+notification sended by City administration
+\end_layout
+
+\begin_layout Itemize
+notifications send to Users
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.1.6 Parking Handler}
+\end_layout
+
+\end_inset
+
+2.1.1.6 Parking Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{T}{his}
+\end_layout
+
+\end_inset
+
+ compontent will receive data from each car park in the city : each car
+ that will go in or out by that car park will pass on a sensor that will
+ send a specific signal to the handler.
+ It will need to be interfaced with Account And Data Handler in order to
+ update data and it could be used by guest for seeing parks availability
+ and by users for seeing parks available or reserve a car parks
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.1.7 Pollution Handler}
+\end_layout
+
+\end_inset
+
+2.1.1.7 Pollution Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{T}{his}
+\end_layout
+
+\end_inset
+
+ handler will be used only for receiving data by CO
+\size tiny
+2 
+\size default
+sensors and elaborate them with respect to prefixed values.
+ If CO
+\size tiny
+2 
+\size default
+levels will be to higher, a signal will be send to Traffic Situation Handler
+ in order to block the car entries in the city.
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.1.8 Pubblic Transport Handler}
+\end_layout
+
+\end_inset
+
+2.1.1.8 Pubblic Transport Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{T}{his}
+\end_layout
+
+\end_inset
+
+ handler will be used for receiving GPS of Public Tranport vehicles and
+ forward them to Traffic Situation Handler.
+ Users And Guest could see these GPS position and Public Transport Company
+ could manage transport line (for example add new line or remove it, insert
+ information about momentanely technical failure and so on...).
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.1.9 Queue Handler}
+\end_layout
+
+\end_inset
+
+2.1.1.9 Queue Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{T}{his}
+\end_layout
+
+\end_inset
+
+ component will manage the queue in the hospital, it could be access with
+ privileges by hospital and without privileges by Guests and Users.
+ More ditails abount algorithms that control this handler will be provide
+ in chapter 3.
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.1.10 Traffic Handler}
+\end_layout
+
+\end_inset
+
+2.1.1.10 Traffic Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{I}{t}
+\end_layout
+
+\end_inset
+
+ will be interfaced with:
+\end_layout
+
+\begin_layout Itemize
+Accounts And Data Handler in order to receive data about new accidents and
+ update the traffic situation
+\end_layout
+
+\begin_layout Itemize
+Maps handler in order to intergat traffic situation with map;
+\end_layout
+
+\begin_layout Itemize
+Pullution Handler in order to activate the block of the traffic with relation
+ to CO
+\size tiny
+2
+\size scriptsize
+ 
+\size default
+levels 
+\end_layout
+
+\begin_layout Itemize
+Traffic LIght and Main Monitors at the sides of streets in order to manage
+ traffic in the better way
+\end_layout
+
+\begin_layout Standard
+Users and Guest could be access to this component for viewing the traffic
+ situation in real time and City Administion could deactivate automatic
+ traffic managing anf perform if manually.
 \end_layout
 
 \begin_layout Subsection*
@@ -683,6 +1006,28 @@ addcontentsline{toc}{section}{2.2 Component View}
 2.2 Component View
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.62] at (current page.center) {
+\backslash
+includegraphics{ComponentView}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
 \begin_inset ERT
 status open
@@ -697,6 +1042,28 @@ addcontentsline{toc}{section}{2.3 Deployment View}
 \end_inset
 
 2.3 Deployment View
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.48] at (current page.center) {
+\backslash
+includegraphics{DeploymentView}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
@@ -1141,12 +1508,13 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{4.3.3 Police Station }
+addcontentsline{toc}{subsection}{4.3.3 Police Stations and Fire Fighters Stations
+ }
 \end_layout
 
 \end_inset
 
-4.3.3 Police Station
+4.3.3 Police Stations and Fire Fighters Stations
 \end_layout
 
 \begin_layout Subsection*
