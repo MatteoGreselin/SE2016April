@@ -1727,74 +1727,6 @@ addcontentsline{toc}{subsection}{4.3.1 City Administration }
 4.3.1 City Administration
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tikzpicture}[remember picture] 
-\backslash
-node [scale=0.48] at (current page.center) {
-\backslash
-includegraphics{city1}}; 
-\backslash
-end{tikzpicture}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tikzpicture}[remember picture] 
-\backslash
-node [scale=0.48] at (current page.center) {
-\backslash
-includegraphics{city2}}; 
-\backslash
-end{tikzpicture}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tikzpicture}[remember picture] 
-\backslash
-node [scale=0.48] at (current page.center) {
-\backslash
-includegraphics{city3}}; 
-\backslash
-end{tikzpicture}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection*
 \begin_inset ERT
 status open
@@ -1809,28 +1741,6 @@ addcontentsline{toc}{subsection}{4.3.2 Hospital }
 \end_inset
 
 4.3.2 Hospital
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tikzpicture}[remember picture] 
-\backslash
-node [scale=0.48] at (current page.center) {
-\backslash
-includegraphics{hospital1}}; 
-\backslash
-end{tikzpicture}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection*
@@ -1850,28 +1760,6 @@ addcontentsline{toc}{subsection}{4.3.3 Police Stations and Fire Fighters Station
 4.3.3 Police Stations and Fire Fighters Stations
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tikzpicture}[remember picture] 
-\backslash
-node [scale=0.48] at (current page.center) {
-\backslash
-includegraphics{helpRequest}}; 
-\backslash
-end{tikzpicture}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection*
 \begin_inset ERT
 status open
@@ -1886,51 +1774,6 @@ addcontentsline{toc}{subsection}{4.3.4 Public Transport Company}
 \end_inset
 
 4.3.4 Public Transport Company
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tikzpicture}[remember picture] 
-\backslash
-node [scale=0.48] at (current page.center) {
-\backslash
-includegraphics{transportCompany}}; 
-\backslash
-end{tikzpicture}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tikzpicture}[remember picture] 
-\backslash
-node [scale=0.48] at (current page.center) {
-\backslash
-includegraphics{transportCompany2}}; 
-\backslash
-end{tikzpicture}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Chapter*

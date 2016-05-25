@@ -160,13 +160,13 @@ addcontentsline{toc}{section}{1.1 Purpose}
 \end_layout
 
 \begin_layout Standard
-This document is required in order to provide more detailed about the applicatio
-n design : which components are necessary, which architecture has been choosen
+This document is required in order to provide more details about the application
+ design : which components are necessary, which architecture has been choosen
  and why, how components are integrated each other, which should be the
  interface that i want propose to guest/user and so on.
- For bring out these things DD will use what has been described in the RASD
- document: this means that there is a strictly relation between what are
- the application requirement and which choises will be done.
+ For bring out these things, DD will use what has been described in the
+ RASD document: this means that there is a strictly relation between what
+ are the application requirement and which choises will be done.
 \end_layout
 
 \begin_layout Section*
@@ -198,55 +198,7 @@ addcontentsline{toc}{section}{1.3 Glossary}
 
 \end_inset
 
-1.3 Glossary
-\end_layout
-
-\begin_layout Subsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsection}{1.3.1 Definitions}
-\end_layout
-
-\end_inset
-
-1.3.1 Definitions
-\end_layout
-
-\begin_layout Subsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsection}{1.3.2 Abbreviations}
-\end_layout
-
-\end_inset
-
-1.3.3Abbreviations
-\end_layout
-
-\begin_layout Subsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsection}{1.3.3 Acronyms}
-\end_layout
-
-\end_inset
-
-1.3.3 Acronyms
+1.3 Definitions, Acronyms, Abbreviations
 \end_layout
 
 \begin_layout Itemize
@@ -266,7 +218,7 @@ FIFO: First In First Out, it's a policy applied to the queue managing.
 \end_layout
 
 \begin_layout Itemize
-PAAS: Platform As A Service
+PaaS: Platform As A Service
 \end_layout
 
 \begin_layout Itemize
@@ -293,47 +245,7 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{1.4 Document Overview}
-\end_layout
-
-\end_inset
-
-1.4 Document Overview
-\end_layout
-
-\begin_layout Standard
-The document will be structured in the following way:
-\end_layout
-
-\begin_layout Itemize
-In the first chapter there will be the architectural design, with a detailed
- description about componets that will interact in order to perfom the service
-\end_layout
-
-\begin_layout Itemize
-In the second chapter i will bring out some of main algoritms that the system
- will manage.
- This section will be done using pseudocode and diagrams
-\end_layout
-
-\begin_layout Itemize
-In the third chapter will be presented a grafical explanation abount experience
- of application usage
-\end_layout
-
-\begin_layout Itemize
-Fifth and sixth chapter will be conclusions and requirements traceability
-\end_layout
-
-\begin_layout Section*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{section}{1.5 Reference Documents}
+addcontentsline{toc}{section}{1.4 Reference Documents}
 \end_layout
 
 \end_inset
@@ -376,6 +288,48 @@ Template For The Design Document provided by prof.
 RASD of smartiCityAdvisor® created me
 \end_layout
 
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{1.5 Document Structure}
+\end_layout
+
+\end_inset
+
+1.4 Document Structure
+\end_layout
+
+\begin_layout Standard
+The document will be structured in 6 chapter.
+ After this one, that is an introduction chapter, the document will be structure
+d as following:
+\end_layout
+
+\begin_layout Itemize
+In the second chapter there will be the architectural design, with a detailed
+ description about componets that will interact in order to perfom the service
+\end_layout
+
+\begin_layout Itemize
+In the third chapter i will bring out some of main algoritms that the system
+ will manage.
+ This section will be done using pseudocode and diagrams
+\end_layout
+
+\begin_layout Itemize
+In the fourth chapter will be presented a grafical explanation abount experience
+ of application usage
+\end_layout
+
+\begin_layout Itemize
+Fifth and sixth chapter will be conclusions and requirements traceability
+\end_layout
+
 \begin_layout Chapter*
 \begin_inset ERT
 status open
@@ -393,15 +347,13 @@ addcontentsline{toc}{chapter}{2 Architectural Design}
 \end_layout
 
 \begin_layout Standard
-The idea is to use the pattern Model - View - Controller (MVC in the following)
-\begin_inset Newline newline
-\end_inset
-
-In the model there will be all the handlers (for the queue, for the traffic
- situation, for the account...).
- In the controller ther will be the connection point beetween the view and
- each component.
- 
+In the next sections will be explained all choise about archirectural decision.
+ I will describe components, their integration in the system and how they
+ will interact between them.
+ A section will be dedicated to more algorithmic parts of system as traffic
+ situation or parking reservation; for these parts will be used pseudocode
+ in order to allow to each reader to understand the system that i want propose,
+ without the necessity of informatic knowledge.
 \end_layout
 
 \begin_layout Section*
@@ -421,11 +373,25 @@ addcontentsline{toc}{section}{2.1 System Components}
 \end_layout
 
 \begin_layout Standard
-The idea is to use the pattern Model - View - Controller (MVC in the following)
-\begin_inset Newline newline
-\end_inset
+The idea is to use the pattern Model - View - Controller, in the following
+ subsection will be present main modules of each component.
+ 
+\end_layout
 
-In the section will be present main modules of each component.
+\begin_layout Itemize
+In the model there will be all the handlers (for the queue, for the traffic
+ situation, for the account...)
+\end_layout
+
+\begin_layout Itemize
+The controller will have the task to forward information between view and
+ model, in realtion with the type of account
+\end_layout
+
+\begin_layout Itemize
+The view will differenciate what each person could see on his device, with
+ respect to the type of log in, if it has been done, otherwise will be proposed
+ guest view ad default view) 
 \end_layout
 
 \begin_layout Subsection*
@@ -442,12 +408,6 @@ addcontentsline{toc}{subsection}{2.1.1 Model Module}
 \end_inset
 
 2.2.1 Model Module
-\end_layout
-
-\begin_layout Standard
-In the model there will be all the handlers (for the queue, for the traffic
- situation, for the account...).
- Next subsection will explain in details each function managed by each handler
 \end_layout
 
 \begin_layout Subsubsection*
@@ -479,11 +439,13 @@ lettrine{T}{his}
 
 \end_inset
 
- is the main handler: it hase a direct connection with the DB and for this
- reason each action that willl required an access to DB, will br interfaced
- with this handler.
+ is the main handler: it is directly connected with DB and for this reason
+ each action that willl required an access to DB will be interfaced with
+ this handler.
  It manage data and user accounts and this includes also the functionality
  'profile managing'.
+ This handler will be used also as final protection against attacks versus
+ DB.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -515,8 +477,8 @@ lettrine{T}{o}
 
 \end_inset
 
- this handler could have access the City Administration with privileges
- in order to add/remove/edit event scheduling and Users or Guests in order
+ this handler could have access the City Administration with privileges,
+ in order to add/remove/edit event scheduling and Users or Guests, in order
  to see events scheduled.
  This component will also manage (if necessary) the event for its entire
  period: it will need to be intefaced with Traffic Managment Handler and
@@ -888,11 +850,23 @@ addcontentsline{toc}{subsubsection}{2.1.2.1 Guest View}
 \end_layout
 
 \begin_layout Standard
-This view will provide all basic functionalities: traffic situation, parking
- availability, hospital queue situation, event scheduled.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{T}{his}
+\end_layout
+
+\end_inset
+
+ view will provide all basic functionalities: traffic situation, parking
+ availability, hospital queues situation, event scheduled.
  For reach this set of views is sufficient have a device and an internet
  connection.
- it doesn't need any type of registration but if doesn't permit to use the
+ It doesn't need any type of registration but it doesn't permit to use the
  entire set of functionalities of application.
  
 \begin_inset Newline newline
@@ -919,9 +893,9 @@ addcontentsline{toc}{subsubsection}{2.1.2.2 User View}
 \end_layout
 
 \begin_layout Standard
-This view is the real view for user, because it permits to use all functionaliti
-s.
- In ordert use this set of views is necessary an easy and quick registration.
+This view perform the complete experience that application wants to provide
+ to users because it permits to use all functionalitis.
+ In order to use this set of views is necessary an easy and quick registration.
  The functionalities that a user could be use with respect to guests are
  :
 \end_layout
@@ -931,7 +905,11 @@ receive notification about accidents in real time
 \end_layout
 
 \begin_layout Itemize
-receive notification for each new event scheduled
+receive notification about event scheduled
+\end_layout
+
+\begin_layout Itemize
+receive notification about unexpected traffic car block (due to pollution)
 \end_layout
 
 \begin_layout Itemize
@@ -946,24 +924,93 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsubsection}{2.1.2.3 Superuser Views}
+addcontentsline{toc}{subsubsection}{2.2.2.3 City Administration View}
 \end_layout
 
 \end_inset
 
-2.2.2.3 Superuser Views
+2.2.2.3 City Administration View
 \end_layout
 
 \begin_layout Standard
-With 'superuser view' i mean the set of views for who will be log in as
- superuser.
- This set of view will not have any functionalities reserved to classic
- guests/user, because these will be only managements view.
-\begin_inset Newline newline
+This view could be see only with log in as superuser 'City Administration'.
+ With this view, Administration employees could manage notification by Public
+ Transport Company, could send notification to user, could take the control
+ of traffic managing or scheduled new events.
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.2.4 Hospital View}
+\end_layout
+
 \end_inset
 
-The access to these voew will be allowed only to city administration, public
- transport company, hospitals, police stations
+2.2.2.4 Hospital View
+\end_layout
+
+\begin_layout Standard
+This view could be see only with log in as superuser 'Hospital'.
+ It will permit to manage the hospital profile, in order to edit hospital
+ specialization, and it will permit to see all new help requests insert
+ in the system in the last 60minutes and, if necessary, to add/remove an
+ help request.
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.2.5 Police Station and Fire Fighters
+ Station View}
+\end_layout
+
+\end_inset
+
+2.2.2.5 Police Station and Fire Fighters Station View
+\end_layout
+
+\begin_layout Standard
+This view could be see only with log in as superuser 'Police Station' or
+ 'Fire Fighter Station'.
+ It will permit to see all new help requests insert in the system in the
+ last 60minutes and, if necessary, to add/remove an help request.
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.1.2.6 Public Transport Company View}
+\end_layout
+
+\end_inset
+
+2.2.2.6 Public Transport Company View
+\end_layout
+
+\begin_layout Standard
+This view could be see only with log in as superuser 'Public Transport Company'.
+ It will permit to edit transport line route or direclty delete a trasport
+ line if it has been deleted.
+ It will permit also to try to send notification to user (for technical
+ information or news) but this type of notification must receive a positive
+ feedback by City Administration, in order to reduce unuseful message on
+ citizen devices.
 \end_layout
 
 \begin_layout Subsection*
@@ -1054,7 +1101,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.5] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{DeploymentView}}; 
 \backslash
@@ -1082,6 +1129,14 @@ addcontentsline{toc}{section}{2.4 Runtime View}
 2.4 Runtime View
 \end_layout
 
+\begin_layout Standard
+In this section will be present some view about possible usage of application.
+ The objective is to bring out the interaction between components presented
+ in this DD.
+ For this reason will be used the concepts of the sequence diagram of RASD
+ and will be modify with the DD specification.
+\end_layout
+
 \begin_layout Section*
 \begin_inset ERT
 status open
@@ -1090,15 +1145,15 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{2.5 Other Design Choises}
+addcontentsline{toc}{section}{2.5 Component Interface}
 \end_layout
 
 \end_inset
 
-2.5 Other Design Choises
+2.5 Component Interface
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Section*
 \begin_inset ERT
 status open
 
@@ -1106,28 +1161,16 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{2.5.1 Architectural Styles}
+addcontentsline{toc}{section}{2.6 Other Design Choises}
 \end_layout
 
 \end_inset
 
-2.5.1 Architectural Styles
+2.6 Other Design Choises
 \end_layout
 
-\begin_layout Subsubsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsection}{2.5.2 Patterns}
-\end_layout
-
-\end_inset
-
-2.5.2 Patterns
+\begin_layout Standard
+MVC - TCP/IP
 \end_layout
 
 \begin_layout Chapter*
@@ -1210,15 +1253,199 @@ addcontentsline{toc}{section}{3.2 New Help Request Algorithms}
 
 \begin_layout Standard
 As explain in RASD i assume that when there is a big accident somone call
- police or hospital.
+ police ,hospital or fire fighter.
  Usually there is an operator that answer to help requests and must advice
  his/her collegues in order to permit a rapid rescue.
- When he/she answer to help request he/she must take note about main information
- (place of accident, people injured, dangerous situation...) and these actions
- will be done with a PC.
- The information will be send directly to collegues, but also to system
- that will check if there will be some similar record in the DB.
- First discrimination will be done on hour
+ The addition of new help request to the system could be perform in the
+ following way:
+\end_layout
+
+\begin_layout Itemize
+When he/she answer to help request he/she could see on the right side of
+ monitor the help requests received in the last 60 minutes
+\end_layout
+
+\begin_layout Itemize
+If any request corrispond to the actual one, operator will add the new request
+\end_layout
+
+\begin_layout Itemize
+He/she must take note about main information (place of accident, people
+ injured, dangerous situation...)
+\end_layout
+
+\begin_layout Itemize
+The information will be send directly to collegues, but also to system 
+\end_layout
+
+\begin_layout Itemize
+System will check if there will be some similar record in the DB, giving
+ following priority:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+System will exclude all help request that have been included more that 20
+ minutes ago
+\end_layout
+
+\begin_layout Itemize
+System will exclude all requests not included in a radius of 150m
+\end_layout
+
+\begin_layout Itemize
+System will exclude all requests with different data (different number of
+ car involved, different number of injured person
+\end_layout
+
+\begin_layout Standard
+If some of the previous discrimination will create an ambiguity, human decision
+ will be required.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+When the rescue will be complete, the operator could remove the help request
+ from the system if other operators have not already done it.
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{3.3 Traffic Managing Algorithms}
+\end_layout
+
+\end_inset
+
+3.3 Traffic Managing Algorithms
+\end_layout
+
+\begin_layout Standard
+We assume that city were SmartCityAdvisor will be used will be divided in
+ areas.
+ The number of them will be variable with respect to the expansion of the
+ city.
+ When a pollution sensor will releve a level of pollution higher than the
+ fixed level, it will send a precise signal to the Pollution Handler.
+ Then Pollution Handler will forwar to Traffic Situation Handler data that
+ will conatin:
+\end_layout
+
+\begin_layout Itemize
+ID about zone where sensor has been activated;
+\end_layout
+
+\begin_layout Itemize
+Pollution level, that will be a number between 1 and 10 that will indicate
+ the danger of situation.
+\end_layout
+
+\begin_layout Standard
+When Traffic Situation Handler receives this data will start its tasks:
+\end_layout
+
+\begin_layout Itemize
+It will start to send information to the interested areas, then to the adjacents
+ one and so on
+\end_layout
+
+\begin_layout Itemize
+It will send information to main monitors at the side of street if Pollution
+ Level will be higher or equal than 6 ;
+\end_layout
+
+\begin_layout Itemize
+It will start to manage traffic light in order to reduce (initially) and
+ block (as final situation) the traffic throgh the city until the CO2 level
+ will be higher that 2;
+\end_layout
+
+\begin_layout Itemize
+It will send notification to all users where will be indicate the zone where
+ the sensor has been activated and an aproximatively time before that the
+ entries could be reopen.
+\end_layout
+
+\begin_layout Standard
+A different situation will be perform if an events has been scheduled: in
+ this case must be blocked all streed interested by the event.
+\begin_inset Newline newline
+\end_inset
+
+We assume that Event Handler will send data to Traffic Situation Handler
+ each day: it will send all event scheduled that will happen in 7 days,
+ in 3 days, tomorrow and today.
+ Notification to users will be send only for the tomorrow events and in
+ the other case citizen will be informed with main monitors at the side
+ of streets.
+ In the period of event, Traffic Situation Handler will use traffic light
+ in order to block cars, all main monitor in the interested zone will explain
+ to citizens what is happened and, if necessary, City Administration could
+ interact with Traffic Situation Handler for manually decision.
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{3.4 Car Parks Reservation Algorithms}
+\end_layout
+
+\end_inset
+
+3.4 Car Parks Reservation Algorithms
+\end_layout
+
+\begin_layout Standard
+A user could check availability of parking but also reserve a car park.
+ The algrithm could be describe in the following way:
+\end_layout
+
+\begin_layout Itemize
+User choose in which parking want to reserve a parking place and he/she
+ will indicate the reservation time (15minutes, 30minutes, 1hour...)
+\end_layout
+
+\begin_layout Itemize
+Data will be send to Parking Handler that will reduce the number of free
+ car park and will assign to one a QR code.
+\end_layout
+
+\begin_layout Itemize
+The same QR code will be send to user
+\end_layout
+
+\begin_layout Itemize
+When the QR code will be received by user, the resarvation cuould be considered
+ finish and the reservation timer will start.
+\end_layout
+
+\begin_layout Itemize
+When the user will arrive to the parking, he/she will show to a QR reader
+ the code and, if the timer will not arrive to the end, the entry will be
+ allowed.
+\end_layout
+
+\begin_layout Itemize
+The payment will be perform in an automatic cash before leave the parking,
+ that will be controlled by registration car number: when a car arrive the
+ registration car number will be save in the DB with the entry hours and
+ when someone want leave the parking, he/she will insert their regirstration
+ car number in order to calculate the parking tima and consequently the
+ price.
+\end_layout
+
+\begin_layout Itemize
+In case of reservation will be apply an additional cost
 \end_layout
 
 \begin_layout Chapter*
@@ -1236,6 +1463,15 @@ addcontentsline{toc}{chapter}{4.User Interface Design}
 
 4.
  User Interface Design
+\end_layout
+
+\begin_layout Standard
+The best way in order to explain the experience that system will propose
+ to all is the use of graphic mokeUps.
+ In the following section will be presented the main page that guests, users
+ and superusers will see when they will open my application.
+ Each page will be proposed in a desktop version in the left side and in
+ a smartphone version in the right side.
 \end_layout
 
 \begin_layout Section*
@@ -1264,7 +1500,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.58] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{home}}; 
 \backslash
@@ -1287,7 +1523,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.58] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{hospitalqueue}}; 
 \backslash
@@ -1310,7 +1546,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.58] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{parksituation}}; 
 \backslash
@@ -1333,7 +1569,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.58] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{eventscheduled}}; 
 \backslash
@@ -1356,7 +1592,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.58] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{transportsituation}}; 
 \backslash
@@ -1379,7 +1615,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.58] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{registration}}; 
 \backslash
@@ -1417,7 +1653,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.58] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{login}}; 
 \backslash
@@ -1440,7 +1676,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.58] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{homelogin}}; 
 \backslash
@@ -1468,6 +1704,13 @@ addcontentsline{toc}{section}{4.3 Superuser Experience }
 4.3 Superuser Experience
 \end_layout
 
+\begin_layout Standard
+SuperUsers experience will be proposed only in desktop version becouse might
+ be difficult to manage a city by a smartphone and we want only the best
+ for citizens.
+ 
+\end_layout
+
 \begin_layout Subsection*
 \begin_inset ERT
 status open
@@ -1484,6 +1727,74 @@ addcontentsline{toc}{subsection}{4.3.1 City Administration }
 4.3.1 City Administration
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{city1}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{city2}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{city3}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection*
 \begin_inset ERT
 status open
@@ -1498,6 +1809,28 @@ addcontentsline{toc}{subsection}{4.3.2 Hospital }
 \end_inset
 
 4.3.2 Hospital
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{hospital1}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -1517,6 +1850,28 @@ addcontentsline{toc}{subsection}{4.3.3 Police Stations and Fire Fighters Station
 4.3.3 Police Stations and Fire Fighters Stations
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{helpRequest}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection*
 \begin_inset ERT
 status open
@@ -1531,6 +1886,51 @@ addcontentsline{toc}{subsection}{4.3.4 Public Transport Company}
 \end_inset
 
 4.3.4 Public Transport Company
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{transportCompany}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.55] at (current page.center) {
+\backslash
+includegraphics{transportCompany2}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter*
