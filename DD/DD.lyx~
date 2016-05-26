@@ -7,8 +7,49 @@
 \date{}
 \usepackage{lettrine}
 \usepackage{tikz,pgf}
-\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{blindtext}
+
 \usepackage{listings}
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{java}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\definecolor{gray75}{gray}{0.75}
+
+
+\lstset{language = Java, style=java}
+
+
+\newcommand{\hsp}{\hspace{18pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+\author{Matteo Greselin}
+\title{SmartCityAdvisor\\Software Design Document\\ Version 1.0}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -1153,6 +1194,451 @@ addcontentsline{toc}{section}{2.5 Component Interface}
 2.5 Component Interface
 \end_layout
 
+\begin_layout Standard
+In this section will be presented the main methods that each Handler will
+ perform, whit received and returned, if present, variables.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.5.1 Account And Data Situation Handler}
+\end_layout
+
+\end_inset
+
+2.5.1 Account And Data Situation Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.5.2 Events Handler}
+\end_layout
+
+\end_inset
+
+2.5.2 Events Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.5.3 Help Requests Handler}
+\end_layout
+
+\end_inset
+
+2.5.3 Help Requests Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.5.4 Map Handler}
+\end_layout
+
+\end_inset
+
+2.5.4 Map Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.5.5 Notifications Handler}
+\end_layout
+
+\end_inset
+
+2.5.5 Notifications Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.5.6 Parking Handler}
+\end_layout
+
+\end_inset
+
+2.5.6 Parking Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.5.7 Pollution Handler}
+\end_layout
+
+\end_inset
+
+2.5.7 Pollution Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.5.8 Public Transport Handler}
+\end_layout
+
+\end_inset
+
+2.5.8 Public Transport Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.5.9 Queue Handler}
+\end_layout
+
+\end_inset
+
+2.5.9 Queue Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.5.10 Traffic Handler}
+\end_layout
+
+\end_inset
+
+2.5.10 Traffic Handler
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
 \begin_inset ERT
 status open
@@ -1169,8 +1655,52 @@ addcontentsline{toc}{section}{2.6 Other Design Choises}
 2.6 Other Design Choises
 \end_layout
 
-\begin_layout Standard
-MVC - TCP/IP
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.6.1 Architectural Styles And Patterns}
+\end_layout
+
+\end_inset
+
+2.6 Architectural Styles And Patterns
+\end_layout
+
+\begin_layout Subsubsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{2.6.1.1 MVC Pattern}
+\end_layout
+
+\end_inset
+
+2.6.1.1 MVC Pattern
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.6.2 Technical Solutions}
+\end_layout
+
+\end_inset
+
+2.6.2 Technical Solutions
 \end_layout
 
 \begin_layout Chapter*
@@ -1737,7 +2267,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.55] at (current page.center) {
+node [scale=0.48] at (current page.center) {
 \backslash
 includegraphics{city1}}; 
 \backslash
@@ -1760,7 +2290,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.55] at (current page.center) {
+node [scale=0.48] at (current page.center) {
 \backslash
 includegraphics{city2}}; 
 \backslash
@@ -1783,7 +2313,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.55] at (current page.center) {
+node [scale=0.48] at (current page.center) {
 \backslash
 includegraphics{city3}}; 
 \backslash
@@ -1821,7 +2351,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.55] at (current page.center) {
+node [scale=0.48] at (current page.center) {
 \backslash
 includegraphics{hospital1}}; 
 \backslash
@@ -1860,7 +2390,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.55] at (current page.center) {
+node [scale=0.48] at (current page.center) {
 \backslash
 includegraphics{helpRequest}}; 
 \backslash
@@ -1898,7 +2428,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.55] at (current page.center) {
+node [scale=0.48] at (current page.center) {
 \backslash
 includegraphics{transportCompany}}; 
 \backslash
@@ -1921,7 +2451,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.55] at (current page.center) {
+node [scale=0.48] at (current page.center) {
 \backslash
 includegraphics{transportCompany2}}; 
 \backslash
@@ -1949,6 +2479,391 @@ addcontentsline{toc}{chapter}{5.
 
 5.
  Requirements Traceability
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{5.1 Sign Up}
+\end_layout
+
+\end_inset
+
+5.1 Sign Up
+\end_layout
+
+\begin_layout Description
+[R1] Guest must no be already registered
+\end_layout
+
+\begin_layout Description
+[R2] Guest must provide some personal information : Name, Surname, Age,
+ eMail, Username, Password
+\end_layout
+
+\begin_layout Description
+[R3] System will send an eMail to the indicate address in order to activate
+ the account
+\end_layout
+
+\begin_layout Description
+[R4] System will ask to insert password two times: the two password must
+ be identical.
+\end_layout
+
+\begin_layout Standard
+All these requirements are satified by Account and Data Handler, it will
+ be interfaced with Notification Handler in order to send confirmation e-mail
+ to Guests right after registration has been done.
+ 
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{5.2 Types of Possible Log In And Functionalities}
+\end_layout
+
+\end_inset
+
+5.2 Types of Possible Log In And Functionalities
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{5.2.1 Log In}
+\end_layout
+
+\end_inset
+
+5.2.1 Log In
+\end_layout
+
+\begin_layout Description
+[R1] User must insert username and password
+\end_layout
+
+\begin_layout Description
+[R2] If he/she wants, he/she could use the email address as username
+\end_layout
+
+\begin_layout Description
+[R3] If necessary, will be avaible a 'recovery password' process that will
+ use the indicated email
+\end_layout
+
+\begin_layout Standard
+These requirements is performed by Account and Data Handler that will be
+ connected with DB and in this way it could be check if insert username
+ and password will have any correspondece.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{5.2.2 Profile Managing}
+\end_layout
+
+\end_inset
+
+5.2.2 Profile Managing
+\end_layout
+
+\begin_layout Description
+[R1] User could change email address, but only one time.
+\end_layout
+
+\begin_layout Description
+[R2] User could change password one time at week
+\end_layout
+
+\begin_layout Description
+[R3] User could select which notification he/she wants recive (traffic,
+ accidents, special notification, events....).
+\end_layout
+
+\begin_layout Description
+[R4] User could delete his/her account in each moment
+\end_layout
+
+\begin_layout Standard
+Requirements about profile managing are performed by Account and Data Handler,
+ becouse they require the access to DB in order to update data.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{5.2.3 Administation Functionalities }
+\end_layout
+
+\end_inset
+
+5.2.3 Administation Functionalities
+\end_layout
+
+\begin_layout Description
+[R1] Administration must manage the entire application, manually or autimaticall
+y
+\end_layout
+
+\begin_layout Description
+[R2] Administration must provide at least 3 people in order to provide a
+ quickly response if it is necessary
+\end_layout
+
+\begin_layout Description
+[R3] Administration could accept or refuse Public Transport Company notification
+\end_layout
+
+\begin_layout Description
+[R4] Administration could see usage report, as user access, user registred,
+ accedets done in a period and so on.
+\end_layout
+
+\begin_layout Description
+[R5] It must provide manteinance, in order to guarantee the service
+\end_layout
+
+\begin_layout Description
+[R6] It is the only that can insert programmed event, as manifestations,
+ road works, Vips visits, ecological days...
+ 
+\end_layout
+
+\begin_layout Standard
+These one is perfomed with the usage of Notification Hanlder (in order to
+ create, delete, modify notication or accept/refuse Public Transport Company
+ notification), Events Handler (in order to provide all information about
+ scheduling events), Traffic Situation Handler (in order to manage manually
+ traffic situation, if necessary), Account and Data Handler (in order to
+ see report or manage any data)
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{5.2.4 Hospital Functionalities}
+\end_layout
+
+\end_inset
+
+5.2.4 Hospital Functionalities
+\end_layout
+
+\begin_layout Description
+[R1] Funcitonality could be done manually by an operator on automatically
+ by an information system
+\end_layout
+
+\begin_layout Description
+[R2] When a person take a tiket for the queue, the queue for that specific
+ medical visit will be update automatically 
+\end_layout
+
+\begin_layout Description
+[R3] When a medical visit starts, the waiting ticked will be read electronically
+ and this operation will update the queue for that specific visit
+\end_layout
+
+\begin_layout Description
+[R4] When Hospital recive a call for an accident on the street, it will
+ be registred and automatically insert in the system
+\end_layout
+
+\begin_layout Description
+[R5] If the indicated position of the accident is already present in the
+ system, there will not be any updating.
+ This means that probably police station has already update the event.
+\end_layout
+
+\begin_layout Description
+[R6] When the medical staff return from the accident, it will be registred
+ and automatically insert in the system
+\end_layout
+
+\begin_layout Description
+[R7] If the indicated position of the accident is not present in the system,
+ there will not be any updating.
+ This means that probably police station has already update the solve accident.
+\end_layout
+
+\begin_layout Description
+[R8] Hospital structure could change the specializations present in it,
+ in case someone of them is closed 
+\end_layout
+
+\begin_layout Standard
+These requirement is obtained, after a log in as Hospital superuser, with
+ Queue Handler, Help Request Handler and Account and Data Handler (if will
+ be necessary modify Hospital information or specializations)
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{5.2.5 Public Transport Company Functionalities}
+\end_layout
+
+\end_inset
+
+5.2.5 Public Transport Company Functionalities
+\end_layout
+
+\begin_layout Description
+[R1] It must constantly provide the position of each vehicle
+\end_layout
+
+\begin_layout Description
+[R2] It must send special notification reguarding company, as strike or
+ own broken vehicle or line interrupted, but after Administration approvation
+\end_layout
+
+\begin_layout Description
+[R3] It could manage the service offered : add new transports line, remove
+ old transports line, change transports route and so on.
+\end_layout
+
+\begin_layout Standard
+These requirements is managed by Public Transport Handler, Notificaiton
+ Handler and Account And Data Handler.
+ Public Transport Handler will have the task to farward information to Traffic
+ Situation Handler that will integrate information about transport vehicles
+ with the other one
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{5.2.6 Police Station And Fire Fighters Station
+ Functionalities}
+\end_layout
+
+\end_inset
+
+5.2.6 Police Station And Fire Fighters Station Functionalities
+\end_layout
+
+\begin_layout Description
+[R1] Funcitonality could be done manually by an operator on automatically
+ by an information system
+\end_layout
+
+\begin_layout Description
+[R2] When Police Station recives a call for an accident on the street, it
+ will be registred and automatically insert in the system
+\end_layout
+
+\begin_layout Description
+[R3] If the indicated position of the accident is already present in the
+ system, there will not be any updating.
+ This means that probably an hospital has already answer to the calling.
+\end_layout
+
+\begin_layout Description
+[R4] When the police staff return from the accident, it will be registred
+ and automatically insert in the system
+\end_layout
+
+\begin_layout Description
+[R5] If the indicated position of the accident is not present in the system,
+ there will not be any updating.
+ This means that probably an hospital has already update the solve accident.
+\end_layout
+
+\begin_layout Standard
+These requirements are satified by Help Request Handler.
+ Police Stations and Fire Fighters Stations could only receive, add, edit
+ and delete this type of request.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{5.2.7 Guests and Users Funcitonalities}
+\end_layout
+
+\end_inset
+
+5.2.7 Guests and Users Funcitonalities
+\end_layout
+
+\begin_layout Description
+[R1] Guests can see traffic situation, queue situation, parking availabilities
+ and public transport situation
+\end_layout
+
+\begin_layout Description
+[R2] User can perform each functionalities that can perform a simple guest
+\end_layout
+
+\begin_layout Description
+[R3] User can receive notification by City Administration and, after positive
+ feedback, also by Public Transport Company
+\end_layout
+
+\begin_layout Description
+[R4] User can reserve a car park, he/she will indicate place and how long
+ reserves it.
+\end_layout
+
+\begin_layout Description
+[R5] User could manage his/her profile data
+\end_layout
+
+\begin_layout Standard
+These requirements are handler with different component : Notification Handler,
+ Traffic Situation Handler, Queue Handler, Parking Handler, Account And
+ Data Handler.
+ Obviously each handler will return to person only the view permitted by
+ own privileges.
+ (for example a guest could not reserve a parking)
 \end_layout
 
 \begin_layout Chapter*
@@ -1992,8 +2907,11 @@ moqups.com to create the UI sketches;
 \end_layout
 
 \begin_layout Standard
-VisualParadigm10 Community Edition to create Sequence Diagrams and State
- Charts;
+
+\series bold
+VisualParadigm10 Community Edition
+\series default
+ to create Sequence Diagrams and State Charts;
 \begin_inset Newline newline
 \end_inset
 

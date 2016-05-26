@@ -371,6 +371,10 @@ addcontentsline{toc}{subsection}{1.3.2 Abbreviations}
 [Sn] : n-specification
 \end_layout
 
+\begin_layout Description
+[Un] : n-update
+\end_layout
+
 \begin_layout Chapter*
 \begin_inset ERT
 status open
@@ -834,8 +838,8 @@ addcontentsline{toc}{subsection}{4.1.1 Sign Up}
 \end_layout
 
 \begin_layout Description
-[R4] System will ask to insert password times: the two password must be
- identical.
+[R4] System will ask to insert password two times: the two password must
+ be identical.
 \end_layout
 
 \begin_layout Subsection*
@@ -859,7 +863,7 @@ addcontentsline{toc}{subsection}{4.1.2 Log In as User}
 \end_layout
 
 \begin_layout Description
-[R2] If he/she wants, he/she could use the email address as usernamen
+[R2] If he/she wants, he/she could use the email address as username
 \end_layout
 
 \begin_layout Description
@@ -875,12 +879,51 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{4.1.3 Log In as Superuser}
+addcontentsline{toc}{subsection}{4.1.3 Guests and Users Funcitonalities}
 \end_layout
 
 \end_inset
 
-4.1.3 Log In as Superuser
+4.1.3 Guests and Users Funcitonalities
+\end_layout
+
+\begin_layout Description
+[R1] Guests can see traffic situation, queue situation, parking availabilities
+ and public transport situation
+\end_layout
+
+\begin_layout Description
+[R2] User can perform each functionalities that can perform a simple guest
+\end_layout
+
+\begin_layout Description
+[R3] User can receive notification by City Administration and, after positive
+ feedback, also by Public Transport Company
+\end_layout
+
+\begin_layout Description
+[R4] User can reserve a car park, he/she will indicate place and how long
+ reserves it.
+\end_layout
+
+\begin_layout Description
+[R5] User could manage his/her profile data
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.1.4 Log In as Superuser}
+\end_layout
+
+\end_inset
+
+4.1.4 Log In as Superuser
 \end_layout
 
 \begin_layout Standard
@@ -899,12 +942,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsubsection}{4.1.3.1 Hospital Functionalities}
+addcontentsline{toc}{subsubsection}{4.1.4.1 Hospital Functionalities}
 \end_layout
 
 \end_inset
 
-4.1.3.1 Hospital Functionalities
+4.1.4.1 Hospital Functionalities
 \end_layout
 
 \begin_layout Description
@@ -957,13 +1000,13 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsubsection}{4.1.3.2 Public Transport Company Functionalitie
+addcontentsline{toc}{subsubsection}{4.1.4.2 Public Transport Company Functionalitie
 s}
 \end_layout
 
 \end_inset
 
-4.1.3.2 Public Transport Company Functionalities
+4.1.4.2 Public Transport Company Functionalities
 \end_layout
 
 \begin_layout Description
@@ -975,7 +1018,14 @@ s}
  own broken vehicle or line interrupted, but after Administration approvation
 \end_layout
 
+\begin_layout Description
+[R3] It could manage the service offered : add new transports line, remove
+ old transports line, change transports route and so on.
+\end_layout
+
 \begin_layout Subsubsection*
+
+\strikeout on
 \begin_inset ERT
 status open
 
@@ -992,33 +1042,47 @@ addcontentsline{toc}{subsubsection}{4.1.3.3 Parking Availability }
 \end_layout
 
 \begin_layout Description
+
+\strikeout on
 [R1] Car Parks in the city must be complitely automated
 \end_layout
 
 \begin_layout Description
+
+\strikeout on
 [R2] Some actuator will releve the availability or not availability in a
  fixed car park.
 \end_layout
 
 \begin_layout Description
+
+\strikeout on
 [R3] The situation will be update in the system each time that actuators
  will detect somethings.
 \end_layout
 
 \begin_layout Description
+
+\strikeout on
 [R4] In case of reservation, system will be implementing for using QR code.
 \end_layout
 
 \begin_layout Description
+
+\strikeout on
 [R5] Each User that will reserve a place will recive a QR code that he/she
  must show when he/she will arrive to the car park
 \end_layout
 
 \begin_layout Description
+
+\strikeout on
 [R6] In each car park there will be a QR reader, near the entry 
 \end_layout
 
 \begin_layout Description
+
+\strikeout on
 [R7] The QR will be valid coherently with the time indicate for the reservation
  (five, ten, fifteen...)
 \end_layout
@@ -1031,12 +1095,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsubsection}{4.1.3.4 Administation Functionalities }
+addcontentsline{toc}{subsubsection}{4.1.4.3 Administation Functionalities }
 \end_layout
 
 \end_inset
 
-4.1.3.4 Administation Functionalities
+4.1.4.3 Administation Functionalities
 \end_layout
 
 \begin_layout Description
@@ -1045,7 +1109,7 @@ y
 \end_layout
 
 \begin_layout Description
-[R2] Administration must foresee at least 3 people in order to provide a
+[R2] Administration must provide at least 3 people in order to provide a
  quickly response if it is necessary
 \end_layout
 
@@ -1076,12 +1140,13 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsubsection}{4.1.3.5 Police Station Functionalities}
+addcontentsline{toc}{subsubsection}{4.1.4.4 Police Station And Fire Fighters
+ Station Functionalities}
 \end_layout
 
 \end_inset
 
-4.1.3.5 Police Station Functionalities
+4.1.4.4 Police Station And Fire Fighters Station Functionalities
 \end_layout
 
 \begin_layout Description
@@ -1119,12 +1184,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{4.1.4 Profile Managing}
+addcontentsline{toc}{subsection}{4.1.5 Profile Managing}
 \end_layout
 
 \end_inset
 
-4.1.4 Profile Managing
+4.1.5 Profile Managing
 \end_layout
 
 \begin_layout Description
@@ -2785,6 +2850,47 @@ the drafting of this document, i have spent about 28 hours.
  Problably, during a team group, this thin will be the same for each component
  becouse the time that normally is used for coordinate the work is very
  relevant.
+\end_layout
+
+\begin_layout Section*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{8.1 Updates}
+\end_layout
+
+\end_inset
+
+8.1 Updates
+\end_layout
+
+\begin_layout Standard
+During the progess of works, i have noted some details unuseful or not totally
+ clear.
+ For this reason the document has been updated in order to have more coerenncy
+ with the entire project.
+\end_layout
+
+\begin_layout Description
+[U1] It was decided to add Fire Fighters Station with the same tasks and
+ privileges reserved to Police Station.
+\end_layout
+
+\begin_layout Description
+[U2] It was added more details about User Functionalities, after that was
+ decided to implement the parking reservation.
+\end_layout
+
+\begin_layout Description
+[U2] It was decided that the Parking Service will be totally automatic :
+ with respect to this decision there will not be necessary any interface
+ for Parking Availability becouse there will be automatic sensor that will
+ releave each events.
+ Also the payment will be manage by automanit cash.
 \end_layout
 
 \end_body
