@@ -1176,6 +1176,137 @@ In this section will be present some view about possible usage of application.
  in this DD.
  For this reason will be used the concepts of the sequence diagram of RASD
  and will be modify with the DD specification.
+ In the RASD, system has been presented with the following structure :
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+actors
+\series default
+ that require action and funcionalities
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+device
+\series default
+ that will implement the front end of application
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+application server
+\series default
+ that queries the DB and implement funtionalities of sytem
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+DB and search engine
+\series default
+ that will provide all stored data 
+\end_layout
+
+\begin_layout Standard
+After details provide in this DD, the new structure is with 
+\series bold
+actors
+\series default
+ and 
+\series bold
+devices
+\series default
+, that rimain with the same meaninig, application server is substituted
+ with 
+\series bold
+each specific handler
+\series default
+ (with respect to the funcionalities required) and DB and search engine
+ will be integrated with 
+\series bold
+Accounts and Data Handler
+\series default
+.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.4.1 Traffic Managing Runtime}
+\end_layout
+
+\end_inset
+
+2.4.1 Traffic Managing Runtime
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.45] at (current page.center) {
+\backslash
+includegraphics{RuntimeTraffic}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.4.2 New Event Scheduling Runtime}
+\end_layout
+
+\end_inset
+
+2.4.2 New Event Scheduling Runtime
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.45] at (current page.center) {
+\backslash
+includegraphics{RuntimeNewEvent}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
@@ -1228,7 +1359,66 @@ begin{lstlisting}
 
 \begin_layout Plain Layout
 
-public   
+public void addNewUser (NewUser u) 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+This methods receive the object NewUser that contain all data insert by
+ a guest during the registration process
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public void deleteUser (User u) 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public void profileManaging (User u) 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1272,7 +1462,66 @@ begin{lstlisting}
 
 \begin_layout Plain Layout
 
-public   
+public void addNewEvent (NewEvent e)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+This methods receive the object NewEvent that contain all data insert by
+ City Administration during the event scheduled
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public Event editEvent (Event e)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public void eventReminder (Event e)
 \end_layout
 
 \begin_layout Plain Layout
@@ -1316,7 +1565,7 @@ begin{lstlisting}
 
 \begin_layout Plain Layout
 
-public   
+public void addNewHelpRequest (NewHelpRequest h)
 \end_layout
 
 \begin_layout Plain Layout
@@ -1328,7 +1577,39 @@ end{lstlisting}
 
 \end_inset
 
+This methods receive the object NewHelpRequest that contain all data insert
+ by Hospital, Police Station or Fire Fighters Station when someone adds
+ a new request into the system
+\begin_inset Newline newline
+\end_inset
 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public void deleteHelpRequest (HelpRequest h)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+This methods receive the object HelpRequest that contain all data refer
+ a request that someone wants delete.
 \end_layout
 
 \begin_layout Subsection*
@@ -1360,7 +1641,7 @@ begin{lstlisting}
 
 \begin_layout Plain Layout
 
-public   
+public Map updateMap (Map m)
 \end_layout
 
 \begin_layout Plain Layout
@@ -1404,7 +1685,37 @@ begin{lstlisting}
 
 \begin_layout Plain Layout
 
-public   
+public void sendNotification (UsersList ul, Message m)  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+This methods receive the list of user that should receive the message and
+ the object that will contain the message.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public feedback chekcNotification (TransportNotification t)  
 \end_layout
 
 \begin_layout Plain Layout
@@ -1448,7 +1759,7 @@ begin{lstlisting}
 
 \begin_layout Plain Layout
 
-public   
+public QRcode (ReservatioRequest rr, User u)
 \end_layout
 
 \begin_layout Plain Layout
@@ -1492,7 +1803,7 @@ begin{lstlisting}
 
 \begin_layout Plain Layout
 
-public   
+public boolean (PollutionLevel p) 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1536,7 +1847,35 @@ begin{lstlisting}
 
 \begin_layout Plain Layout
 
-public   
+public void (gpsPosition g, idVehicle i)  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public TrasportLine editTransportLine (TransportLine tl)
 \end_layout
 
 \begin_layout Plain Layout
@@ -1580,7 +1919,7 @@ begin{lstlisting}
 
 \begin_layout Plain Layout
 
-public   
+public QueueSituation updateQueue (QueueSituation q)
 \end_layout
 
 \begin_layout Plain Layout
@@ -1624,7 +1963,7 @@ begin{lstlisting}
 
 \begin_layout Plain Layout
 
-public   
+public void (Map m, Pollution p, TransportSituation t, NewHelpRequest n)
 \end_layout
 
 \begin_layout Plain Layout

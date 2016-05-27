@@ -1459,12 +1459,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{4.2.3 Communication Interface}
+addcontentsline{toc}{subsection}{4.2.4 Communication Interface}
 \end_layout
 
 \end_inset
 
-4.2.3 Communication Interface
+4.2.4 Communication Interface
 \end_layout
 
 \begin_layout Standard
@@ -1492,12 +1492,47 @@ status open
 
 
 \backslash
-addcontentsline{toc}{subsection}{4.2.4 Constraints}
+addcontentsline{toc}{subsection}{4.2.5 System Security}
 \end_layout
 
 \end_inset
 
-4.2.3 Constraints and other specifications
+4.2.5 System Security
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine{S}{ystem }
+\end_layout
+
+\end_inset
+
+will have a detailded implementation with respect to security, this choise
+ is done in order to avoid that any black hat hacker could arrive into the
+ system and, for example, manages traffic how he/she prefer or sends spam
+ to all registered users.
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.2.6 Constraints and other specifications}
+\end_layout
+
+\end_inset
+
+4.2.6 Constraints and other specifications
 \end_layout
 
 \begin_layout Standard
