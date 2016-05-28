@@ -76,7 +76,7 @@
 \spacing single
 \use_hyperref false
 \papersize a4paper
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -1113,7 +1113,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.53] at (current page.center) {
+node [scale=0.62] at (current page.center) {
 \backslash
 includegraphics{ComponentView}}; 
 \backslash
@@ -1151,7 +1151,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.4] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{DeploymentView}}; 
 \backslash
@@ -1281,7 +1281,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.38] at (current page.center) {
+node [scale=0.45] at (current page.center) {
 \backslash
 includegraphics{RuntimeTraffic}}; 
 \backslash
@@ -1333,7 +1333,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.38] at (current page.center) {
+node [scale=0.45] at (current page.center) {
 \backslash
 includegraphics{RuntimeNewEvent}}; 
 \backslash
@@ -1384,7 +1384,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.43] at (current page.center) {
+node [scale=0.5] at (current page.center) {
 \backslash
 includegraphics{RuntimeHelp}}; 
 \backslash
@@ -2165,7 +2165,7 @@ It permit to work better when there are more developers in the same project
 \end_layout
 
 \begin_layout Itemize
-It reduce dependency in the code
+It reduce dependency
 \end_layout
 
 \begin_layout Standard
@@ -2185,18 +2185,7 @@ the time to market will be reduced;
 \end_layout
 
 \begin_layout Itemize
-cost will be reduced becouse no one will have to do any heavy investement,
- with the exception of the contract with the Paas supplier company;
-\end_layout
-
-\begin_layout Itemize
-centralized development process, that implies a reduction of development
- time;
-\end_layout
-
-\begin_layout Itemize
-the possibility to integrate in the application alot of web service (as
- Google Map API) that will allow the maximum level of customization.
+cost will be reduced becouse no one will have to do any heavy investement
 \end_layout
 
 \begin_layout Chapter*
@@ -2526,7 +2515,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.47] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{home}}; 
 \backslash
@@ -2549,7 +2538,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.47] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{hospitalqueue}}; 
 \backslash
@@ -2572,7 +2561,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.47] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{parksituation}}; 
 \backslash
@@ -2595,7 +2584,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.47] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{eventscheduled}}; 
 \backslash
@@ -2618,7 +2607,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.47] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{transportsituation}}; 
 \backslash
@@ -2641,7 +2630,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.47] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{registration}}; 
 \backslash
@@ -2679,7 +2668,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.47] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{login}}; 
 \backslash
@@ -2702,7 +2691,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.47] at (current page.center) {
+node [scale=0.55] at (current page.center) {
 \backslash
 includegraphics{homelogin}}; 
 \backslash
@@ -2763,21 +2752,13 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.47] at (current page.center) {
+node [scale=0.48] at (current page.center) {
 \backslash
 includegraphics{city1}}; 
 \backslash
 end{tikzpicture}
 \end_layout
 
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Newline newline
 \end_inset
 
 
@@ -2794,7 +2775,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.47] at (current page.center) {
+node [scale=0.48] at (current page.center) {
 \backslash
 includegraphics{city2}}; 
 \backslash
@@ -2817,7 +2798,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.47] at (current page.center) {
+node [scale=0.48] at (current page.center) {
 \backslash
 includegraphics{city3}}; 
 \backslash
@@ -2855,7 +2836,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.47] at (current page.center) {
+node [scale=0.48] at (current page.center) {
 \backslash
 includegraphics{hospital1}}; 
 \backslash
@@ -2894,7 +2875,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.47] at (current page.center) {
+node [scale=0.48] at (current page.center) {
 \backslash
 includegraphics{helpRequest}}; 
 \backslash
@@ -2932,7 +2913,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.47] at (current page.center) {
+node [scale=0.48] at (current page.center) {
 \backslash
 includegraphics{transportCompany}}; 
 \backslash
@@ -2955,7 +2936,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.47] at (current page.center) {
+node [scale=0.48] at (current page.center) {
 \backslash
 includegraphics{transportCompany2}}; 
 \backslash
@@ -3435,12 +3416,33 @@ status open
 
 
 \backslash
+lettrine{E}{xtra }
+\end_layout
+
+\end_inset
+
+documentation consulted:
+\end_layout
+
+\begin_layout Itemize
+Business Process Model and Notation (BPMN) - Version 2.0 provided by OMG
+ (Object Management Group)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 lettrine{R}{eguarding }
 \end_layout
 
 \end_inset
 
-the drafting of this document, i have spent about 20 hours.
+the drafting of this document, i have spent about hours.
  Problably, during a team group, this thin will be the same for each component
  becouse the time that normally is used for coordinate the work is very
  relevant.

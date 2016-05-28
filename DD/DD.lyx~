@@ -76,7 +76,7 @@
 \spacing single
 \use_hyperref false
 \papersize a4paper
-\use_geometry true
+\use_geometry false
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -192,12 +192,12 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{1.1 Purpose}
+addcontentsline{toc}{section}{1.1 Purpose and Scope}
 \end_layout
 
 \end_inset
 
-1.1 Purpose
+1.1 Purpose and Scope
 \end_layout
 
 \begin_layout Standard
@@ -208,22 +208,31 @@ This document is required in order to provide more details about the application
  For bring out these things, DD will use what has been described in the
  RASD document: this means that there is a strictly relation between what
  are the application requirement and which choises will be done.
-\end_layout
-
-\begin_layout Section*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{section}{1.2 Scope}
-\end_layout
-
+ 
+\begin_inset Newline newline
 \end_inset
 
-1.2 Scope
+I will use graphical way for explain my decision and, for sequence diagrame
+ in real time view, will be done an updating of those rappresented in the
+ RASD.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+SmartCityAdvisor will be an application client/server based.
+ This mean that on he client evice will be provide only the interface (the
+ view) in order to allow the access to functionalities that will be on the
+ server side.
+ With this choise i want to extend the usage of application becouse it reduces
+ constraint releated to device hardware specification.
+ The application will be also able to run on each type of OS, both for smartphon
+e that for PC desktop.
+ In order to reach functionalities, userd needs to have a permanent internet
+ connection : this will allows to syncronize information between client
+ side and server side, when required.
 \end_layout
 
 \begin_layout Section*
@@ -234,7 +243,7 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{1.3 Glossary}
+addcontentsline{toc}{section}{1.2 Glossary}
 \end_layout
 
 \end_inset
@@ -286,7 +295,7 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{1.4 Reference Documents}
+addcontentsline{toc}{section}{1.3 Reference Documents}
 \end_layout
 
 \end_inset
@@ -337,7 +346,7 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{1.5 Document Structure}
+addcontentsline{toc}{section}{1.4 Document Structure}
 \end_layout
 
 \end_inset
@@ -1104,7 +1113,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.62] at (current page.center) {
+node [scale=0.53] at (current page.center) {
 \backslash
 includegraphics{ComponentView}}; 
 \backslash
@@ -1142,7 +1151,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.47] at (current page.center) {
+node [scale=0.4] at (current page.center) {
 \backslash
 includegraphics{DeploymentView}}; 
 \backslash
@@ -1250,6 +1259,19 @@ addcontentsline{toc}{subsection}{2.4.1 Traffic Managing Runtime}
 \end_layout
 
 \begin_layout Standard
+In the following runtime view i have brought out what happen in the Traffic
+ Handler.
+\begin_inset Newline newline
+\end_inset
+
+I have proposed some of action that Traffic Handler will perform with data
+ that it will receive in each moment : it will manage traffic, it will block
+ the traffic, it will forward notification.
+ Obviously for doing this, it will interact with more of other Handler.
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset ERT
 status open
 
@@ -1259,7 +1281,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.45] at (current page.center) {
+node [scale=0.38] at (current page.center) {
 \backslash
 includegraphics{RuntimeTraffic}}; 
 \backslash
@@ -1288,6 +1310,20 @@ addcontentsline{toc}{subsection}{2.4.2 New Event Scheduling Runtime}
 \end_layout
 
 \begin_layout Standard
+In the nex runtime view i have shown how a new event could be scheduled.
+ The main actor in City Administration, the only that will have privileges
+ for doing this action.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Here are also brought out notifications that will be send to registered
+ user when a new event will be scheduled and to main monitor in order to
+ advise all citizens.
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset ERT
 status open
 
@@ -1297,9 +1333,60 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.45] at (current page.center) {
+node [scale=0.38] at (current page.center) {
 \backslash
 includegraphics{RuntimeNewEvent}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.4.3 New Help Request Runtime}
+\end_layout
+
+\end_inset
+
+2.4.3 New Help Request Runtime
+\end_layout
+
+\begin_layout Standard
+In this runtime view i propose a situation where the same help request arrive
+ to an hospital and to a fire fighter station.
+ I have brought out the concurrency of situation : the first that receive
+ the request is not the first that insert the request into the system.
+\begin_inset Newline newline
+\end_inset
+
+In this case, when hospital tries to insert the help request, system will
+ found that a similar data will already exist.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture] 
+\backslash
+node [scale=0.43] at (current page.center) {
+\backslash
+includegraphics{RuntimeHelp}}; 
 \backslash
 end{tikzpicture}
 \end_layout
@@ -1328,6 +1415,10 @@ addcontentsline{toc}{section}{2.5 Component Interface}
 \begin_layout Standard
 In this section will be presented the main methods that each Handler will
  perform, whit received and returned, if present, variables.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -1389,7 +1480,7 @@ begin{lstlisting}
 
 \begin_layout Plain Layout
 
-public void addNewUser (NewUser u) 
+public void deleteUser (User u) 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1399,6 +1490,41 @@ public void addNewUser (NewUser u)
 end{lstlisting}
 \end_layout
 
+\end_inset
+
+This method will receive a user as parameters and it deletes that user by
+ DB.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public void profileManaging (User u) 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+This method could be used by users when they want to change personal information
+, it will interact directly with the DB.
+\begin_inset Newline newline
 \end_inset
 
 
@@ -1473,6 +1599,44 @@ public Event editEvent (Event e)
 end{lstlisting}
 \end_layout
 
+\end_inset
+
+This methos will receive a fixed event as paramethers, with specific changes,
+ and will subsitute it with the old events (without changes).
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public void eventReminder (Event e)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+This methods will implements the reminder that will be forward to traffic
+ situation handler 7 days before the events, 3 days before, 1 day before
+ and the day of the events.
+ In this way citizens will be advise about all events several time.
+\begin_inset Newline newline
 \end_inset
 
 
@@ -1552,6 +1716,10 @@ end{lstlisting}
 
 This methods receive the object HelpRequest that contain all data refer
  a request that someone wants delete.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -1595,6 +1763,12 @@ end{lstlisting}
 
 \end_inset
 
+This method will receive the map by Google Map API and will 'translate'
+ it in order to allow to Traffic Handler to integrate map with help request,
+ public transport position, accidents an so on.
+\begin_inset Newline newline
+\end_inset
+
 
 \end_layout
 
@@ -1627,7 +1801,7 @@ begin{lstlisting}
 
 \begin_layout Plain Layout
 
-public void (UsersList ul, Message m)  
+public void sendNotification (UsersList ul, Message m)  
 \end_layout
 
 \begin_layout Plain Layout
@@ -1667,6 +1841,11 @@ public feedback chekcNotification (TransportNotification t)
 end{lstlisting}
 \end_layout
 
+\end_inset
+
+This methods will allow to city administration to check notification send
+ by Public Transport Company and decide which could be forward to users.
+\begin_inset Newline newline
 \end_inset
 
 
@@ -1713,6 +1892,12 @@ end{lstlisting}
 
 \end_inset
 
+This methos will manage the reservation, when a reservation will be done,
+ this method will create a specific QR code and it will be assign to that
+ specific reservation
+\begin_inset Newline newline
+\end_inset
+
 
 \end_layout
 
@@ -1755,6 +1940,12 @@ public boolean (PollutionLevel p)
 end{lstlisting}
 \end_layout
 
+\end_inset
+
+This method will receive the pollution level by sensors in the city and
+ will return a boolean variable that will be 1 when a fixed limit will be
+ passed.
+\begin_inset Newline newline
 \end_inset
 
 
@@ -1801,10 +1992,13 @@ end{lstlisting}
 
 \end_inset
 
+This methos will receive GPS position and transports vehicle ID, and it
+ will format data in order to permit to Traffic Handler to integrate data
+ in the map
+\begin_inset Newline newline
+\end_inset
 
-\end_layout
 
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -1827,6 +2021,11 @@ public TrasportLine editTransportLine (TransportLine tl)
 end{lstlisting}
 \end_layout
 
+\end_inset
+
+This method will allow to Public Transport Company to modify/delete/add
+ transport line.
+\begin_inset Newline newline
 \end_inset
 
 
@@ -1873,6 +2072,13 @@ end{lstlisting}
 
 \end_inset
 
+This methods will allow to manage queue in the hospital, it will receive
+ signals about queue (for example whan a new person will require that visit),
+ it will update queue and will return the new queue situation for that specific
+ visit
+\begin_inset Newline newline
+\end_inset
+
 
 \end_layout
 
@@ -1917,7 +2123,11 @@ end{lstlisting}
 
 \end_inset
 
-
+This can be considered the principal method of the application.
+ It will receive continuously data by other handler and will integrate all
+ in a unique map.
+ It will also take autimatic decision with respect to data received: for
+ example an high poluttion level will impose the block of traffic.
 \end_layout
 
 \begin_layout Section*
@@ -1936,68 +2146,57 @@ addcontentsline{toc}{section}{2.6 Other Design Choises}
 2.6 Other Design Choises
 \end_layout
 
-\begin_layout Subsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsection}{2.6.1 Architectural Styles And Patterns}
+\begin_layout Standard
+Reguarding design pattern, the choice fell on MCV pattern for the following
+ reasons:
 \end_layout
 
-\end_inset
-
-2.6 Architectural Styles And Patterns
+\begin_layout Itemize
+It reduce code complexity;
 \end_layout
 
-\begin_layout Subsubsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsubsection}{2.6.1.1 MVC Pattern}
+\begin_layout Itemize
+It increase the flexibility of application created;
 \end_layout
 
-\end_inset
-
-2.6.1.1 MVC Pattern
+\begin_layout Itemize
+It permit to work better when there are more developers in the same project
+ becouse produce reusable code;
 \end_layout
 
-\begin_layout Subsubsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsubsection}{2.6.1.2 Paas Concept}
+\begin_layout Itemize
+It reduce dependency in the code
 \end_layout
 
-\end_inset
-
-2.6.1.2 Paas Concept
+\begin_layout Standard
+The architechture will be base on the most common tecnilogies on Cloud Computing
+, in this way will be possible reduce cost and reduce the load that application
+ implies on devices.
+ In the specific, the idea is follow Paas, a section of service-oriented
+ architecture.
+ With this architecture developers will have only tho develop the application,
+ withount thinking about memory allocation or other similar choise that
+ will be manage by the company that provides PaaS.
+ This choise will allows different advantages:
 \end_layout
 
-\begin_layout Subsection*
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-addcontentsline{toc}{subsection}{2.6.2 Technical Solutions}
+\begin_layout Itemize
+the time to market will be reduced;
 \end_layout
 
-\end_inset
+\begin_layout Itemize
+cost will be reduced becouse no one will have to do any heavy investement,
+ with the exception of the contract with the Paas supplier company;
+\end_layout
 
-2.6.2 Technical Solutions
+\begin_layout Itemize
+centralized development process, that implies a reduction of development
+ time;
+\end_layout
+
+\begin_layout Itemize
+the possibility to integrate in the application alot of web service (as
+ Google Map API) that will allow the maximum level of customization.
 \end_layout
 
 \begin_layout Chapter*
@@ -2327,7 +2526,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.55] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{home}}; 
 \backslash
@@ -2350,7 +2549,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.55] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{hospitalqueue}}; 
 \backslash
@@ -2373,7 +2572,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.55] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{parksituation}}; 
 \backslash
@@ -2396,7 +2595,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.55] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{eventscheduled}}; 
 \backslash
@@ -2419,7 +2618,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.55] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{transportsituation}}; 
 \backslash
@@ -2442,7 +2641,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.55] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{registration}}; 
 \backslash
@@ -2480,7 +2679,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.55] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{login}}; 
 \backslash
@@ -2503,7 +2702,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.55] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{homelogin}}; 
 \backslash
@@ -2564,7 +2763,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.48] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{city1}}; 
 \backslash
@@ -2574,10 +2773,13 @@ end{tikzpicture}
 \end_inset
 
 
-\begin_inset Newline newline
+\begin_inset Newpage newpage
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -2587,7 +2789,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.48] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{city2}}; 
 \backslash
@@ -2610,7 +2812,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.48] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{city3}}; 
 \backslash
@@ -2648,7 +2850,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.48] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{hospital1}}; 
 \backslash
@@ -2687,7 +2889,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.48] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{helpRequest}}; 
 \backslash
@@ -2725,7 +2927,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.48] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{transportCompany}}; 
 \backslash
@@ -2748,7 +2950,7 @@ status open
 \backslash
 begin{tikzpicture}[remember picture] 
 \backslash
-node [scale=0.48] at (current page.center) {
+node [scale=0.47] at (current page.center) {
 \backslash
 includegraphics{transportCompany2}}; 
 \backslash
@@ -3228,33 +3430,12 @@ status open
 
 
 \backslash
-lettrine{E}{xtra }
-\end_layout
-
-\end_inset
-
-documentation consulted:
-\end_layout
-
-\begin_layout Itemize
-Business Process Model and Notation (BPMN) - Version 2.0 provided by OMG
- (Object Management Group)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
 lettrine{R}{eguarding }
 \end_layout
 
 \end_inset
 
-the drafting of this document, i have spent about hours.
+the drafting of this document, i have spent about 20 hours.
  Problably, during a team group, this thin will be the same for each component
  becouse the time that normally is used for coordinate the work is very
  relevant.
