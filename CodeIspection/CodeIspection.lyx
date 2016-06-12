@@ -1,0 +1,3384 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\date{}
+\usepackage{lettrine}
+\usepackage{tikz,pgf}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{blindtext}
+
+\usepackage{listings}
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{java}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\definecolor{gray75}{gray}{0.75}
+
+
+\lstset{language = Java, style=java}
+
+
+\newcommand{\hsp}{\hspace{18pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+\author{Matteo Greselin}
+\title{SmartCityAdvisor\\Software Design Document\\ Version 1.0}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman cmr
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command makeindex
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\rightmargin 2cm
+\secnumdepth 5
+\tocdepth 5
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle plain
+\bullet 1 0 9 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[remember picture,overlay] 
+\backslash
+node [opacity=0.1,scale=1] at (current page.center) {
+\backslash
+includegraphics{logopolimi}}; 
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\shape smallcaps
+\size giant
+Code Inspection
+\end_layout
+
+\begin_layout Author
+
+\shape smallcaps
+Matteo Greselin - Matr.
+ 862908
+\end_layout
+
+\begin_layout Date
+
+\shape smallcaps
+Version 1.0
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Classes and Methods 
+\begin_inset Newline newline
+\end_inset
+
+Analyzed
+\end_layout
+
+\begin_layout Standard
+All methods that will be listed, are located in https://github.com/mrniko/netty-s
+ocketio/blob/master/src/main/java/com/corundumstudio/socketio/protocol/PacketEnc
+oder.java
+\end_layout
+
+\begin_layout Itemize
+public PacketEncoder(Configuration configuration, JsonSupport jsonSupport)
+\begin_inset Newline newline
+\end_inset
+
+Starting line : 44
+\end_layout
+
+\begin_layout Itemize
+public JsonSupport getJsonSupport()
+\begin_inset Newline newline
+\end_inset
+
+Starting line : 49
+\end_layout
+
+\begin_layout Itemize
+public ByteBuf allocateBuffer(ByteBufAllocator allocator)
+\begin_inset Newline newline
+\end_inset
+
+Starting line : 53
+\end_layout
+
+\begin_layout Itemize
+public void encodeJsonP(Integer jsonpIndex, Queue<Packet> packets, ByteBuf
+ out, ByteBufAllocator allocator, int limit) throws IOException
+\begin_inset Newline newline
+\end_inset
+
+Starting line : 61
+\end_layout
+
+\begin_layout Itemize
+private void processUtf8(ByteBuf in, ByteBuf out, boolean jsonpMode)
+\begin_inset Newline newline
+\end_inset
+
+Starting line : 108
+\end_layout
+
+\begin_layout Itemize
+public void encodePackets(Queue<Packet> packets, ByteBuf buffer, ByteBufAllocato
+r allocator, int limit) throws IOException
+\begin_inset Newline newline
+\end_inset
+
+Starting line : 123
+\end_layout
+
+\begin_layout Itemize
+private byte toChar(int number)
+\begin_inset Newline newline
+\end_inset
+
+Starting line : 144
+\end_layout
+
+\begin_layout Itemize
+static int stringSize(long x)
+\begin_inset Newline newline
+\end_inset
+
+Starting line : 170
+\end_layout
+
+\begin_layout Itemize
+static void getChars(long i, int index, byte[] buf)
+\begin_inset Newline newline
+\end_inset
+
+Starting line : 176
+\end_layout
+
+\begin_layout Itemize
+public static byte[] toChars(long i)
+\begin_inset Newline newline
+\end_inset
+
+Starting line : 211
+\end_layout
+
+\begin_layout Itemize
+public static byte[] longToBytes(long number)
+\begin_inset Newline newline
+\end_inset
+
+Starting line : 218
+\end_layout
+
+\begin_layout Itemize
+public void encodePacket(Packet packet, ByteBuf buffer, ByteBufAllocator
+ allocator, boolean binary) throws IOException
+\begin_inset Newline newline
+\end_inset
+
+Starting line : 230
+\end_layout
+
+\begin_layout Itemize
+public static int find(ByteBuf buffer, ByteBuf searchValue)
+\begin_inset Newline newline
+\end_inset
+
+Starting line : 334
+\end_layout
+
+\begin_layout Itemize
+private static boolean isValueFound(ByteBuf buffer, int index, ByteBuf search)
+\begin_inset Newline newline
+\end_inset
+
+Starting line : 343
+\end_layout
+
+\begin_layout Section
+Task Performed by class analyzed
+\end_layout
+
+\begin_layout Standard
+The class that i have analyzed is stored into the package com.corundumstudio.socke
+tio.protocol so i suppose that it will perform some task reguarding connection,
+ setting, encoding and so on.
+\begin_inset Newline newline
+\end_inset
+
+During the insertion of javadoc, that will be presented in the next chapter,
+ following task perfomed by methods analyzed have been brought out:
+\end_layout
+
+\begin_layout Itemize
+check if JavaScript Object Notation is enable
+\end_layout
+
+\begin_layout Itemize
+try to perform utf-8 codifing
+\end_layout
+
+\begin_layout Itemize
+perform encoding between char and byte
+\end_layout
+
+\begin_layout Itemize
+allocate buffer with respect to an indicated choise
+\end_layout
+
+\begin_layout Itemize
+check if a fixed value is into a buffer
+\end_layout
+
+\begin_layout Itemize
+check if, after a search, something has been found
+\end_layout
+
+\begin_layout Chapter
+Functional Role Of Assigned class
+\end_layout
+
+\begin_layout Standard
+In the assigned class is totally absent any type of documentation.
+ The idea is to provide javadoc or comments step-by-step for each methods
+ in order to allow a better understanding in the future.
+ This assignement is a little bit more difficult due to the total absence
+ of any documentation: this involves that code is, in some part, hardly
+ understandable.
+\end_layout
+
+\begin_layout Section
+public PacketEncoder(Configuration 
+\begin_inset Newline newline
+\end_inset
+
+configuration, JsonSupport jsonSupport)       
+\end_layout
+
+\begin_layout Subsection*
+2.1.1 Java Doc
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+*Java constructor, it permitts to defend from further modifications by cloning
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param configuration, it defend from further modifications by cloning
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param jsonSupport, it allows to implement custom realizations to JSON
+ support operations.
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+2.1.2 Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public PacketEncoder(Configuration configuration, JsonSupport jsonSupport)
+ {         
+\end_layout
+
+\begin_layout Plain Layout
+
+	this.jsonSupport = jsonSupport;
+\end_layout
+
+\begin_layout Plain Layout
+
+	this.configuration = configuration;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+public JsonSupport getJsonSupport() 
+\end_layout
+
+\begin_layout Subsection*
+2.2.1 Java Doc
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+*Allow to take the value of a variable defined as private
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@return jsonSupport, it is the support for JavaScript Object Notation
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+2.2.2 Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public JsonSupport getJsonSupport() {
+\end_layout
+
+\begin_layout Plain Layout
+
+	return jsonSupport;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+public ByteBuf allocateBuffer(ByteBufAllocator allocator) 
+\end_layout
+
+\begin_layout Subsection*
+2.3.1 Java Doc
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+*It prepares the buffer with respect to the selected type
+\end_layout
+
+\begin_layout Plain Layout
+
+*We can have two possible returns
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param allocator, it is the buffer that we want to allocate
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@return type, it is the type of buffer that has been allocated
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+Note: configuration.isPrefererDirectBuffer is a method implemented in class
+ Configuration.
+ I have reported it's javaDoc in order to increase comprehensibility.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+/**      
+\end_layout
+
+\begin_layout Plain Layout
+
+* Buffer allocation method used during packet encoding.
+      
+\end_layout
+
+\begin_layout Plain Layout
+
+* Default is {@code true}      
+\end_layout
+
+\begin_layout Plain Layout
+
+*      
+\end_layout
+
+\begin_layout Plain Layout
+
+* @param preferDirectBuffer    {@code true} if a direct buffer should be
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+*							  tried to be used as target for the encoded
+\end_layout
+
+\begin_layout Plain Layout
+
+*							  messages.
+ If {@code false} is used it will 
+\end_layout
+
+\begin_layout Plain Layout
+
+*							  allocate a heap buffer, which is backed by 
+\end_layout
+
+\begin_layout Plain Layout
+
+*							  an byte array.
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+2.3.2 Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public ByteBuf allocateBuffer(ByteBufAllocator allocator) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	if (configuration.isPreferDirectBuffer()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		return allocator.ioBuffer();
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	return allocator.heapBuffer();
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+public void encodeJsonP(Integer jsonpIndex, 
+\begin_inset Newline newline
+\end_inset
+
+Queue<Packet> packets, ByteBuf out, 
+\begin_inset Newline newline
+\end_inset
+
+ByteBufAllocator allocator, int limit) throws 
+\begin_inset Newline newline
+\end_inset
+
+IOException
+\end_layout
+
+\begin_layout Subsection*
+2.4.1 Java Doc
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param jsonIndex, it is an integer used for setting jsonpMode that will
+ usefor another process
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param packets
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param out, it indicate the type of buffer that has been allocated
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param allocator
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param limit
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+2.4.2 Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public void encodeJsonP(Integer jsonpIndex, Queue<Packet> packets, ByteBuf
+ out, ByteBufAllocator allocator, int limit) throws IOException {
+\end_layout
+
+\begin_layout Plain Layout
+
+	boolean jsonpMode = jsonpIndex != null;
+\end_layout
+
+\begin_layout Plain Layout
+
+	ByteBuf buf = allocateBuffer(allocator);
+\end_layout
+
+\begin_layout Plain Layout
+
+	int i = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+	while (true) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Packet packet = packets.poll();
+\end_layout
+
+\begin_layout Plain Layout
+
+		if (packet == null || i == limit) {                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			break;             
+\end_layout
+
+\begin_layout Plain Layout
+
+		}   
+\end_layout
+
+\begin_layout Plain Layout
+
+		ByteBuf packetBuf = allocateBuffer(allocator);
+\end_layout
+
+\begin_layout Plain Layout
+
+		encodePacket(packet, packetBuf, allocator, true);
+\end_layout
+
+\begin_layout Plain Layout
+
+		int packetSize = packetBuf.writerIndex();             			
+\end_layout
+
+\begin_layout Plain Layout
+
+		buf.writeBytes(toChars(packetSize));             			
+\end_layout
+
+\begin_layout Plain Layout
+
+		buf.writeBytes(B64_DELIMITER);             			
+\end_layout
+
+\begin_layout Plain Layout
+
+		buf.writeBytes(packetBuf);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		packetBuf.release();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		i++;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+		for (ByteBuf attachment : packet.getAttachments()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+			ByteBuf encodedBuf = Base64.encode(attachment, Base64Dialect.URL_SAFE);
+\end_layout
+
+\begin_layout Plain Layout
+
+			buf.writeBytes(toChars(encodedBuf.readableBytes() + 2));
+\end_layout
+
+\begin_layout Plain Layout
+
+			buf.writeBytes(B64_DELIMITER);
+\end_layout
+
+\begin_layout Plain Layout
+
+			buf.writeBytes(BINARY_HEADER);                 				
+\end_layout
+
+\begin_layout Plain Layout
+
+			buf.writeBytes(encodedBuf);             
+\end_layout
+
+\begin_layout Plain Layout
+
+		}         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	if (jsonpMode) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		out.writeBytes(JSONP_HEAD);             			
+\end_layout
+
+\begin_layout Plain Layout
+
+		out.writeBytes(toChars(jsonpIndex));             			
+\end_layout
+
+\begin_layout Plain Layout
+
+		out.writeBytes(JSONP_START);         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\end_layout
+
+\begin_layout Plain Layout
+
+	processUtf8(buf, out, jsonpMode);
+\end_layout
+
+\begin_layout Plain Layout
+
+		buf.release();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	if (jsonpMode) {             
+\end_layout
+
+\begin_layout Plain Layout
+
+		out.writeBytes(JSONP_END);         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+private void processUtf8(ByteBuf in, ByteBuf out, boolean jsonpMode)   
+   
+\end_layout
+
+\begin_layout Subsection*
+2.5.1 Java Doc
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+*This methods processes values and decode them with the utf-8 encoding.
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param in, it indicates the parameters from where i will read the
+\end_layout
+
+\begin_layout Plain Layout
+
+*		   value that i will encode
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param out, it indicates the parameters from where i will write the
+\end_layout
+
+\begin_layout Plain Layout
+
+*		    value after that i will encode it
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param jsonpMode, it idicates if JavaScript OrientedNotation is
+\end_layout
+
+\begin_layout Plain Layout
+
+*	   enabled
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+2.5.2 Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+private void processUtf8(ByteBuf in, ByteBuf out, boolean jsonpMode) { 
+        
+\end_layout
+
+\begin_layout Plain Layout
+
+	while (in.isReadable()) {             
+\end_layout
+
+\begin_layout Plain Layout
+
+		short value = (short) (in.readByte() & 0xFF);
+\end_layout
+
+\begin_layout Plain Layout
+
+		if (value >>> 7 == 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+			if (jsonpMode && (value == '
+\backslash
+
+\backslash
+' || value == '
+\backslash
+'')) {
+\end_layout
+
+\begin_layout Plain Layout
+
+				out.writeByte('
+\backslash
+
+\backslash
+');
+\end_layout
+
+\begin_layout Plain Layout
+
+			}
+\end_layout
+
+\begin_layout Plain Layout
+
+			out.writeByte(value);
+\end_layout
+
+\begin_layout Plain Layout
+
+			} else {                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				out.writeByte(((value >>> 6) | 0xC0));
+\end_layout
+
+\begin_layout Plain Layout
+
+				out.writeByte(((value & 0x3F) | 0x80));             
+\end_layout
+
+\begin_layout Plain Layout
+
+			}         
+\end_layout
+
+\begin_layout Plain Layout
+
+		}     
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+public void encodePackets(Queue<Packet> 
+\begin_inset Newline newline
+\end_inset
+
+packets, ByteBuf buffer, ByteBufAllocator 
+\begin_inset Newline newline
+\end_inset
+
+allocator, int limit) throws IOException
+\end_layout
+
+\begin_layout Subsection*
+2.6.1 Java Doc
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+*This method encode packets
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param packets, it is a queue of packets
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param buffer, it rappresent the buffer that is allocated
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param allocator, it rappresent the byte of buffer that are allocated
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param limit, it rapresent the limit of packets that i can remove from
+\end_layout
+
+\begin_layout Plain Layout
+
+*			  the head of the queue
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+2.6.2 Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public void encodePackets(Queue<Packet> packets, ByteBuf buffer, ByteBufAllocato
+r allocator, int limit) throws IOException {
+\end_layout
+
+\begin_layout Plain Layout
+
+	int i = 0;         
+\end_layout
+
+\begin_layout Plain Layout
+
+	while (true) {             
+\end_layout
+
+\begin_layout Plain Layout
+
+		Packet packet = packets.poll();             
+\end_layout
+
+\begin_layout Plain Layout
+
+		if (packet == null || i == limit) {                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			break;
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+		encodePacket(packet, buffer, allocator, false);
+\end_layout
+
+\begin_layout Plain Layout
+
+		i++;
+\end_layout
+
+\begin_layout Plain Layout
+
+		for (ByteBuf attachment : packet.getAttachments()) {                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			buffer.writeByte(1);                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			buffer.writeBytes(longToBytes(attachment.readableBytes() + 1));       
+          
+\end_layout
+
+\begin_layout Plain Layout
+
+			buffer.writeByte(0xff);                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			buffer.writeByte(4);                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			buffer.writeBytes(attachment);             
+\end_layout
+
+\begin_layout Plain Layout
+
+		}         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}     
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+private byte toChar(int number)        
+\end_layout
+
+\begin_layout Subsection*
+2.7.1 Java Doc
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+*It produce a char from a number, it return the char as byte
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param number
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@return byte
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+2.7.2 Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+private byte toChar(int number) {         
+\end_layout
+
+\begin_layout Plain Layout
+
+	return (byte) (number ^ 0x30);     
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+	static int stringSize(long x)    
+\end_layout
+
+\begin_layout Subsection*
+2.8.1 Java Doc
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+*It calculates the correct stringSize with respect 
+\end_layout
+
+\begin_layout Plain Layout
+
+*to values provides in te declaration of  sizeTable
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param x, numeric variable that must be positive
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@return i, numeric variable
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+2.8.2 Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+static int stringSize(long x) {         
+\end_layout
+
+\begin_layout Plain Layout
+
+	for (int i = 0;; i++)             
+\end_layout
+
+\begin_layout Plain Layout
+
+		if (x <= sizeTable[i])                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			return i + 1;     
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+static void getChars(long i, int index, byte[] buf)        
+\end_layout
+
+\begin_layout Subsection*
+2.9.1 Java Doc
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param i,
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param index,
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param buf,
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+2.9.2 Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+static void getChars(long i, int index, byte[] buf) {         
+\end_layout
+
+\begin_layout Plain Layout
+
+	long q, r;         
+\end_layout
+
+\begin_layout Plain Layout
+
+	int charPos = index;         
+\end_layout
+
+\begin_layout Plain Layout
+
+	byte sign = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+	if (i < 0) {             
+\end_layout
+
+\begin_layout Plain Layout
+
+		sign = '-';             
+\end_layout
+
+\begin_layout Plain Layout
+
+		i = -i;         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	// Generate two digits per iteration         
+\end_layout
+
+\begin_layout Plain Layout
+
+	while (i >= 65536) {             
+\end_layout
+
+\begin_layout Plain Layout
+
+		q = i / 100;             
+\end_layout
+
+\begin_layout Plain Layout
+
+		// really: r = i - (q * 100);             
+\end_layout
+
+\begin_layout Plain Layout
+
+		r = i - ((q << 6) + (q << 5) + (q << 2));             
+\end_layout
+
+\begin_layout Plain Layout
+
+		i = q;             
+\end_layout
+
+\begin_layout Plain Layout
+
+		buf[--charPos] = (byte) DigitOnes[(int)r];             
+\end_layout
+
+\begin_layout Plain Layout
+
+		buf[--charPos] = (byte) DigitTens[(int)r];         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	// Fall thru to fast mode for smaller numbers         
+\end_layout
+
+\begin_layout Plain Layout
+
+	// assert(i <= 65536, i);         
+\end_layout
+
+\begin_layout Plain Layout
+
+	for (;;) {             
+\end_layout
+
+\begin_layout Plain Layout
+
+		q = (i * 52429) >>> (16 + 3);             
+\end_layout
+
+\begin_layout Plain Layout
+
+		r = i - ((q << 3) + (q << 1)); 
+\end_layout
+
+\begin_layout Plain Layout
+
+		// r = i-(q*10) ...
+             
+\end_layout
+
+\begin_layout Plain Layout
+
+		buf[--charPos] = (byte) digits[(int)r];             
+\end_layout
+
+\begin_layout Plain Layout
+
+		i = q;             
+\end_layout
+
+\begin_layout Plain Layout
+
+		if (i == 0)                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			break;         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}         
+\end_layout
+
+\begin_layout Plain Layout
+
+	if (sign != 0) {             
+\end_layout
+
+\begin_layout Plain Layout
+
+		buf[--charPos] = sign;         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}     
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+public static byte[] toChars(long i)        
+\end_layout
+
+\begin_layout Subsection*
+2.10.1 Java Doc
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+*The methods create a variables buffer with a calculated 
+\end_layout
+
+\begin_layout Plain Layout
+
+*size and it will used to call the methods getChars
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param i, 
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@return buf, variable with the correct size calculated
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+2.10.2 Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public static byte[] toChars(long i) {         
+\end_layout
+
+\begin_layout Plain Layout
+
+	int size = (i < 0) ? stringSize(-i) + 1 : stringSize(i);         
+\end_layout
+
+\begin_layout Plain Layout
+
+	byte[] buf = new byte[size];         
+\end_layout
+
+\begin_layout Plain Layout
+
+	getChars(i, size, buf);         
+\end_layout
+
+\begin_layout Plain Layout
+
+	return buf;     
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+public static byte[] longToBytes(long number)     
+\end_layout
+
+\begin_layout Subsection*
+2.11.1 Java Doc
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+*This methods return a byte after that it has recived a
+\end_layout
+
+\begin_layout Plain Layout
+
+*long variable
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param number
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@return res, a byte variables that correspond to the variable
+\end_layout
+
+\begin_layout Plain Layout
+
+*		number that has been passed
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+2.11.2 Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public static byte[] longToBytes(long number) {   // TODO optimize     
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+	int length = (int)(Math.log10(number)+1);         
+\end_layout
+
+\begin_layout Plain Layout
+
+	byte[] res = new byte[length];         
+\end_layout
+
+\begin_layout Plain Layout
+
+	int i = length;         
+\end_layout
+
+\begin_layout Plain Layout
+
+	while (number > 0) {             
+\end_layout
+
+\begin_layout Plain Layout
+
+		res[--i] = (byte) (number % 10);             
+\end_layout
+
+\begin_layout Plain Layout
+
+		number = number / 10;         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}         
+\end_layout
+
+\begin_layout Plain Layout
+
+	return res;     
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+public void encodePacket(Packet packet, 
+\begin_inset Newline newline
+\end_inset
+
+ByteBuf buffer, ByteBufAllocator allocator, 
+\begin_inset Newline newline
+\end_inset
+
+boolean binary) throws IOException 
+\end_layout
+
+\begin_layout Subsection*
+2.12.1 Java Doc
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param packet, it indicate the packet on which operations are done
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param buffer, it represent the buffer that has been allocated
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param allocator, it represent the byte of the buffer that has been allocated
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param binary, it isused to decide if buffer is already allocated
+\end_layout
+
+\begin_layout Plain Layout
+
+*	    or not
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@return 
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+2.12.2 Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public void encodePacket(Packet packet, ByteBuf buffer, ByteBufAllocator
+ allocator, boolean binary) throws IOException {
+\end_layout
+
+\begin_layout Plain Layout
+
+	ByteBuf buf = buffer;         
+\end_layout
+
+\begin_layout Plain Layout
+
+	if (!binary) {             
+\end_layout
+
+\begin_layout Plain Layout
+
+		buf = allocateBuffer(allocator);         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}         
+\end_layout
+
+\begin_layout Plain Layout
+
+	byte type = toChar(packet.getType().getValue());         
+\end_layout
+
+\begin_layout Plain Layout
+
+	buf.writeByte(type);
+\end_layout
+
+\begin_layout Plain Layout
+
+	try {             
+\end_layout
+
+\begin_layout Plain Layout
+
+		switch (packet.getType()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+			case PONG: {                     
+\end_layout
+
+\begin_layout Plain Layout
+
+				buf.writeBytes(packet.getData().toString().getBytes(CharsetUtil.UTF_8));
+                     
+\end_layout
+
+\begin_layout Plain Layout
+
+				break;                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			}
+\end_layout
+
+\begin_layout Plain Layout
+
+			case OPEN: {                     
+\end_layout
+
+\begin_layout Plain Layout
+
+				ByteBufOutputStream out = new ByteBufOutputStream(buf);            
+         
+\end_layout
+
+\begin_layout Plain Layout
+
+				jsonSupport.writeValue(out, packet.getData());                     
+\end_layout
+
+\begin_layout Plain Layout
+
+				break;                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			}
+\end_layout
+
+\begin_layout Plain Layout
+
+			case MESSAGE: {
+\end_layout
+
+\begin_layout Plain Layout
+
+				ByteBuf encBuf = null;
+\end_layout
+
+\begin_layout Plain Layout
+
+				if (packet.getSubType() == PacketType.ERROR) {                       
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+					encBuf = allocateBuffer(allocator);
+\end_layout
+
+\begin_layout Plain Layout
+
+					ByteBufOutputStream out = new ByteBufOutputStream(encBuf);
+\end_layout
+
+\begin_layout Plain Layout
+
+					jsonSupport.writeValue(out, packet.getData());                     
+\end_layout
+
+\begin_layout Plain Layout
+
+				}
+\end_layout
+
+\begin_layout Plain Layout
+
+				if (packet.getSubType() == PacketType.EVENT || packet.getSubType() == PacketTyp
+e.ACK) {
+\end_layout
+
+\begin_layout Plain Layout
+
+					List<Object> values = new ArrayList<Object>();                    
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+					if (packet.getSubType() == PacketType.EVENT) {                      
+       
+\end_layout
+
+\begin_layout Plain Layout
+
+						values.add(packet.getName());                         
+\end_layout
+
+\begin_layout Plain Layout
+
+					}
+\end_layout
+
+\begin_layout Plain Layout
+
+					encBuf = allocateBuffer(allocator);
+\end_layout
+
+\begin_layout Plain Layout
+
+					List<Object> args = packet.getData();                         
+\end_layout
+
+\begin_layout Plain Layout
+
+					values.addAll(args);                         
+\end_layout
+
+\begin_layout Plain Layout
+
+					ByteBufOutputStream out = new ByteBufOutputStream(encBuf);
+\end_layout
+
+\begin_layout Plain Layout
+
+					jsonSupport.writeValue(out, values);
+\end_layout
+
+\begin_layout Plain Layout
+
+					if (!jsonSupport.getArrays().isEmpty()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+						packet.initAttachments(jsonSupport.getArrays().size());             
+                
+\end_layout
+
+\begin_layout Plain Layout
+
+						for (byte[] array : jsonSupport.getArrays()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+							packet.addAttachment(Unpooled.wrappedBuffer(array));              
+               
+\end_layout
+
+\begin_layout Plain Layout
+
+						}                             
+\end_layout
+
+\begin_layout Plain Layout
+
+						packet.setSubType(PacketType.BINARY_EVENT);                        
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+					}                     
+\end_layout
+
+\begin_layout Plain Layout
+
+				}
+\end_layout
+
+\begin_layout Plain Layout
+
+				byte subType = toChar(packet.getSubType().getValue());               
+      
+\end_layout
+
+\begin_layout Plain Layout
+
+				buf.writeByte(subType);
+\end_layout
+
+\begin_layout Plain Layout
+
+				if (packet.hasAttachments()) {                         
+\end_layout
+
+\begin_layout Plain Layout
+
+					byte[] ackId = toChars(packet.getAttachments().size());             
+            
+\end_layout
+
+\begin_layout Plain Layout
+
+					buf.writeBytes(ackId);                         
+\end_layout
+
+\begin_layout Plain Layout
+
+					buf.writeByte('-');                     
+\end_layout
+
+\begin_layout Plain Layout
+
+				}
+\end_layout
+
+\begin_layout Plain Layout
+
+				if (packet.getSubType() == PacketType.CONNECT) {                     
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+					if (!packet.getNsp().isEmpty()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+						buf.writeBytes(packet.getNsp().getBytes(CharsetUtil.UTF_8));         
+                
+\end_layout
+
+\begin_layout Plain Layout
+
+					}                     
+\end_layout
+
+\begin_layout Plain Layout
+
+				} else {                         
+\end_layout
+
+\begin_layout Plain Layout
+
+				if (!packet.getNsp().isEmpty()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+					buf.writeBytes(packet.getNsp().getBytes(CharsetUtil.UTF_8));      
+\end_layout
+
+\begin_layout Plain Layout
+
+					buf.writeByte(',');                         
+\end_layout
+
+\begin_layout Plain Layout
+
+				}                     
+\end_layout
+
+\begin_layout Plain Layout
+
+			}
+\end_layout
+
+\begin_layout Plain Layout
+
+			if (packet.getAckId() != null) {                         
+\end_layout
+
+\begin_layout Plain Layout
+
+				byte[] ackId = toChars(packet.getAckId());                         
+\end_layout
+
+\begin_layout Plain Layout
+
+				buf.writeBytes(ackId);                     
+\end_layout
+
+\begin_layout Plain Layout
+
+			}
+\end_layout
+
+\begin_layout Plain Layout
+
+			if (encBuf != null) {                         
+\end_layout
+
+\begin_layout Plain Layout
+
+				buf.writeBytes(encBuf);                         
+\end_layout
+
+\begin_layout Plain Layout
+
+				encBuf.release();                     
+\end_layout
+
+\begin_layout Plain Layout
+
+			}
+\end_layout
+
+\begin_layout Plain Layout
+
+			break;                 
+\end_layout
+
+\begin_layout Plain Layout
+
+		}             
+\end_layout
+
+\begin_layout Plain Layout
+
+	}finally {             
+\end_layout
+
+\begin_layout Plain Layout
+
+	// we need to write a buffer in any case             
+\end_layout
+
+\begin_layout Plain Layout
+
+		if (!binary) {                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			buffer.writeByte(0);                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			int length = buf.writerIndex();                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			buffer.writeBytes(longToBytes(length));                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			buffer.writeByte(0xff);                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			buffer.writeBytes(buf);
+\end_layout
+
+\begin_layout Plain Layout
+
+			buf.release();             
+\end_layout
+
+\begin_layout Plain Layout
+
+		}         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}    
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+public static int find(ByteBuf buffer, ByteBuf searchValue)         
+\end_layout
+
+\begin_layout Subsection*
+2.13.1 Java Doc
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+*It scans a fixed parameters and with a for cycle checks the 
+\end_layout
+
+\begin_layout Plain Layout
+
+*presence of occurences of another selected parameters 
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param bufferm
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param searchValue
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@return integer that indicate if value has been found and, if it 
+\end_layout
+
+\begin_layout Plain Layout
+
+*		is happened, it indicates value positions
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+2.13.2 Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+public static int find(ByteBuf buffer, ByteBuf searchValue) {         
+\end_layout
+
+\begin_layout Plain Layout
+
+	for (int i = buffer.readerIndex(); i < buffer.readerIndex() + buffer.readableBytes
+(); i++) {             
+\end_layout
+
+\begin_layout Plain Layout
+
+		if (isValueFound(buffer, i, searchValue)) {                 
+\end_layout
+
+\begin_layout Plain Layout
+
+		return i;             
+\end_layout
+
+\begin_layout Plain Layout
+
+		}         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}         
+\end_layout
+
+\begin_layout Plain Layout
+
+	return -1;     
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+	private static boolean isValueFound(ByteBuf buffer, int index, ByteBuf
+ search)        
+\end_layout
+
+\begin_layout Subsection*
+2.14.1 Java Doc
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+*It scans a fixed parameters and with a for cycle checks the 
+\end_layout
+
+\begin_layout Plain Layout
+
+*presence of occurences of another selected parameters 
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param buffer, it indicates what i'm looking for
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param index, it indicates from where i will start
+\end_layout
+
+\begin_layout Plain Layout
+
+*@param search, it is the buffer into where i'm looking for 
+\end_layout
+
+\begin_layout Plain Layout
+
+*
+\end_layout
+
+\begin_layout Plain Layout
+
+*@return boolean value, it indicates if the value has been
+\end_layout
+
+\begin_layout Plain Layout
+
+*		found or not
+\end_layout
+
+\begin_layout Plain Layout
+
+*/
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+2.14.2 Code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}
+\end_layout
+
+\begin_layout Plain Layout
+
+private static boolean isValueFound(ByteBuf buffer, int index, ByteBuf search)
+ {         
+\end_layout
+
+\begin_layout Plain Layout
+
+	for (int i = 0; i < search.readableBytes(); i++) {             
+\end_layout
+
+\begin_layout Plain Layout
+
+		if (buffer.getByte(index + i) != search.getByte(i)) {                 
+\end_layout
+
+\begin_layout Plain Layout
+
+			return false;             
+\end_layout
+
+\begin_layout Plain Layout
+
+		}         
+\end_layout
+
+\begin_layout Plain Layout
+
+	}         
+\end_layout
+
+\begin_layout Plain Layout
+
+	return true;     
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+List Of Issues Found By 
+\begin_inset Newline newline
+\end_inset
+
+Applying The Checklist
+\end_layout
+
+\begin_layout Standard
+Next sectiond will provide error with respect to an assigned checklist that
+ contains all correct coding rules.
+ The identification of errors was made difficult becouse of the absence
+ of comments that could clarify the code.
+\begin_inset Newline newline
+\end_inset
+
+Only section with errors have been described.
+\begin_inset Newline newline
+\end_inset
+
+Reguarding sections 
+\series bold
+Indentation - Wrapping Lines - Package and Import Statements - Arrays -
+ Methods Calls - Outputformat - Computation, Comparison And Assignment -
+ Files
+\series default
+ i haven't found any coding rules violation
+\end_layout
+
+\begin_layout Section
+Naming Conventions
+\end_layout
+
+\begin_layout Standard
+Naming conventions, in this class, should create some problem.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Two methods, encodePacket and encodePackets are ambiguous.
+\begin_inset Newline newline
+\end_inset
+
+Variables DigitTens and DigitOnes start with a work capitalized.
+\begin_inset Newline newline
+\end_inset
+
+One-character variables is used in a wrong way, as 'q' and 'r' variables
+ in line 177.
+\end_layout
+
+\begin_layout Section
+Braces
+\end_layout
+
+\begin_layout Standard
+In this class is used Kernighan and Ritchie style for braces.
+ However curly braces are not always used in the correct way:
+\end_layout
+
+\begin_layout Itemize
+line 170, methods stringSize(...)
+\begin_inset Newline newline
+\end_inset
+
+The for cycle in line 171 and the if cycle in line 172 don't use curly braces
+\end_layout
+
+\begin_layout Itemize
+line 203, realted to methods getChars(...)
+\begin_inset Newline newline
+\end_inset
+
+The if instruction doesn't use curly baces
+\end_layout
+
+\begin_layout Section
+File Organization
+\end_layout
+
+\begin_layout Standard
+In this class blank lines are used to separate different sections, but not
+ all of these are useful.
+ 
+\begin_inset Newline newline
+\end_inset
+
+With respect to maximum line lenght, it is not respected: more lines lenght
+ exceed 80 characters.
+\end_layout
+
+\begin_layout Section
+Comments
+\end_layout
+
+\begin_layout Standard
+In the class PacketEncoder, comments are totally absent.
+ In order to increasy the ability to understanding, an upgrade of comments
+ and javadoc has been provided in the previous chapter.
+ 
+\end_layout
+
+\begin_layout Section
+Java Source Files
+\end_layout
+
+\begin_layout Standard
+PacketEncoder.java provides only one class, as required by checklist, but
+ javadoc is complieely absent.
+\end_layout
+
+\begin_layout Section
+Class And Interface Declaration
+\end_layout
+
+\begin_layout Standard
+In lines 148-167 there are variables that should be declareted about in
+ line 40/45.
+\end_layout
+
+\begin_layout Section
+Inizialization And Declaration
+\end_layout
+
+\begin_layout Standard
+Reguaring this section, it is partially respected:
+\end_layout
+
+\begin_layout Itemize
+constructor is called in the right position, after variables declaration
+ at the beginning o class;
+\end_layout
+
+\begin_layout Itemize
+variables DigitTens, DigitOnes, digits and sizeTable are correclty define
+ as variables but aren't defined in the correct position (after the beginning
+ of class);
+\end_layout
+
+\begin_layout Itemize
+when required, not all local variable are defined at the beginning of block.
+ For example variable type (line 235)
+\end_layout
+
+\begin_layout Section
+Object Comparison
+\end_layout
+
+\begin_layout Standard
+All object comparison are done in the wrong way, with '==' and not with
+ 'equals'
+\end_layout
+
+\begin_layout Section
+Exceptions
+\end_layout
+
+\begin_layout Standard
+In different methods arepresent exception.
+ IOException is used in methods:
+\end_layout
+
+\begin_layout Itemize
+encodeJsonP, line 61 
+\end_layout
+
+\begin_layout Itemize
+encodePackets, line 123
+\end_layout
+
+\begin_layout Itemize
+encodePacket, line 230
+\end_layout
+
+\begin_layout Standard
+Each of this methods works with input and output command with respect to
+ buffers but in the implementation of exception isn't provide any type of
+ comment.
+ With this approch, when i will have an IOException, i will have an exception
+ (correctly) but without any message.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+In methods called processUtf8 there isn't any exception but also it work
+ with some output command for buffers.
+ This methods receive the fixed exeption by the caller methods.
+\begin_inset Newline newline
+\end_inset
+
+In other methods isn't necessary any type of exception.
+\end_layout
+
+\begin_layout Section
+Flows Of Controls
+\end_layout
+
+\begin_layout Standard
+The methods encodePacket, line 230, present a switch instruction, lines
+ 239-318.
+\begin_inset Newline newline
+\end_inset
+
+All cases are addressed by breack but there isn't a default branch.
+ It's also true that the switch instruction is included in a try/catch instructi
+on; if any case of switch will be done, the execution will pass to the finally
+ branch.
+\begin_inset Newline newline
+\end_inset
+
+With respect to loops, not all are implemented in the correct way:
+\end_layout
+
+\begin_layout Itemize
+line 198, related to method getCharts
+\begin_inset Newline newline
+\end_inset
+
+The for cycle is not correct implemented, it hasn't the contidions
+\end_layout
+
+\begin_layout Chapter
+Appendix
+\end_layout
+
+\begin_layout Section
+Used Tools
+\end_layout
+
+\begin_layout Standard
+We used the following tools to make the Code Inspection document: 
+\end_layout
+
+\begin_layout Itemize
+LYX 2.1: to redact and format the document; 
+\end_layout
+
+\begin_layout Itemize
+NetBeans IDE 8.1: to analyze and inspect the source code provided.
+\end_layout
+
+\begin_layout Section
+Working Time
+\end_layout
+
+\begin_layout Standard
+In order to complete this document i have used about 24 hours, more of them
+ due to the completely absence of documentation, that is useful on order
+ to understang an unknowing code.
+ 
+\end_layout
+
+\end_body
+\end_document
