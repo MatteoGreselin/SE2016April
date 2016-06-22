@@ -1,0 +1,463 @@
+%% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[10pt,a4paper]{report}
+\usepackage[latin1]{inputenc}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\pdfpageheight\paperheight
+\pdfpagewidth\paperwidth
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{amsfonts}
+
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{blindtext}
+
+\usepackage{listings}
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{java}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\definecolor{gray75}{gray}{0.75}
+
+
+\lstset{language = Java, style=java}
+
+
+\newcommand{\hsp}{\hspace{18pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+\author{Losio Davide Francesco, Luchetti Mauro, Mosca Paolo}
+\title{Integration Test Plan Document\\ Version 1.0}
+
+\makeatother
+
+\begin{document}
+\maketitle \tableofcontents{}
+
+
+\chapter{Introduction }
+
+
+\section{Revision History}
+\begin{itemize}
+\item January 2016 - Integration Test Plan Document: Version 1.0
+\end{itemize}
+
+\section{Purpose and Scope}
+
+This document provides the testing plan for the integration of the
+whole MTS system. Components implementation order, interfaces between
+them and tests that must be executed are stated here. This document
+should be used as a reference of the testing methodologies used by
+the MTS team. The scope is the creation of a workflow sequence of
+operation that allows the testers to work optimizing the available
+time.
+
+
+\section{List of Definitions and Abbreviations }
+\begin{itemize}
+\item \textbf{MTS}: \textbf{M}y\textbf{T}axi\textbf{S}ervice
+\item \textbf{RASD:} \textbf{R}equirements \textbf{S}pecification \textbf{A}nalysis
+\textbf{D}ocument 
+\item \textbf{DD: D}esign \textbf{D}ocument
+\end{itemize}
+
+\section{List of Reference Documents}
+\begin{itemize}
+\item {\textbf{MyTaxyService RASD}} 
+
+
+- November/6/2015-
+
+\item {\textbf{MyTaxyService DD}} 
+
+
+- December/4/2015-
+
+\item The project description 
+\item The documentation of any tool you plan to use for testing 
+\end{itemize}
+
+\chapter{Integration Strategy }
+
+
+\section{Entry Criteria}
+
+Before the beginning of the procedures stated in this document, it
+is mandatory to develop suitable unit tests for each class. Furthermore,
+this tests, have to be implemented during the class development in
+order to ensure their correction and to certify that the requirements
+of the class functionality are respected. The developing of the unit
+tests also aims to guarantee a minimal automated testing environment,
+to ensure that each revision to the code can be tested immediately.
+Classes that haven't been tested cannot be included in the integration
+testing, This in order to simplify error-finding procedures in addition
+to trying to avoid some sort of big-bang approach. Not completed components,
+either with respect to the code or the testing, will be integrated
+and tested incrementally. 
+
+
+\section{Elements to be Integrated}
+
+Elements to be integrated are those individuated in DD document (look
+at Reference, at point Two). For the sake of legibility they are reported
+here:
+\begin{itemize}
+\item Queue Handler
+\item Requests Handler
+\item Shareable Ride Finder
+\item Mapping Features Handler
+\item DBMS and Log-In Handler
+\item Ban Handler 
+\item Passenger Communicator 
+\item Driver Communicator 
+\item Passenger-views 
+\item Driver-views
+\end{itemize}
+\newpage
+
+\begin{flushleft}
+The integration testing involves all the code modules developed, moreover,
+the end-user application has to be tested in the various system environments
+stated in DD document at the Scope chapter, these are:
+\par\end{flushleft}
+\begin{itemize}
+\item Unix based OS.
+\item Windows systems.
+\item Android.
+\item iOS.
+\item Windows phone.
+\end{itemize}
+
+\section{Integration Strategy}
+
+The integration strategy will follow a mixed-approach, also known
+as sandwich approach. \\\\Model integration will start with the completion
+of DBMS and Log-In Handler, Mapping Features Handler and the Requests
+Handler. These components can be easily tested in their integration
+with the the Queue Handler, that will be initilially implemented as
+a stub component and than integrated in the final realization. \\\\
+Indeed, since these components require from the Queue handler only
+some simple return values, this values can be retrieved by very simple
+stubs class (of about one return method). \\\\This approach also
+allows the functions incremental integration, in fact the Shareable
+Ride Finder, which is a component bounded to an ``extra'' functionality,
+will be implemented in a second time. Since it isn't an essential
+part but an additional functionality, we have no need to use stubs
+to fulfill his functions.\\\\ Actually, the Model part of the system
+can be viewed as a ``sub-component'', in an ideal hierarchy, with
+the controller and the view on top. These two parts can be mocked
+up easily, to test an embryonic version of the model, which is the
+core part of the entire system; this has to be developed in first
+place. \\\\Here we are using a bottom-up approach instead of testing
+the component of the model we have preferred a top-down approach.
+This definitely justify the general sandwich approach as a proper
+one. \\\\A little note has to be made on database component testing:
+this will be done populating the DBMS table with some fake values,
+and actually it couldn't be unit tested as a normal class. Instead,
+the class interacting with him will be tested to ensure his correct
+implementation.\\\\ The main feature that this strategy guarantees
+is that it perfectly matches the incremental approach needed by the
+developing of the system.
+
+
+\section{Software Integration Sequence}
+
+The integration will follow the path specified below:
+\begin{itemize}
+\item In a first time, model components will be developed and tested along
+side their completion.
+
+\begin{enumerate}
+\item The first components to be developed and tested will be the DBMS \&
+Log-In Handler, Mapping Features Handler and Requests Handler, as
+these are the main components of the entire system. Interactions among
+the related components will be simulated by the realization of simple
+and quick stubs.\\\\The development procedure will be split up among
+three different developing-team. This will optimize the project timeliness
+since that works will going on in a parallel way. \\\\The integration
+between Mapping Features Handler and the Google Maps API has to be
+taken in account and carried out. Since this SOA service is already
+on the market, there is no need of drivers or stubs to test this integration.
+A first integration between Mapping Features Handler and DBMS \& Log-In
+Handler should be done instead. \\\\The Request Handler will be also
+provided of a stub component, that will play the role of a simple
+Shareable Request Finder.\\\\ This procedure will be even applied
+for the realization of a ban handler stub, which will also be implemented
+as a driver for the Request Handler.
+\item After that point one is successfully completed, Queue Handler will
+be developed and tested. When it correctly meets all the Entry Criteria
+stated above, it will take place of the stub used at point 1, then,
+the integration will be tested again.\\\\ This approach ensures to
+clearly separate integration issues coming from the Mapping Features
+Handler, DBMS \& Log-In Handler and Requests Handle, or the newly
+integrated component. 
+\item At least, the Ban Handler will be developed and tested exploiting
+the already existent stub and driver.
+\item Functionalities of the whole Model ``Subsystem'' will be tested
+through the using of view and controller drivers. This will give an
+overview on the main issues to solve in the controllers and views
+implementation.\newpage
+\end{enumerate}
+\item In an optic of an incremental approach, Controllers and Views components
+will be still developed and tested one by one.
+
+\begin{enumerate}
+\item Controllers, either for the driver or the passenger side, will be
+firstly developed an tested. This allows the developers to clearly
+know what are the inputs requested by the Model to perform his functions.
+They actually will be the result of the integration, and huge amplification
+of the drivers used in the model testing.\\\\ At the end of this
+process, when the Controllers definitely meet the entry criteria and
+one at time, they will take the drivers place, and will pass thorough
+the integration test.
+\item View will be developed upon the Controllers integration testing completion.
+As well as latter, they will be the result of the drivers integration
+and amplification.\\\\ At the end of this process, when the views
+definitely meet the entry criteria and one at time, they will take
+take the drivers place, and will pass thorough the integration test.
+\end{enumerate}
+\item Reached this point, the entire system will going thorough a general
+integration system test, that will cover:
+
+\begin{itemize}
+\item Whole System Testing.
+\item Performance testing.
+\item Ultimate features testing, exploiting the main scenarios in which
+the system has to work.
+\end{itemize}
+\item At this time, after passing all integration and acceptance testing,
+a first finite product version will be released for beta testing purpose,
+among a bunch of selected test-user. This version will be spoiled
+of the extra feature provided by the final one. Those are Shareable
+ride function and MTS API. This will allow a more flexible timetable
+for the releasing date. Indeed, if the develop process encounters
+some delays, it will be possible to evaluate a first basic-release
+spoiled of the ``extra'' features listed above. From time to time
+the last functionalities will be added when ready.
+\item Meanwhile Shareable Ride Finder component will be developed, tested
+and integrated.
+\item API functionalities will be implemented and tested at least with some
+fake implementation of their use.\newpage
+\end{itemize}
+For having a better overview of the Integration Sequence procedure,
+a simple scheme follows:
+
+\begin{figure}[H] \makebox[\textwidth][c]{ \includegraphics[width=\textwidth]{\string"ITPDimages/IntegrationSequence".png} } \end{figure}
+
+
+\section{Subsystem Integration Sequence}
+
+As result of the integration sequence, the subsystems taking part
+in the application will be integrated in this order:
+\begin{enumerate}
+\item Model core functionalities.
+\item Controllers.
+\item Views.
+\item Extra functionalities and API.
+\end{enumerate}
+
+\chapter{Individual Steps and Test Description }
+
+
+\section{Integration Test 1}
+
+\begin{center}
+\begin{tabular}{|p{0.3\textwidth}||p{0.65\textwidth}|}
+\hline  \textbf{Test Case Identifier} & I1\tabularnewline
+\hline  \textbf{Test Items} & DBMS \& LogIn Handler -- Mapping Features Handler\tabularnewline 
+\hline  \textbf{Other Stubs} & None\tabularnewline 
+\hline  \textbf{Input Specification} & Method calls from DBMS \& LogIn Handler\tabularnewline 
+\hline  \textbf{Output Specification} & Check that the correct methods are called in Mapping Features Handler\tabularnewline 
+\hline  \textbf{Tests applied} & The tests done must verify that the component:
+\begin{itemize}
+\item calls the correct method for locating a driver basing on his position when his availability state changes   
+\end{itemize}
+\tabularnewline 
+\hline  
+\end{tabular}
+\par\end{center}
+
+
+\section{Integration Test 2}
+
+\begin{center}
+\begin{tabular}{|p{0.3\textwidth}||p{0.65\textwidth}|}
+\hline  \textbf{Test Case Identifier} & I2\tabularnewline
+\hline  \textbf{Test Items} & DBMS \& LogIn Handler -- Queue Handler stub\tabularnewline 
+\hline  \textbf{Other Stubs} & None\tabularnewline 
+\hline  \textbf{Input Specification} & Method calls from DBMS \& LogIn Handler\tabularnewline 
+\hline  \textbf{Output Specification} & Check that the correct methods are called in Queue Handler stub\tabularnewline 
+\hline  \textbf{Tests applied} & The tests done must verify that the component:
+\begin{itemize}
+\item calls the correct method for adding a driver in the queue related to his position when his availability becomes "true"  
+\item calls the correct method for deleting a driver from the queue related to his position when his availability becomes "false"  
+\end{itemize}
+\tabularnewline 
+\hline  
+\end{tabular}
+\par\end{center}
+
+
+\section{Integration Test 3}
+
+\begin{center}
+\begin{tabular}{|p{0.3\textwidth}||p{0.65\textwidth}|}
+\hline  \textbf{Test Case Identifier} & I3\tabularnewline
+\hline  \textbf{Test Items} & Request Handler -- Queue Handler stub\tabularnewline 
+\hline  \textbf{Other Stubs} & Shareable Request Finder\tabularnewline 
+\hline  \textbf{Input Specification} & Method calls from Request Handler\tabularnewline 
+\hline  \textbf{Output Specification} & Check that the correct methods are called in Queue Handler stub\tabularnewline 
+\hline  \textbf{Tests applied} & The tests done must verify that the component:
+\begin{itemize}
+\item calls the correct method for extracting a driver from the queue related to the ingoing request starting position
+\item calls the correct method for adding a driver in the queue related to the ingoing request starting position if the user doesn't confirm or if the timeout expires
+\item calls the correct method for creating a shereabled request if the ingoing one asks for it
+\end{itemize}
+\tabularnewline 
+\hline  
+\end{tabular}
+\par\end{center}
+
+
+\section{Integration Test 4}
+
+\begin{center}
+\begin{tabular}{|p{0.3\textwidth}||p{0.65\textwidth}|}
+\hline  \textbf{Test Case Identifier} & I4\tabularnewline
+\hline  \textbf{Test Items} & DBMS \& LogIn Handler -- Ban Handler Stub\tabularnewline 
+\hline  \textbf{Other Stubs} & None\tabularnewline 
+\hline  \textbf{Input Specification} & Method calls from Queue Handler\tabularnewline 
+\hline  \textbf{Output Specification} & Check that the correct methods are called in Ban Handler \tabularnewline 
+\hline  \textbf{Tests applied} & The tests done must verify that the component:
+\begin{itemize}
+\item calls the correct method for adding a new banned user
+\item calls the correct method for checking whether a user passed as parameter is banned or not
+\end{itemize}
+\tabularnewline 
+\hline  
+\end{tabular}
+\par\end{center}
+
+\newpage
+
+
+\section{Integration Test 5}
+
+\begin{center}
+\begin{tabular}{|p{0.3\textwidth}||p{0.65\textwidth}|}
+\hline  \textbf{Test Case Identifier} & I5\tabularnewline
+\hline  \textbf{Test Items} & Model component -- Controller\tabularnewline 
+\hline  \textbf{Other Stubs} & None\tabularnewline 
+\hline  \textbf{Input Specification} & Method calls from Model components\tabularnewline 
+\hline  \textbf{Output Specification} & Check that the correct methods are called in Controller \tabularnewline 
+\hline  \textbf{Tests applied} & The tests done must verify that:
+\begin{itemize}
+\item The Request Handler component calls the correct method for sending a request to a given driver 
+\item The Request Handler component correctly receives an ingoing request from a passenger 
+\item The Mapping Features Handler component calls the correct method for sending the map informations to a given driver 
+\item The Mapping Features Handler component calls the correct method for sending the map informations to a given passenger 
+\item The DBMS \& LogIn Handler component correctly receives LoginData informations from the Passenger Communicator
+\item The DBMS \& LogIn Handler component correctly receives LoginData informations from the Driver Communicator
+\item The DBMS \& LogIn Handler component correctly answers to passenger user sending the access permission to the related page
+\item The DBMS \& LogIn Handler component correctly answers to driver user sending the access permission the related page
+\item The DBMS \& LogIn Handler component refuses the access to a banned user
+\end{itemize}
+\tabularnewline 
+\hline  
+\end{tabular}
+\par\end{center}
+
+\newpage
+
+
+\section{Integration Test 6}
+
+\begin{center}
+\begin{tabular}{|p{0.3\textwidth}||p{0.65\textwidth}|}
+\hline  \textbf{Test Case Identifier} & I6\tabularnewline
+\hline  \textbf{Test Items} & Controller subsystem -- View subsystem\tabularnewline 
+\hline  \textbf{Other Stubs} & None\tabularnewline 
+\hline  \textbf{Input Specification} & Method calls from Controller components\tabularnewline 
+\hline  \textbf{Output Specification} & Check that the correct methods are called in View\tabularnewline 
+\hline  \textbf{Tests applied} & The tests done must verify that:
+\begin{itemize}
+\item The Driver Communicator component calls the correct method for showing the request information to a given driver view
+\item The Passenger Communicator component correctly receives an ingoing request from a passenger view
+\item The Driver Communicator component calls the correct method for showing the map and a possible route to a given driver view, basing on the information provided by the model 
+\item The Passenger Communicator component calls the correct method for showing the map to a given passenger view, basing on the information provided by the model 
+\item The Passenger Communicator component calls the correct method for showing the user related page on his device
+\item The Driver Communicator component calls the correct method for showing the driver related page on his device
+\item The Passenger Communicator component calls the correct method for showing the ban informations to a banned user
+\end{itemize}
+\tabularnewline 
+\hline  
+\end{tabular}
+\par\end{center}
+
+
+\chapter{Tools and Test Equipment Required}
+
+The following tools will be used in order to make tests according
+to those presented during the lectures. Manual testing will be also
+used when no other methods will be avaiable. 
+\begin{itemize}
+\item Starting by considering Mockito, it will be used either where will
+be necessary to isolate dependencies (i.e during Requests Handler's
+building)or to test Mapping Features Handler's interaction with external
+service (Google APIs); moreover, Mockito is used to make possible
+the usage of a not implemented yet class. this tool allows even us
+to stub a method whenever understanding if a object method answer
+reply in the foresee manners (i.e ``When an immediate request is
+noticed print 'OK' `` ).
+\item Arquilan might be used for set up the right interaction among the
+components especially in order to understand if the database works
+well.
+\item JMeter can be used to have consistency and fault tollerance tested.
+It provides some functionalities in order to simulate a fulfilled
+form or an information overload, this can be useful close to the end,
+either an entire ``Booking action'' need to be tested or whereas
+the system can work well under strain or a big number of incoming
+request may cause a failure.
+\end{itemize}
+
+\chapter{Program Stubs and Test Data Required }
+
+Based on the testing strategy and test design, identify any program
+stubs or special test data required for each integration step.
+\end{document}
