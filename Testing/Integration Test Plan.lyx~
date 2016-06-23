@@ -272,7 +272,11 @@ Element To Be Integrated
 \end_layout
 
 \begin_layout Standard
-Elements to be integrated are those individuated in DD document (section).
+Elements to be integrated are those individuat
+\series bold
+Mockito
+\series default
+ed in DD document (section).
  Here i reports an alphabetic list:
 \end_layout
 
