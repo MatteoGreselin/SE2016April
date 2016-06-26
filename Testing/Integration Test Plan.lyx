@@ -231,16 +231,6 @@ SmartCityAdvisor DD
 Project Assignment provided by professors
 \end_layout
 
-\begin_layout Itemize
-Documentation about tools used during testing as:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-aaa
-\end_layout
-
-\end_deeper
 \begin_layout Chapter
 Integraztion Strategy
 \end_layout
@@ -414,6 +404,10 @@ Android
 
 \begin_layout Itemize
 iOS
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -423,6 +417,13 @@ Integration Strategy
 \begin_layout Standard
 Integration strategy should be considered as a bottom-up approach with respect
  to interactions with other component.
+\begin_inset Newline newline
+\end_inset
+
+In the next is proposed a schema that clarify the sequence of integration.
+ The idea is that when a component for a component will be performed the
+ integration test, all the component that should be considered as 'secondary'
+ for it must be already integrated.
 \begin_inset Newline newline
 \end_inset
 
@@ -446,14 +447,132 @@ end{tikzpicture}
 \end_inset
 
 
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
 Software Integration Sequence
 \end_layout
 
+\begin_layout Standard
+For integration tests phase is supposed that each Handler will correctly
+ interact with its actuator: this mean that Map Handler will be already
+ interfaced with Google Maps API, Pollution Handler receives correct data
+ from pollution sensors, Traffic Situation Handler can correclty communicate
+ with monitors on the street and with traffic lights and so on.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+The software integration start with the DB: it must be complete develope
+ before that any test could be done.
+ Then it will be integrated with Account and Data Handler, the only component
+ with connection and privileges for comunicating with the DB.
+ After this, could be start the real integration phase.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+It has been choosen to start with integration between Account and Data Handler
+ and Queue Handler becouse it is a component without interaction with other
+ one.
+ It can be conseidered as an 'insolate system': it must return correct data
+ when guests or user require to see the situation in a specific hospital
+ for a specific type of visit and it must provide functionality for updating
+ queue coherently with normal hospital activities.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+The successive integration test will include Account and Data Handler yet,
+ but with Notification Handler: the test will check if Notification Handler
+ could receive different list of users for forwarding notification, this
+ is one of the most important functionalities in the application and it
+ is used by other Handler as Event Handler, Traffic Situation Handler, Parking
+ Handler or Public Transport Handler when they need to comunicate with users.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+After it, will be done the integration test between Account And Data Handler
+ and Parking Handler, this becouse Parking Handler could provade all functionali
+ties only if Notification Handler will work correctly.
+\begin_inset Newline newline
+\end_inset
+
+Then will be the turn of Event Handler with Account and Data Handler: it
+ will allow to schedule new event, notify this action to user and provide
+ information for Traffic Situation Handler so that it could manage road
+ condition when event will be started
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+At this point i have to integrate Traffic Situation Handler with different
+ component.
+ It is the most important Handler after Account And Data Handler, and this
+ hierarchy is only give by interaction with DB.
+\begin_inset Newline newline
+\end_inset
+
+First integration of Traffic Situation Handler will be with Account And
+ Data Handler, in order to check the correct communicaation with DB.
+ Then will be done integration with Notification Handler, Map Handler, Pollution
+ Handler, Public Transport Handler and Help Request Handler.
+\begin_inset Newline newline
+\end_inset
+
+I want to bring out an important detail: when a new help request is insert
+ into the system, it is obviousy saved in the DB but it isn't this the real
+ impact of a new request for the application scope.
+ The impact in the application scope is done by the possibility from Traffic
+ Situation Handler to updating the traffic situation in the map and showing
+ to user and guests the new accident.
+ Furthermore there will be the possibilities to sending notifiacation to
+ users and all rescue entities (as police, hospitals and fire fighters).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+The last two steps, after that all the application modules will be integrated
+ and will be veified that the back-end work correctly, will be integrate
+ component for forwarding information to actor: for this reasons will be
+ performed integration test between Model component and Controller component
+ and between Controller component and View component.
+\end_layout
+
 \begin_layout Chapter
 Individual Step And Description
+\end_layout
+
+\begin_layout Standard
+As explain in the previous chapter, we can consider to have a step 0 in
+ the integration that include the integration between Hanlers and external
+ actuator ad sensors, monitors and so on.
+ In particular will be foundamenta the correct integration between DB and
+ Account And Data Handler.
 \end_layout
 
 \begin_layout Section
@@ -492,7 +611,9 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Test Items} & Account And Data Handler and Notification Handler
+textbf{Test Items} & Account and Data Handler 
+\backslash
+& Queue Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -503,7 +624,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Other Stubs} & None
+textbf{Secondary Items} & None
 \backslash
 tabularnewline 
 \end_layout
@@ -514,7 +635,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Input Specification} & Method calls from Account And Data Handler
+textbf{Input Specification} & Method calls from Queue Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -526,7 +647,7 @@ tabularnewline
 hline  
 \backslash
 textbf{Output Specification} & Check that the correct methods are called
- in Notification Handler
+ in Account And Data Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -537,7 +658,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Tests applied} & The tests done must verify that the component:
+textbf{Tests applied} & Tests done must verify that the component:
 \end_layout
 
 \begin_layout Plain Layout
@@ -551,16 +672,14 @@ begin{itemize}
 
 
 \backslash
-item calls correct methods for extracting the list of users that must receive
- a notification
+item calls correct methods for returning the required queue (with all data)
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-item calls correct methods for forwarding the notification to assigned set
- of users  
+item calls correct methods for updating an indicated queue
 \end_layout
 
 \begin_layout Plain Layout
@@ -621,7 +740,7 @@ textwidth}|}
 \backslash
 hline  
 \backslash
-textbf{Test Case Identifier} & 
+textbf{Test Case Identifier} & I2
 \backslash
 tabularnewline
 \end_layout
@@ -632,9 +751,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Test Items} & Map Handler 
-\backslash
-& Pollution Handler
+textbf{Test Items} & Account And Data Handler and Notification Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -645,7 +762,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Other Stubs} & Traffic Management Handler, Notification Handler
+textbf{Secondary Items} & None
 \backslash
 tabularnewline 
 \end_layout
@@ -656,7 +773,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Input Specification} & Method calls from Map Handler
+textbf{Input Specification} & Method calls from Notification Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -668,7 +785,7 @@ tabularnewline
 hline  
 \backslash
 textbf{Output Specification} & Check that the correct methods are called
- in Pollution Handler
+ in Account And Data Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -679,7 +796,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Tests applied} & The tests done must verify that the component:
+textbf{Tests applied} & Tests done must verify that the component:
 \end_layout
 
 \begin_layout Plain Layout
@@ -693,23 +810,32 @@ begin{itemize}
 
 
 \backslash
-item call correct methods for receivig data about pollution situation from
- polution sensors
+item calls correct methods for extracting and returning lists of users that
+ must receive a notification
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-item call correct methods for activating Traffic Management Handler, if
- necessary
+item calls correct methods for forwarding the notification to assigned set
+ of users or single users (for example during a car park reservation confirm)
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-item call correct methods for activating Notification Handler, if necessary
+item calls correct methods for checking if the notification's sender has
+ privileges in order to perform that action
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item calls correct methods for requiring administration feedback before
+ forward a notification (if necessary)
 \end_layout
 
 \begin_layout Plain Layout
@@ -770,7 +896,7 @@ textwidth}|}
 \backslash
 hline  
 \backslash
-textbf{Test Case Identifier} & 
+textbf{Test Case Identifier} & I3
 \backslash
 tabularnewline
 \end_layout
@@ -781,20 +907,9 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Test Items} & Map Handler 
+textbf{Test Items} & Account and Data Handler 
 \backslash
-& Traffic Management
-\backslash
-tabularnewline 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline  
-\backslash
-textbf{Other Stubs} & none
+& Parking Handler Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -805,7 +920,18 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Input Specification} & Method calls from Map Handler
+textbf{Secondary Items} & Notification Handler
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Input Specification} & Method calls from Parking Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -817,7 +943,7 @@ tabularnewline
 hline  
 \backslash
 textbf{Output Specification} & Check that the correct methods are called
- in Traffic Management Handler
+ in Account And Data Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -828,7 +954,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Tests applied} & The tests done must verify that the component:
+textbf{Tests applied} & Tests done must verify that the component:
 \end_layout
 
 \begin_layout Plain Layout
@@ -842,22 +968,17 @@ begin{itemize}
 
 
 \backslash
-item call correct methods for activating the block of traffic car in a fixed
- zone if required by pullution levels
+item calls correct methods for updating parking car availability when someone
+ go in or out from it.
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-item call correct methods for managing
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-item call correct methods for activating Notification Handler, if necessary
+item call correct methods for activate Notification Handler if user has
+ performed a reservation in a specific cars park (always after have performed
+ the updatig).
 \end_layout
 
 \begin_layout Plain Layout
@@ -918,7 +1039,7 @@ textwidth}|}
 \backslash
 hline  
 \backslash
-textbf{Test Case Identifier} & 
+textbf{Test Case Identifier} & I4
 \backslash
 tabularnewline
 \end_layout
@@ -929,7 +1050,9 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Test Items} & 
+textbf{Test Items} & Account and Data Handler 
+\backslash
+& Event Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -940,7 +1063,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Other Stubs} & 
+textbf{Secondary Items} & Notification Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -951,7 +1074,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Input Specification} & 
+textbf{Input Specification} & Method calls from Event Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -962,7 +1085,8 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Output Specification} & 
+textbf{Output Specification} & Check that the correct methods are called
+ in Account And Data Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -973,7 +1097,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Tests applied} & The tests done must verify that the component:
+textbf{Tests applied} & Tests done must verify that the component:
 \end_layout
 
 \begin_layout Plain Layout
@@ -987,7 +1111,16 @@ begin{itemize}
 
 
 \backslash
-item    
+item calls correct methods for saving new event after that administration
+ have scheduled it
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item calls correct methods for sending notification to all user in order
+ to remind them the events
 \end_layout
 
 \begin_layout Plain Layout
@@ -1048,7 +1181,7 @@ textwidth}|}
 \backslash
 hline  
 \backslash
-textbf{Test Case Identifier} & 
+textbf{Test Case Identifier} & I5
 \backslash
 tabularnewline
 \end_layout
@@ -1059,7 +1192,11 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Test Items} & 
+textbf{Test Items} & Traffic Situation Handler 
+\backslash
+
+\backslash
+& Notification Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -1070,7 +1207,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Other Stubs} & 
+textbf{Secondary Items} & None
 \backslash
 tabularnewline 
 \end_layout
@@ -1081,7 +1218,8 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Input Specification} & 
+textbf{Input Specification} & Method calls from duringTraffic Situation
+ Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -1092,7 +1230,8 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Output Specification} & 
+textbf{Output Specification} & Check that the correct methods are called
+ in Notification Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -1103,7 +1242,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Tests applied} & The tests done must verify that the component:
+textbf{Tests applied} & Tests done must verify that the component:
 \end_layout
 
 \begin_layout Plain Layout
@@ -1117,7 +1256,32 @@ begin{itemize}
 
 
 \backslash
-item    
+item calls correct methods for sendig notification to users when pollution
+ sensors releve something
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item calls correct methods for sendig notification to users when is happened
+ an accidents
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item calls correct methods for sendig notification to users when there is
+ some problem with public transport
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item calls correct methods for sendig notification to users when an event
+ block some streets  
 \end_layout
 
 \begin_layout Plain Layout
@@ -1178,7 +1342,7 @@ textwidth}|}
 \backslash
 hline  
 \backslash
-textbf{Test Case Identifier} & 
+textbf{Test Case Identifier} & I6
 \backslash
 tabularnewline
 \end_layout
@@ -1189,7 +1353,9 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Test Items} & 
+textbf{Test Items} & Traffic Situation Handler 
+\backslash
+& Map Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -1200,7 +1366,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Other Stubs} & 
+textbf{Secondary Items} & None
 \backslash
 tabularnewline 
 \end_layout
@@ -1211,7 +1377,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Input Specification} & 
+textbf{Input Specification} & Methods call from Traffic Situation Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -1222,7 +1388,8 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Output Specification} & 
+textbf{Output Specification} & Check that correct methods are called in
+ Map Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -1233,7 +1400,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Tests applied} & The tests done must verify that the component:
+textbf{Tests applied} & Tests done must verify that the component:
 \end_layout
 
 \begin_layout Plain Layout
@@ -1247,7 +1414,17 @@ begin{itemize}
 
 
 \backslash
-item    
+item calls correct methods in roder to integrate Google Map API with traffic
+ situation information so all user and guest could see the real time traffic
+ situation.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item calls correct methods in order to mantain application's maps as current
+ as possible
 \end_layout
 
 \begin_layout Plain Layout
@@ -1299,7 +1476,7 @@ begin{tabular}{|p{0.3
 \backslash
 textwidth}||p{0.65
 \backslash
-teMockitoxtwidth}|}
+textwidth}|}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1319,7 +1496,9 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Test Items} & 
+textbf{Test Items} & Traffic Handler 
+\backslash
+& Account And Data Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -1330,7 +1509,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Other Stubs} & 
+textbf{Other Stubs} & Map Handler, Pollution Handler 
 \backslash
 tabularnewline 
 \end_layout
@@ -1341,7 +1520,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Input Specification} & 
+textbf{Input Specification} & Method calls from Traffic Situation Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -1352,7 +1531,8 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Output Specification} & 
+textbf{Output Specification} & Check that the correct methods are called
+ in Account And Data Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -1363,7 +1543,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Tests applied} & The tests done must verify that the component:
+textbf{Tests applied} & Tests done must verify that the component:
 \end_layout
 
 \begin_layout Plain Layout
@@ -1377,7 +1557,14 @@ begin{itemize}
 
 
 \backslash
-item    
+item call correct methods for updating Map Handler, if necessary
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item call correct methods for storing an high pollution level
 \end_layout
 
 \begin_layout Plain Layout
@@ -1449,7 +1636,9 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Test Items} & 
+textbf{Test Items} & Traffic Handler 
+\backslash
+& Pollution Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -1460,7 +1649,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Other Stubs} & 
+textbf{Secondary Items} & None
 \backslash
 tabularnewline 
 \end_layout
@@ -1471,7 +1660,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Input Specification} & 
+textbf{Input Specification} & Method calls from Traffic Situation Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -1482,7 +1671,8 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Output Specification} & 
+textbf{Output Specification} & Check that the correct methods are called
+ in Pollution Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -1493,7 +1683,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Tests applied} & The tests done must verify that the component:
+textbf{Tests applied} & Tests done must verify that the component:
 \end_layout
 
 \begin_layout Plain Layout
@@ -1507,7 +1697,8 @@ begin{itemize}
 
 
 \backslash
-item    
+item call correct methods for receivig data about pollution situation from
+ polution sensors
 \end_layout
 
 \begin_layout Plain Layout
@@ -1579,20 +1770,9 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Test Items} & Module component 
+textbf{Test Items} & Traffic Situation Handler 
 \backslash
-& Controller Component
-\backslash
-tabularnewline 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline  
-\backslash
-textbf{Other Stubs} & None
+& Help Request Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -1603,7 +1783,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Input Specification} & Method calls from modul component
+textbf{Secondary Items} & Notification Hanlder, Map Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -1614,8 +1794,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Output Specification} & Check that the correct methods are calledin
- controller component
+textbf{Input Specification} & Method calls from Help Request Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -1626,7 +1805,19 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Tests applied} & The tests done must verify that the component:
+textbf{Output Specification} & Check that the correct methods are called
+ in Traffic Situation Handler
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Tests applied} & Tests done must verify that the component:
 \end_layout
 
 \begin_layout Plain Layout
@@ -1640,7 +1831,31 @@ begin{itemize}
 
 
 \backslash
-item    
+item calls correct methods for activating traffic deviation, if necessary
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item calls correct methods for indicating new accindents in the maps
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item calls correct methods for requiring the activation of all functionalities
+ related to new accidents, as notification to users
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item calls correct methods for advicing Police Station, Hospital and Fire
+ Fighters near the accident, in order to be sure that everybody know what
+ is happenend
 \end_layout
 
 \begin_layout Plain Layout
@@ -1712,20 +1927,9 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Test Items} & Controller Component 
+textbf{Test Items} & Traffic Situation Handler 
 \backslash
-& View Component
-\backslash
-tabularnewline 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline  
-\backslash
-textbf{Other Stubs} & None
+& Public Transport Company Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -1736,7 +1940,19 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Input Specification} & Method calls from controller component
+textbf{Secondary Items} & Notification Handler
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Input Specification} & Method calls from Public Transport Company
+ Handler 
 \backslash
 tabularnewline 
 \end_layout
@@ -1748,7 +1964,7 @@ tabularnewline
 hline  
 \backslash
 textbf{Output Specification} & Check that the correct methods are called
- in view component
+ in Traffic Situation Handler
 \backslash
 tabularnewline 
 \end_layout
@@ -1759,7 +1975,7 @@ tabularnewline
 \backslash
 hline  
 \backslash
-textbf{Tests applied} & The tests done must verify that the component:
+textbf{Tests applied} & Tests done must verify that the component:
 \end_layout
 
 \begin_layout Plain Layout
@@ -1773,7 +1989,399 @@ begin{itemize}
 
 
 \backslash
-item    
+item call correct method in order to forward notification to notification
+ handler, after city administration approval
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item call correct method for updating transport line's scheduling
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item call correct method for constantly updating public transports position
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Integration Test 11
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{|p{0.3
+\backslash
+textwidth}||p{0.65
+\backslash
+textwidth}|}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Test Case Identifier} & I11
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Test Items} & Model Component 
+\backslash
+& Controller Component
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Secondary Items} & All Module Item must be already integrated
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Input Specification} & Method calls from Model Component
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Output Specification} & Check that the correct methods are called
+ in Controller Component
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Tests applied} & Tests done must verify that the component:
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item calls
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Integration Test 12
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{|p{0.3
+\backslash
+textwidth}||p{0.65
+\backslash
+textwidth}|}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Test Case Identifier} & I12
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Test Items} & Controller Component 
+\backslash
+& View Component
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Secondary Items} & Module's items and Controller Component must be
+ already integrated
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Input Specification} & Method calls from Controller Component
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Output Specification} & Check that the correct methods are called
+ in View Component
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Tests applied} & The tests done must verify that:
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{itemize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item guest communicator component call the correct method for:
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+subitem -showing traffic situation and requireing best way
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+subitem -showing events already scheduled by city administration
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+subitem -showing hospital queue
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+subitem -showing parking situation
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+subitem -showing public transport position
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item user communicator component call the correct method for:
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+subitem -showing notification when someone send something
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+subitem -showing form for reserve a car park
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item city administration communicator component call the correct method
+ for:
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+subitem -showing form for schedule new events
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+subitem -showing all notification that require an approvation
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item police station communicator, hospital communicator and fire fighters
+ communivator component call the correct method for:
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+subitem -showing the form for insert a new help request
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item public trasport company communicator component call the correct method
+ for:
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+subitem -showing the form for send special notification to user, but only
+ after city administration approval
 \end_layout
 
 \begin_layout Plain Layout
@@ -1810,7 +2418,9 @@ end{tabular}
 \end_layout
 
 \begin_layout Chapter
-Tools and Test Equipment Required
+quipment Required
+\series bold
+Unit Test
 \end_layout
 
 \begin_layout Standard
@@ -1823,8 +2433,10 @@ In order to perform integration test, have been used some tools presented
 \begin_layout Itemize
 
 \series bold
+\bar under
 Mockito
 \series default
+\bar default
  has been used to test interatction with external service, as Google APIs.
  It also allow to isolate dependencies.
 \end_layout
@@ -1832,8 +2444,10 @@ Mockito
 \begin_layout Itemize
 
 \series bold
+\bar under
 Arquillian
 \series default
+\bar default
  has an important role during the integration between system and DB: it
  is very helpful in order to understand if the database works well.
 \end_layout
@@ -1842,8 +2456,11 @@ Arquillian
 When i need to simulate a fulfilled form or an information overload i might
  use
 \series bold
- Jmeter
+ 
+\bar under
+Jmeter
 \series default
+\bar default
  that allow to have consistency and fault tolerance tested.
  For these reasons it should also used to check if the system can work well
  under strain or if a big number of incoming requests may cause a failure.
@@ -1861,8 +2478,571 @@ becouse they not required complex tool for testing
 Program Stubs and Test Data Required
 \end_layout
 
+\begin_layout Standard
+In this chapter i bring out some test procedure that have the scope to verify
+ that each integration test is done correctly.
+ Each TP will be structured with a short description about what the simulation
+ includes andwhich integration test should be already done if i want that
+ the TP could be performed in the right way.
+\end_layout
+
+\begin_layout Section
+Integration Test Procedure TP1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{|p{0.3
+\backslash
+textwidth}||p{0.65
+\backslash
+textwidth}|}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Test Procedure ID} & TP1
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Purpose} & This test procedure simulate a precise situation in order
+ to check the correct integration between different component.
+ Will be necessary simulate a guest as actor that will check the queue situation
+ in a specifi hospital
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Procedure Steps} & I0 (DB/Account and Data Handler) and I1  must
+ be done
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Integration Test Procedure TP2
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{|p{0.3
+\backslash
+textwidth}||p{0.65
+\backslash
+textwidth}|}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Test Procedure ID} & TP2
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Purpose} & This test procedure simulate a precise situation in order
+ to check the correct integration between different component.
+ Will be necessary simulate a user as actor that will check the car park
+ availability in a specific car parking and he will decide to reserve on
+ park
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Procedure Steps} & I0, I2 and I3 must be done
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Integration Test Procedure TP3
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{|p{0.3
+\backslash
+textwidth}||p{0.65
+\backslash
+textwidth}|}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Test Procedure ID} & TP3
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Purpose} & This test procedure simulate a precise situation in order
+ to check the correct integration between different component.
+ Will be necessary simulate city administration that insert a new event.
+ This mean that users will receive notification and data will be update.
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Procedure Steps} & I0, I2 and I4 must be done
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Integration Test Procedure TP4
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{|p{0.3
+\backslash
+textwidth}||p{0.65
+\backslash
+textwidth}|}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Test Procedure ID} & TP4
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Purpose} & This test procedure simulate a precise situation in order
+ to check the correct integration between different component.
+ Will be necessary simulate that an event is started and user must be advice
+ about each temporary change.
+ Here will be involved also Traffic Situation Handler and Map Handler if
+ we want to provide a real time information for our users
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Procedure Steps} & I0, I2, I4, I5, I6 and I7 must be done
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Integration Test Procedure TP5
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{|p{0.3
+\backslash
+textwidth}||p{0.65
+\backslash
+textwidth}|}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Test Procedure ID} & TP5
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Purpose} & This test procedure simulate a precise situation in order
+ to check the correct integration between different component.
+ Will be necessary simulate the block of car traffic due to pollution levels
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Procedure Steps} & I0, I2, I5, I6, I7, I8 must be done
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Integration Test Procedure TP6
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{|p{0.3
+\backslash
+textwidth}||p{0.65
+\backslash
+textwidth}|}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Test Procedure ID} & TP6
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Purpose} & This test procedure simulate a precise situation in order
+ to check the correct integration between different component.
+ Will be necessary simulate the integration of Public Transport Situation
+ in the map and also simulate an attempt by Public Transport Company Administrat
+ion to send an email that must be verify from City Administration
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Procedure Steps} & I0, I2, I5, I6, I7 and I10 must be done
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Integration Test Procedure TP7
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{|p{0.3
+\backslash
+textwidth}||p{0.65
+\backslash
+textwidth}|}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Test Procedure ID} & TP7
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Purpose} & This test procedure simulate a precise situation in order
+ to check the correct integration between different component.
+ Will be necessary simulate a new help request captured by hospital, police
+ station or fire fighter station, with respect to who will be contacted
+ as first from the plece where the accident is happened
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+textbf{Procedure Steps} & I0, I2, I4, I5, I6, I7 and I9 must be done
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Appendix
+\end_layout
+
+\begin_layout Section
+Used Tools
+\end_layout
+
+\begin_layout Standard
+In order to create this document i have used the following tools:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Lyx
+\series default
+ for writing the pdf
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+VisualParadigm
+\series default
+10 Community Edition for creating diagrams
+\end_layout
+
+\begin_layout Section
+Time Spent
+\end_layout
+
+\begin_layout Standard
+For drafting this document i have spent about 15 hours.
 \end_layout
 
 \end_body
