@@ -1,0 +1,873 @@
+%% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[10pt,a4paper]{report}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\pdfpageheight\paperheight
+\pdfpagewidth\paperwidth
+
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+%% A simple dot to overcome graphicx limitations
+\newcommand{\lyxdot}{.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{amsfonts}
+
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{blindtext}
+
+\usepackage{listings}
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{java}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\definecolor{gray75}{gray}{0.75}
+
+
+\lstset{language = Java, style=java}
+
+
+\newcommand{\hsp}{\hspace{18pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+\author{Losio Davide Francesco, Luchetti Mauro, Mosca Paolo}
+\title{Project Plan\\ Version 1.0}
+
+\makeatother
+
+\begin{document}
+\maketitle \tableofcontents{}
+
+
+\chapter{Introduction}
+
+This document aims to clearly stating the Project plan for the developing
+of MyTaxiService application. The developers team is composed by 
+\begin{itemize}
+\item Losio Davide Francesco
+\item Luchetti Mauro
+\item Mosca Paolo
+\end{itemize}
+The document will be split up in the section stated below
+\begin{enumerate}
+\item Estimate of effort and cost, this will be done by the applying Function
+Points method to estimate the project size and then COCOMO to evaluate
+the tasks for the project and their schedule.
+\item Resource allocation where all the tasks and resources will be clearly
+assigned to all the members of the group. Actual availability and
+needs of any member will be taken into account, and merged with the
+project contingencies. 
+\item Risk analysis, analysis of their relevance and the associated recovery
+and monitoring actions.
+\end{enumerate}
+
+\chapter{Effort and cost estimation}
+
+
+\section{Functional points}
+
+
+\subsection{Brief Explanation}
+
+We have chose Functional Point technique to evaluate the application
+dimensions basing on the functionalities, at the and of the overall
+analysis this will be implemented in SLOC estimation, that will be
+calculated with the so-called COCOMO method. The analyzed function
+are taken from DD, and RASD previously edited by the same team that
+is redacting this document. Functionalities are split in
+\begin{itemize}
+\item Internal Logic Files: These are homogeneous set of data used and managed
+by the application.
+\item External Interface Files: These are homogeneous sets of data used
+by the application but generated and maintained by other applications.
+\item External Inputs: These are elementary operations useful to elaborate
+data coming form the external environment.
+\item External Outputs: These are elementary operations that generate data
+for the external environment.
+\item External Inquiries: These are elementary operations that involve input
+and output without significant elaboration of data from logic files.\newpage
+\end{itemize}
+Functional points analysis will bind the right weights to all the
+individuated functions starting from the table stated below.\\
+
+\begin{figure}[H] \makebox[\textwidth][c]{ \includegraphics[width=\textwidth]{\string"Img/FpTab".png} } \end{figure}
+
+
+\subsection{Functional Points estimation}
+
+
+\subsection*{Internal Logical File}
+
+
+\paragraph{Driver }
+
+On the driver side we need to store:
+\begin{itemize}
+\item Driver specific information: which can be considered of low complexity,
+because they only are personal and work related simple information.
+\textbf{7 FP}
+\item Queue: system need to store information and statistic about the queue
+situation, moreover this data has to be accessed, written and read
+several different times and retrieved from different sources. We can
+assume an average complexity. \textbf{10 FP}
+\end{itemize}
+
+\paragraph{Passenger}
+
+On the passenger side we need to store:
+\begin{itemize}
+\item Passenger specific information: which can be considered of low complexity,
+because they only are personal simple information. \textbf{7 FP}
+\end{itemize}
+
+\paragraph{On both side }
+\begin{itemize}
+\item Login data: which are a subsection of user information. We can consider
+them of low complexity because of their small size. Furthermore they
+will have a similar implementation with a huge code re-use, so we
+can consider them a single unit, not differentiated for passengers
+and drivers. \textbf{7 FP}
+\item Common ride info: we have to store information about the rides due
+to information retrieving facilities. Common data have to be split
+up between the two type of users, and each of them has to be capable
+to see only the data in which it is interested. so we can consider
+the structure of Average complexity. \textbf{10 FP}
+\item Zone: MTS need to archive some geographic and statistical information,
+to do is job. We can assume a low complexity for this kind of logical
+file, since despite of their big volume they have to remain basically
+unchanged for long time. \textbf{7 FP} 
+\end{itemize}
+
+\paragraph{So in total}
+
+we have about \textbf{48 FP} for this section.
+
+
+\subsection*{External Interface File}
+
+Since MTS has to interface with the Google Maps API system, we keep
+in account about the navigation data received by this external system.
+We can consider them of High complexity, since they carry several
+different information both about positioning and routing. \textbf{10
+FP}
+
+
+\paragraph{So in total}
+
+since this is the only external system providing data to MTS we have
+about \textbf{10 FP} for this section.
+
+
+\subsection*{External Inputs}
+
+
+\paragraph{Driver }
+
+On the driver side we have:
+\begin{itemize}
+\item Request accept/reject: here is requested a simple low complexity input.
+\textbf{3 FP}
+\item Feedback: Driver has to release a feedback on the passenger. This
+can be considered as a simple operation. \textbf{3 FP}
+\item Availability: we can consider this of average complexity, here gps
+information are needed. furthermore GPS involves both the Device and
+the application. \textbf{4 FP.}
+\end{itemize}
+
+\paragraph{Passenger}
+
+On the passenger side we have:
+\begin{itemize}
+\item Feedback: Passenger has to release a feedback on the driver. This
+can be considered as a simple operation. \textbf{3 FP}
+\item Request insert/change input: here are requested different data, like:
+position, addresses, type of reservation so we can consider this of
+avg complexity. \textbf{2 x 4 FP}
+\item Request delete input: deleting a request is a simple operation that
+require a few input to be completed so we can consider this of low
+complexity. \textbf{3 FP}
+\end{itemize}
+
+\paragraph{On both Side}
+
+common operation to the two user are:
+\begin{itemize}
+\item User login input: which can be considered of low complexity, because
+only few data are needed. \textbf{3 FP}
+\item User edit/create new user: both can be considered of average complexity,
+since we have to involve either user manager component, and dbms component.
+\textbf{2 X 4 FP}
+\end{itemize}
+
+\paragraph{So in total}
+
+we have about \textbf{35 FP} for this section.
+
+
+\subsection*{External Outputs}
+
+
+\paragraph{Driver }
+
+On the driver side we have:
+\begin{itemize}
+\item Request forwarding: which can be considered of average complexity,
+because of the computation that have to be done for the driver selection.
+\textbf{5 FP}
+\item Queue status update: this is a periodical operation that requires
+to re-calculate the driver position in the Taxi Queue. This has to
+be done each time a driver exit from the queue for several different
+reason. we can consider this operation of strictly high complexity.
+\textbf{7 FP}
+\item General operation confirmations: due to the pop-up acknowledgment.
+Low complexity output. \textbf{3 FP}
+\item Availability request: also here a low complexity output can do the
+job. \textbf{3 FP}
+\end{itemize}
+
+\paragraph{On both Side}
+
+common operation to the two user are:
+\begin{itemize}
+\item Ride warn: Users has to be warn of the incoming rides appointment.
+This is a simple operation. \textbf{2 x 3 FP} 
+\end{itemize}
+
+\paragraph{So in total}
+
+we have about \textbf{24 FP} for this section.
+
+
+\subsection*{External Inquiries}
+
+
+\paragraph{Driver }
+
+On the driver side we have:
+\begin{itemize}
+\item Display queue position: position an information always available,
+his computation is transparent to his inquiry, given that we can consider
+this as a low complexity inquiry. \textbf{3 FP}
+\end{itemize}
+
+\paragraph*{On both side}
+
+common operation to the two user are:
+\begin{itemize}
+\item Display account: this can be considered as a simple inquiries, as
+it only have to display available data that hardly change during time.
+\textbf{3 FP}
+\item Display schedule: In this case, information are pretty static, not
+so many and easy to retrieve. We consider this operation of low complexity.
+\textbf{3 FP}
+\item Display Gps information: we can consider this operation of medium
+complexity, as it has to involve the device application/hardware component,
+predisposed for this feature. \textbf{4 FP}
+\item Display last feedback: this can be considered as a average complexity
+operation, since it could have to couple with data that have to be
+retrieved, either about the ride or the driver associated to the feedback.
+In order to achieve this goal, different file have to be accessed.
+\textbf{4 FP}
+\end{itemize}
+
+\paragraph{So in total}
+
+we have about \textbf{21 FP} for this section.
+
+
+\subsection{Total}
+
+\begin{center}
+\begin{tabular}{|cc|}
+\hline 
+{\Large{}Categories} & {\Large{}Sum}\tabularnewline
+\hline 
+{\Large{}Internal Logical Files} & {\Large{}48 +}\tabularnewline
+\hline 
+{\Large{}External Interfaces Files} & {\Large{}10 +}\tabularnewline
+\hline 
+{\Large{}External Inputs} & {\Large{}35 +}\tabularnewline
+\hline 
+{\Large{}External Outputs} & {\Large{}24 +}\tabularnewline
+\hline 
+{\Large{}External Inquiries} & {\Large{}17 =}\tabularnewline
+\hline 
+{\Large{}Total:} & {\Large{}135}\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+
+The line of code estimation is done by using the usual formula, that
+is
+
+
+
+\begin{center}
+$LOC$ = $AVC$ $\cdot$ $Number$ $of$ $FP$
+\par\end{center}
+
+
+
+by using 46 as AVC parameter:
+
+
+
+\begin{center}
+135 $\cdot$ 46 = 6210 LOC.
+\par\end{center}
+
+
+
+parameters for the calculus are taken from here:
+
+
+
+\textit{http://www.qsm.com/resources/function-point-languages-table.}
+
+
+\section{COCOMO}
+
+Mainly we have chosen the COCOMO effort evaluation method, because
+of his well known robustness. Furthermore since our company leak of
+a portfolio big enough to perform a calculus based on precedents it
+was the only available choice. Actually we have decided for the COCOMO
+II model, since this is the reviewed and corrected version. Here FP
+are used as a basis to estimate the size of the project in SLOC and
+then COCOMO method is applied to estimate the effort exploiting the
+SLOC estimation. \\
+
+\begin{flushleft}
+Below is reported the estimation done with the help of:
+\par\end{flushleft}
+
+\begin{flushleft}
+\textit{http://csse.usc.edu/tools/COCOMOII.php}
+\par\end{flushleft}
+\begin{quotation}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{\string"Img/Screenshot 2016-01-26 22.47.20\string".png}
+\par\end{center}
+\end{quotation}
+
+\begin{quotation}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{\string"Img/Screenshot 2016-01-26 22.47.33\string".png}
+\par\end{center}
+
+\newpage
+
+\begin{flushleft}
+It follows the output file generated by the application, carrying
+out all the settings: 
+\par\end{flushleft}
+\end{quotation}
+
+\begin{quotation}
+\begin{center}
+\includegraphics[width=0.65\textwidth]{\string"Img/Screenshot 2016-01-26 22.47.43\string".png}\newpage
+\par\end{center}
+\end{quotation}
+
+\subsection{Comments on the chosen Driver}
+
+Below are stated the main motivation for the COCOMO parameters chosen.
+
+
+\paragraph{Scale Drivers}
+\begin{itemize}
+\item Precedentedness: We have set this value to low, since it is the measure
+of the development experience on the chosen development environment.
+Actually this is our first JavaEE application, so it seems quite reasonable
+to set this Scale Drivers to low.
+\item Development flexibility: Flexibility has to be high, as we have never
+couple with this kind of application, so we really don't know what
+to expect. Sure thing, is that we are going to do everything in the
+book, but we think it will be better to be conservative. As result
+we opted for a very high value. 
+\item Risk resolution: As reported below, we have done a meticulous risk
+analysis so we opted to set this value to normal. Indeed we always
+prefer to be conservative. 
+\item Team cohesion: As team, we have already works in several different
+project and we know each other very well. Only to report some proofs
+of this:
+
+\begin{itemize}
+\item We have developed in team Escape From The Alien In Outer Space Online
+Game
+\item \textit{http://www.chrisportline.com/}
+\item \textit{http://www.pizzeriadasportogirasole-nerviano.it/home.html}
+\item And many others works
+\end{itemize}
+
+so it seems quite reasonable to set this driver to extra high.
+
+\item Process maturity: This was evaluated around the 18 Key Process Area
+(KPAs) in the SEI Capability Model. Because of the goals were consistently
+achieved these values will be set to normal
+\end{itemize}
+
+\paragraph{Cost Drivers}
+\begin{itemize}
+\item Required Software Reliability: We have chosen to remain in an average
+setting. Indeed our application doesn't require any particular measure
+with respect to any other application. 
+\item Data Base Size: Also here we have assumed to use the capacity of any
+other average application.
+\item Product Complexity: Set to high according to the nominal COCOMO II
+CPLEX rating scale. 
+\item Required Reusability: MTS is designed with a SOA architecture, either
+for use or reuse. API of the main functionality will be available,
+so it is substantially designed to allow high reusability. High is
+the value we choose.
+\item Documentation match to life-cycle needs: This driver its suitability
+set to nominal since each aspect of our system has been described
+in the RASD or in DD. 
+\item Execution Time Constraint: In our case this parameter is not relevant
+so it is reasonable to set it as nominal
+\item Main Storage Constraint: We don't have any particular storage constraints,
+we set this value to low. 
+\item Platform Volatility: The application platform shouldn't change too
+often, or rather we have forecast to keep it as stable as possible.
+so this value is set to low. 
+\item Analyst Capability: Actually this our first analysis study, so we
+think, not being presumptuous, to set our skill evaluation to low.
+\item Programmer Capability: Once again, we think that our CV talk for us,
+so we decide to set this value on high. 
+\item Application Experience: Being our first javaEE project this value
+is equal to low. 
+\item Platform Experience: As above, for the same motivations we chose low. 
+\item Language and Tool Experience: Here we have decided to keep in account
+of our java SE knowledge, so we set the value to nominal. 
+\item Personnel continuity: we set this value to high, since we are capable
+to work at least 8 our per day, almost every day. 
+\item Usage of Software Tools: We actually planning to use JavaEE, gitHub
+and several different frameworks to speed-up development so we set
+this to nominal. 
+\item Multisite development: we set this driver to nominal, as we actually
+prefer to avoid a massive multisite development, but we keep in account
+that we are capable to work on our own, also on high distance site
+and obviously in a more or less parallel way.
+\item Required development schedule: As this is our first approach to a
+project of this dimension we have preferred to produce a well documented
+development schedule. So we set this value to high.
+\end{itemize}
+For each clarification on drivers meaning, we refer, once again to
+the official manual:
+
+\begin{flushleft}
+\textit{http://csse.usc.edu/csse/research/COCOMOII/cocomo2000.0/CII\_modelman2000.0.pdf}
+\par\end{flushleft}
+
+
+\chapter{Task identification}
+
+This chapter provides a list of the main tasks of the whole project.
+All the necessary documents, all the deadlines associated with them,
+are taken into account in this section. Furthermore, it is shown the
+related schedule for each of the tasks individuated. 
+
+
+\section{Project Tasks }
+
+For each tasks, a possible fragmentation to subtasks can be considered:
+\begin{enumerate}
+\item \textbf{Requirement Analysis}
+
+\begin{enumerate}
+\item Meeting with stakeholders (Interview)
+\item Model of the world (Alloy model)
+\item RASD production
+\item RASD review and presentation
+\end{enumerate}
+\item \textbf{Design} 
+
+\begin{enumerate}
+\item High level architecture
+\item Detailed design structure
+\item Algorithm design
+\item DD production
+\item DD review and presentation
+\end{enumerate}
+\item \textbf{Implementation}
+
+\begin{enumerate}
+\item DBMS \& Login Handler
+\item Mapping Features Handler
+\item Request Handler
+\item Queue Handler
+\item Ban Handler
+\item Controller
+\item View\newpage
+\end{enumerate}
+\item \textbf{Testing}
+
+\begin{enumerate}
+\item JUnit tests over modules
+\item Integration Tests
+\item System Tests
+\item Security Test
+\item Usability Test
+\end{enumerate}
+\item \textbf{Deployment}
+\item \textbf{Maintenance\newpage}
+\end{enumerate}
+
+\section{Tasks schedule}
+
+The schedules for the various parts of the project are been introduced
+taking into account the project documentation deadlines provided:\\
+
+\begin{center}
+\includegraphics[scale=0.7]{Img/Gantt_Schedule}\newpage
+\par\end{center}
+
+
+\section{Gantt Chart}
+
+For having a better overview of the tasks and the related time associated
+to each of them, a Gantt chart has been provided (because of his dimensions
+it has been split in two parts):
+
+
+\subsection*{Study phase}
+
+\begin{figure}[H] \makebox[\textwidth][c]{ \includegraphics[width=\textwidth]{\string"Img/Gantt1".png} } \end{figure}
+
+
+\subsection*{Development phase}
+
+\begin{figure}[H] \makebox[\textwidth][c]{ \includegraphics[width=1.1\textwidth]{\string"Img/Gantt2".png} } \end{figure}\newpage
+
+For having a complete overview of the chart:\\
+
+\begin{center}
+\includegraphics[angle=270,scale=0.4]{Img/Gantt}
+\par\end{center}
+
+
+\chapter{Resources allocation}
+
+As stated in the introduction of this document, the team working on
+the MyTaxiService system is composed by three members:
+\begin{itemize}
+\item Losio Davide Francesco
+\item Luchetti Mauro
+\item Mosca Paolo
+\end{itemize}
+Team members can be considered as resources of the project. In this
+chapter it is wanted to assign at each task individuated before a
+corresponding person. The tasks division is the one used above:
+
+
+\section{Requirement analysis}
+
+\begin{tabular}{|p{0.3\textwidth}||p{0.3\textwidth}||p{0.4\textwidth}|}
+\hline  \textbf{Task} & \textbf{Resource} & \textbf{Motivation}\tabularnewline
+\hline
+\hline
+
+\hline  Stakeholders interview & All team members & In this phase there is the need to have the better understanding 
+of the future requirements possible \tabularnewline 
+
+\hline  Alloy model & Davide Losio & Fair job division\tabularnewline 
+
+\hline  RASD production & All team members & Because of the document dimension, different parts can be assigned to
+the different team members \tabularnewline
+
+\hline  RASD review and presentation  & All team members & Having all the members working on the revision of this
+document allows the better cohesion in the future phases \tabularnewline 
+
+\hline  
+\end{tabular}
+
+
+\section{Design}
+
+\begin{tabular}{|p{0.3\textwidth}||p{0.3\textwidth}||p{0.4\textwidth}|}
+\hline  \textbf{Task} & \textbf{Resource} & \textbf{Motivation}\tabularnewline
+\hline
+\hline
+
+\hline  High level architecture & Paolo Mosca & Fair job division\tabularnewline 
+
+\hline  Detailed design structure & Davide Losio & Fair job division\tabularnewline 
+
+\hline  Algorithm design & Mauro Luchetti & Fair job division\tabularnewline
+
+\hline  DD production  & Sequentially: 
+\begin{itemize}
+\item Paolo Mosca 
+\item Davide Losio
+\item Mauro Luchetti 
+\end{itemize} & Because of the sequentially 
+nature of the three precedent tasks, after each completion, the related team member adds the proper part
+to the DD document\tabularnewline 
+
+\hline DD review and presentation & All team members & Having all the members working on the revision of this
+document allows the better cohesion in the future phases. Each of them can check and understand the parts done by the others\tabularnewline
+\hline  
+\end{tabular}
+
+
+\section{Implementation}
+
+\begin{tabular}{|p{0.3\textwidth}||p{0.3\textwidth}||p{0.4\textwidth}|}
+\hline  \textbf{Task} & \textbf{Resource} & \textbf{Motivation}\tabularnewline
+\hline
+\hline
+
+\hline  DBMS \& Login Handler & Davide Losio & Fair job division\tabularnewline 
+
+\hline  Mapping Features \newline Handler & Paolo Mosca & Fair job division\tabularnewline 
+
+\hline  Request Handler & Mauro Luchetti & Fair job division\tabularnewline
+
+\hline  Queue Handler  & Mauro Luchetti & This component is directly connected with the previous implemented one by the same member. This can ensure 
+a better work-flow continuity\tabularnewline 
+
+\hline  Ban Handler & Davide Losio & This component is directly connected with the previous implemented one by the same member. This can ensure 
+a better work-flow continuity\tabularnewline
+
+\hline  Controller & Paolo Mosca,\newline Davide Losio & The controller is composed by two similar component. Two team member can done the task in parallel\tabularnewline
+
+\hline  View & Paolo Mosca,\newline Mauro Luchetti & The view is composed by two similar component. Two team member can done the task in parallel\tabularnewline
+
+\hline  
+\end{tabular}
+
+
+\section{Testing}
+
+\begin{tabular}{|p{0.3\textwidth}||p{0.3\textwidth}||p{0.4\textwidth}|}
+\hline  \textbf{Task} & \textbf{Resource} & \textbf{Motivation}\tabularnewline
+\hline
+\hline
+
+\hline  JUnit tests over\newline  modules & All team members & Each team member should dedicate part of his time in doing tests over
+his specific component\tabularnewline 
+
+\hline  Integration Tests & Paolo Mosca in the first phase & The other two members are employed to perform the implementation of other components. After completion, integration tests must proceed in parallel with implementation and they involve part of each member's time \tabularnewline 
+
+\hline  System Tests & All team members & This tests are done when the implementation phase is over. All the members are available and can work together \tabularnewline
+
+\hline  Security Test  & All team members & This tests are done when the implementation phase is over. All the members are available and can work together\tabularnewline 
+
+\hline  Usability Test & All team members & This tests are done when the implementation phase is over. All the members are available and can work together\tabularnewline
+
+\hline  
+\end{tabular}
+
+
+\section{Deployment}
+
+\begin{tabular}{|p{0.3\textwidth}||p{0.3\textwidth}||p{0.4\textwidth}|}
+\hline  \textbf{Task} & \textbf{Resource} & \textbf{Motivation}\tabularnewline
+\hline
+\hline
+
+\hline  Deployment & All team members & At this point each team member should have a clear idea of all the parts of the project and can partecipate at the distribution phase\tabularnewline 
+
+\hline  
+\end{tabular}
+
+
+\section{Maintenance}
+
+\begin{tabular}{|p{0.3\textwidth}||p{0.3\textwidth}||p{0.4\textwidth}|}
+\hline  \textbf{Task} & \textbf{Resource} & \textbf{Motivation}\tabularnewline
+\hline
+\hline
+
+\hline  Maintenance & All team members & Every possible maintenance action, because of the complete project knowledge of each member, can be handled by who is available\tabularnewline 
+
+\hline  
+\end{tabular}
+
+
+\chapter{Risks analysis}
+
+In this chapter Risks will be analyzed and will be provided some solutions. 
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+\textbf{Risk} & \textbf{Probability} & \textbf{Impact}\tabularnewline
+\hline 
+\hline 
+Estimates are inaccurate  & Moderate & Critical\tabularnewline
+\hline 
+Dependencies are inaccurate & low & Critical\tabularnewline
+\hline 
+Activities are missing from scope & Moderate & Serious\tabularnewline
+\hline 
+Stakeholders become disengaged  & Low & Catastrophic\tabularnewline
+\hline 
+Architecture lacks flexibility & Medium & Serious\tabularnewline
+\hline 
+Technology components have security vulnerabilities & Moderate & Catastrophic\tabularnewline
+\hline 
+Delays to required infrastructure & Moderate & Serious\tabularnewline
+\hline 
+requirements have huge changes & Low & Critical\tabularnewline
+\hline 
+Architecture is infeasible  & Low & Critical\tabularnewline
+\hline 
+Design is not fit for purpose  & Low & Marginal\tabularnewline
+\hline 
+Components aren't interoperable  & Moderate & Catastrophic\tabularnewline
+\hline 
+Components are over-engineered  & Moderate & Serious\tabularnewline
+\hline 
+\end{tabular} 
+\par\end{center}
+\begin{itemize}
+\item \textbf{Estimates are inaccurate:} this might happen in case of wrong
+estimation of users. In this case probably hardware won't be able
+to support a huge number of users or in the otherwise powerful infrastructures
+might be an unnecessary cost. 
+
+\begin{itemize}
+\item \textbf{Solution: }an accurate estimation during the project planning,
+costs and prevision of the success, rewards. It would be a better
+hardware design expandable.
+\end{itemize}
+\item \textbf{Dependencies are inaccurate:} a bad specification of requirements
+during the first phase might involve a wrong components development
+this will cause bad interaction among components and might cause bugs.
+
+\begin{itemize}
+\item \textbf{Solution: }well done planning and specification understanding
+with team and stakeholders interaction.
+\end{itemize}
+\item \textbf{Activities are missing from scope:} some main scopes might
+be misunderstood. This could cause a different usage of some functionalities.
+
+\begin{itemize}
+\item \textbf{Solution: }starting by interacting with the stakeholders and
+among team components to make an informal draft of what the application
+must do which component do what.\newpage{}
+\end{itemize}
+\item \textbf{Stakeholders become disengaged:} if stakeholders ignore project
+communications, the assignment quality probably get worse, a guide
+lines absence might cause a huge schedule delay as well as might cause
+inaccurate work or different functionalities from what expected.
+
+\begin{itemize}
+\item \textbf{Solution: }close partnership with stakeholders even if it
+doesn't depend from the developing team. The second should make sure
+of the stakeholders seriousness and establish a safe relantionship
+with the first.
+\end{itemize}
+\item \textbf{Architecture lacks flexibility:} if the architecture is incapable
+of supporting change requests and needs to be reworked. 
+
+\begin{itemize}
+\item \textbf{Solution: }a well done project at the begin and during the
+whole developing to make possible extensible components.
+\end{itemize}
+\item \textbf{Technology components have security vulnerabilities:} if an
+accurate analysis or specific test aren't done in order to avoid bugs,
+exploits could be used to steal sensitive data or to cause software
+malfunction.
+
+\begin{itemize}
+\item \textbf{Solution: }well security planning must be done during the
+whole time project.
+\end{itemize}
+\item \textbf{Delays to required infrastructures:} this might cause a schedule
+delay as well as an inability to respect the requirements.
+
+\begin{itemize}
+\item \textbf{Solution: }be sure to have the required infrastructures before
+starting the related activity.
+\end{itemize}
+\item \textbf{Requirements have huge changes:} if during the project the
+organization or the stakeholders changes the requirements a huge part
+of the project must be redone.
+
+\begin{itemize}
+\item \textbf{Solution: }be sure of the requires accuracy. 
+\end{itemize}
+\item \textbf{Architecture is infeasible:} the architecture is hard to implement,
+excessively costly or doesn't support the requirements. 
+
+\begin{itemize}
+\item \textbf{Solution:} during the design and development must ensure the
+reliability and that the components have a feaseabile cost. 
+\end{itemize}
+\item \textbf{Design is not fit for purpose:} the design is underestimated
+so it is bad projected.
+
+\begin{itemize}
+\item \textbf{Solution: }during the software developing design must be implemented
+well during the entire project time, in particular way views must
+be done carefully.
+\end{itemize}
+\item \textbf{Components aren't interoperable: }if the components aren't
+able to cooperate the entire application might not work appropriately.
+
+\begin{itemize}
+\item \textbf{Solution: }interfaces between components must be created and
+tested during the whole project developing.
+\end{itemize}
+\item \textbf{Components are over-engineered: }A component might bloated
+with unneeded functionality and design features.
+
+\begin{itemize}
+\item \textbf{Solution: }components might be chosen and developed narrowly
+with clear and well specific tasks.
+\end{itemize}
+\end{itemize}
+
+\chapter{Appendix}
+
+
+\section{Used Tools }
+
+We used the following tools to make the ITP document: 
+\begin{itemize}
+\item LYX 2.1: to redact and format the document
+\item GANTT PRO: to produce the Gantt chart. Available at: \textit{https://ganttpro.com}
+\end{itemize}
+
+\section{Time Spent }
+\begin{itemize}
+\item For redact, correct and review this document we spent almost 10 hours
+per person.\end{itemize}
+
+\end{document}
